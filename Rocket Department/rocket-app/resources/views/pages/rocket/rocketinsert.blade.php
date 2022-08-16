@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Title</label>
-                        <input title="Input your title" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" name="title" required>
+                        <input title="Input your title name here" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" name="title" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>

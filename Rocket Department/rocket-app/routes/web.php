@@ -1,0 +1,48 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainHomeController;
+use App\Http\Controllers\RocketHomeController;
+use App\Http\Controllers\RocketController;
+use App\Http\Controllers\RocketInsertController;
+use App\Http\Controllers\RocketViewController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\RocketProjectController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+//Main-Home
+Route::get('/', [MainHomeController::class, "homeindex"])->name('home');
+
+//Rocekt-Home
+Route::get('/rockethome', [RocketHomeController::class, "rocketindex"])->name('rockethome');
+//Rocket-Cards
+Route::get('/rocket', [RocketController::class, "rocketview"])->name('rocket');
+//Rocket-Insert
+Route::prefix('/rocketinsert')->group(function () {
+    Route::get('/', [RocketInsertController::class, "rocketinsertview"])->name('rocketinsert');
+    Route::post('/store', [RocketInsertController::class, "store"])->name('rocketinsert.store');
+}); 
+//Rocket-View
+Route::prefix('/rocketview')->group(function () {
+    Route::get('/', [RocketViewController::class, "rocketview"])->name('rocketview');
+    Route::get('/edit', [RocketViewController::class, "edit"])->name('rocketview.edit');
+    Route::post('/{task_id}/update', [RocketViewController::class, "update"])->name('rocketview.update');
+    Route::get('/{task_id}/delete', [RocketViewController::class, "delete"])->name('rocketview.delete');
+    Route::get('/{task_id}/done', [RocketViewController::class, "done"])->name('rocketview.done');
+}); 
+
+//Rocket_project-Home
+Route::get('/projecthome', [RocketProjectController::class, "projectindex"])->name('projecthome');
+
+//Contact Us
+Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

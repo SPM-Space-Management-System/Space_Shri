@@ -17,7 +17,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Team</a></li>
-        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+        <li><a href="{{ route('contact') }}">Contact Space Shri</a></li>
     </ul>
     <p>&copy;2022 Space Shri | All Rights Reserved</p>
 </footer>

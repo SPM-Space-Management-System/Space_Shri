@@ -78,7 +78,7 @@
                 <p><input type="submit" title="Click this button to save the entered data." class="btn btn-warning btn-lg"
                         value="ADD DETAILS">
                     <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block"
-                        href="#" role="button">VIEW
+                        href="{{ route('projectview') }}" role="button">VIEW
                         DETAILS</a>
                 </p>
             </div>

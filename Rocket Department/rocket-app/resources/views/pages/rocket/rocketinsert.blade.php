@@ -26,13 +26,13 @@
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>
                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country" required>
-                            <option selected>Open this select menu</option>
-                            <option value="us">United States</option>
-                            <option value="france">France, ESA</option>
-                            <option value="russia">Russia</option>
-                            <option value="china">China</option>
-                            <option value="india">India</option>
-                            <option value="sri lanka">Sri Lanka</option>
+                            <option selected>Open this country of origin select menu</option>
+                            <option value="United States">United States</option>
+                            <option value="France, ESA">France, ESA</option>
+                            <option value="Russia">Russia</option>
+                            <option value="China">China</option>
+                            <option value="India">India</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
                         </select>
                     </div>
                     <div class="mb-5">
@@ -45,11 +45,16 @@
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">First Flight</label>
-                        <input class="form-control form-control-lg" id="exampleFormControlInput1" name="date" required>
+                        <input class="form-control form-control-lg" type="date" id="exampleFormControlInput1" name="date" required>
+                        
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Status</label>
-                        <input class="form-control form-control-lg" id="exampleFormControlInput1" name="status" required>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="status" required>
+                            <option selected>Open this status select menu</option>
+                            <option value="Retired">Retired</option>
+                            <option value="Active">Active</option>
+                        </select>
                     </div>
                     <div class="mb-5">
                         <label for="formFileLg" class="form-label">Image</label>

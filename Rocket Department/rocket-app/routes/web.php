@@ -7,6 +7,7 @@ use App\Http\Controllers\RocketController;
 use App\Http\Controllers\RocketInsertController;
 use App\Http\Controllers\ProjectInsertController;
 use App\Http\Controllers\RocketViewController;
+use App\Http\Controllers\ProjectViewController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\RocketProjectController;
 
@@ -53,6 +54,14 @@ Route::prefix('/projectinsert')->group(function () {
     Route::get('/', [ProjectInsertController::class, "projectinsertview"])->name('projectinsert');
     Route::post('/store', [ProjectInsertController::class, "store"])->name('projectinsert.store');
 });
+
+//Project-View
+Route::prefix('/projectview')->group(function () {
+    Route::get('/', [ProjectViewController::class, "rocketview"])->name('projectview');
+    Route::get('/edit', [ProjectViewController::class, "edit"])->name('projectview.edit');
+    Route::post('/{post_id}/update', [ProjectViewController::class, "update"])->name('projectview.update');
+    Route::get('/{post_id}/delete', [ProjectViewController::class, "delete"])->name('projectview.delete');
+}); 
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

@@ -99,6 +99,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 30vh;
+            padding-bottom: 50vh;
         }
 
         .container .card {

@@ -101,8 +101,8 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-        </div>
+        </div>   
+        </div> 
     </div>
 
     <!-- Modal -->
@@ -134,6 +134,10 @@
             display: block;
             margin: auto;
             1 padding: auto;
+        }
+
+        .container {
+            padding-bottom: 40vh;
         }
 
         .page-title {

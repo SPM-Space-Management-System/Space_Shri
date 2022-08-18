@@ -49,54 +49,39 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td>
-                                <h5>{{ $task->title }}</h5>
+                                <h5>{{ $post->pname }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $task->country }}</h5>
+                                <h5>{{ $post->pdate }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $task->height }}</h5>
+                                <h5>{{ $post->fcost }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $task->stages }}</h5>
+                                <h5>{{ $post->ecost }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $task->date }}</h5>
+                                <h5>{{ $post->fucost }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $task->status }}</h5>
-                            </td>
-                            <td><img src="{{ config('images.upload_path') }}/{{ $task->images->name }}" class="table-iamge">
+                                <h5>{{ $post->oxcost }}</h5>
                             </td>
                             <td>
-                                @if ($task->done == 0)
-                                    <span class="badge bg-danger">
-                                        <h6>Inactive</h6>
-                                    </span>
-                                @else
-                                    <span class="badge bg-primary">
-                                        <h6>Active</h6>
-                                    </span>
-                                @endif
+                                <h5>{{ $post->pcost }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $post->ncost }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $post->ocost }}</h5>
                             </td>
                             <td>
                                 <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('rocketview.delete', $task->id) }}" role="button">
+                                    href="{{ route('projectview.delete', $post->id) }}" role="button">
                                     <h6>DELETE</h6>
                                 </a>
-                                @if ($task->done == 0)
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('rocketview.done', $task->id) }}" role="button">
-                                        <h6>PUBLISH</h6>
-                                    </a>
-                                @else
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('rocketview.done', $task->id) }}" role="button">
-                                        <h6>DRAFT</h6>
-                                    </a>
-                                @endif
                                 <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
-                                    onclick="rocketEditModal({{ $task->id }})">
+                                    onclick="projectEditModal({{ $post->id }})">
                                     <h6>EDIT</h6>
                                 </a>
                             </td>
@@ -106,7 +91,7 @@
             </table>
             <div class="col-md-12 text-center">
                 <div class="btn">
-                    <a href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                    <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
                 </div>
             </div>  
         </div>   
@@ -114,15 +99,15 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="rocketEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="rocketEditLabel" aria-hidden="true">
+    <div class="modal fade" id="projectEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="projectEditLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="rocketEditLabel">Rocket Details Update</h4>
+                    <h4 class="modal-title" id="projectEditLabel">Project Details Update</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="rocketEditContent">
+                <div class="modal-body" id="projectEditContent">
 
                 </div>
             </div>
@@ -163,7 +148,6 @@
             height: 35px;
         }
 
-       
         .btn a {
             position: relative;
             font-size: 1.5em;
@@ -174,11 +158,6 @@
             text-decoration: none;
             background-color: chartreuse;
         }
-
-        .table-iamge {
-            width: 150px;
-            height: 120px;
-        }
         .bottom {
             padding-bottom: 120px;
         }
@@ -187,12 +166,12 @@
 
 @push('js')
     <script>
-        function rocketEditModal(task_id) {
+        function projectEditModal(post_id) {
             var data = {
-                task_id: task_id,
+                post_id: post_id,
             };
             $.ajax({
-                url: "{{ route('rocketview.edit') }}",
+                url: "{{ route('projectview.edit') }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -200,8 +179,8 @@
                 dataType: '',
                 data: data,
                 success: function(response) {
-                    $('#rocketEdit').modal('show');
-                    $('#rocketEditContent').html(response);
+                    $('#projectEdit').modal('show');
+                    $('#projectEditContent').html(response);
                 }
             });
         }

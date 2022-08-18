@@ -30,7 +30,7 @@
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
             <label for="stages-name" class="col-form-label">Stages:</label>
-            <input type="text" class="form-control form-control-lg" name="stages'" value="{{ $task->stages }}"
+            <input type="text" class="form-control form-control-lg" name="stages" value="{{ $task->stages }}"
                 required>
             <br>
         </div>

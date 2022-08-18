@@ -101,6 +101,12 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="col-md-12 text-center">
+                <div class="btn">
+                    <a class="btn btn-lg btn-block" href="{{ route('rocketinsert') }}" role="button">ADD NEW
+                        DETAILS</a>
+                </div>
+            </div>  
         </div>   
         </div> 
     </div>
@@ -133,11 +139,11 @@
             height: 500px;
             display: block;
             margin: auto;
-            1 padding: auto;
+            padding: auto;
         }
 
         .container {
-            padding-bottom: 40vh;
+            padding-bottom: 30vh;
         }
 
         .page-title {
@@ -155,9 +161,11 @@
             height: 35px;
         }
 
-        a {
-            width: 70px;
-            height: 35px;
+       
+        .btn a {
+            width: 220px;
+            height: 50px;
+            background-color: chartreuse;
         }
 
         .table-iamge {

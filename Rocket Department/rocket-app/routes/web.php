@@ -57,7 +57,7 @@ Route::prefix('/projectinsert')->group(function () {
 
 //Project-View
 Route::prefix('/projectview')->group(function () {
-    Route::get('/', [ProjectViewController::class, "rocketview"])->name('projectview');
+    Route::get('/', [ProjectViewController::class, "projectview"])->name('projectview');
     Route::get('/edit', [ProjectViewController::class, "edit"])->name('projectview.edit');
     Route::post('/{post_id}/update', [ProjectViewController::class, "update"])->name('projectview.update');
     Route::get('/{post_id}/delete', [ProjectViewController::class, "delete"])->name('projectview.delete');

@@ -92,6 +92,7 @@
             <div class="col-md-12 text-center">
                 <div class="btn">
                     <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
+                    <a href="#" role="button">Report >></a>
                 </div>
             </div>  
         </div>   
@@ -150,7 +151,7 @@
 
         .btn a {
             position: relative;
-            font-size: 1.5em;
+            font-size: 1.4em;
             font-weight: 400;
             padding: 10px 20px;
             border-radius: 5px;

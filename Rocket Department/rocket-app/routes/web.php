@@ -5,6 +5,7 @@ use App\Http\Controllers\MainHomeController;
 use App\Http\Controllers\RocketHomeController;
 use App\Http\Controllers\RocketController;
 use App\Http\Controllers\RocketInsertController;
+use App\Http\Controllers\ProjectInsertController;
 use App\Http\Controllers\RocketViewController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\RocketProjectController;
@@ -25,13 +26,16 @@ Route::get('/', [MainHomeController::class, "homeindex"])->name('home');
 
 //Rocekt-Home
 Route::get('/rockethome', [RocketHomeController::class, "rocketindex"])->name('rockethome');
+
 //Rocket-Cards
 Route::get('/rocket', [RocketController::class, "rocketview"])->name('rocket');
+
 //Rocket-Insert
 Route::prefix('/rocketinsert')->group(function () {
     Route::get('/', [RocketInsertController::class, "rocketinsertview"])->name('rocketinsert');
     Route::post('/store', [RocketInsertController::class, "store"])->name('rocketinsert.store');
 }); 
+
 //Rocket-View
 Route::prefix('/rocketview')->group(function () {
     Route::get('/', [RocketViewController::class, "rocketview"])->name('rocketview');
@@ -43,6 +47,12 @@ Route::prefix('/rocketview')->group(function () {
 
 //Rocket_project-Home
 Route::get('/projecthome', [RocketProjectController::class, "projectindex"])->name('projecthome');
+
+//Project-Insert
+Route::prefix('/projectinsert')->group(function () {
+    Route::get('/', [ProjectInsertController::class, "projectinsertview"])->name('projectinsert');
+    Route::post('/store', [ProjectInsertController::class, "store"])->name('projectinsert.store');
+});
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

@@ -4,7 +4,7 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
-    <form method="post" action="#" enctype="multipart/form-data" role="form">
+    <form method="post" action="{{ route('projectinsert.store') }}" role="form">
         {{ csrf_field() }}
         <div class="container">
             <div class="row">
@@ -31,43 +31,43 @@
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Frame Cost</label>
                         <input title="Enter the frame cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="fcost"
                             placeholder="Enter frame cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Engine Cost</label>
                         <input title="Enter the engine cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="ecost"
                             placeholder="Enter engine cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Fuel Cost</label>
                         <input title="Enter the fuel cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="fucost"
                             placeholder="Enter Fuel cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Oxidizer Cost</label>
                         <input title="Enter the oxidizer cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="oxcost"
                             placeholder="Enter oxidizer cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Pump Cost</label>
                         <input title="Enter the pump cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="pcost"
                             placeholder="Enter pump cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Nozzle Cost</label>
                         <input title="Enter the nozzle cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="ncost"
                             placeholder="Enter nozzle cost here (e.g. 200000)" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Other Cost</label>
                         <input title="Enter the other cost incurred for the project in Rs."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="ocost"
                             placeholder="Enter other cost here (e.g. 200000)" required>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                 <p><input type="submit" title="Click this button to save the entered data." class="btn btn-warning btn-lg"
                         value="ADD DETAILS">
                     <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block"
-                        href="{{ route('rocketview') }}" role="button">VIEW
+                        href="#" role="button">VIEW
                         DETAILS</a>
                 </p>
             </div>

@@ -17,17 +17,17 @@ return new class extends Migration
             $table->id();
             $table->string('pname')->nullable();
             $table->date('pdate')->nullable();
-            $table->float('fcost')->nullable();
-            $table->float('ecost')->nullable();
-            $table->float('fucost')->nullable();
-            $table->float('oxcost')->nullable();
-            $table->float('pcost')->nullable();
-            $table->float('ncost')->nullable();
-            $table->float('ocost')->nullable();
+            $table->double('fcost', 14, 2)->nullable();
+            $table->double('ecost', 14, 2)->nullable();
+            $table->double('fucost', 14, 2)->nullable();
+            $table->double('oxcost', 14, 2)->nullable();
+            $table->double('pcost', 14, 2)->nullable();
+            $table->double('ncost', 14, 2)->nullable();
+            $table->double('ocost', 14, 2)->nullable();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

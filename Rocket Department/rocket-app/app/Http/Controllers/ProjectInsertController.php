@@ -14,7 +14,7 @@ class ProjectInsertController extends Controller
 
     public function store(Request $request) {
         ProjectInsertFacade::store($request->all());
-        return redirect()->back()->with('message','Details Added Successfully!');
+        return redirect()->back();
     }
 
 }

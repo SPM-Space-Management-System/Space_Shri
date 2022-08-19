@@ -17,7 +17,7 @@
         <h2 class="layer">Space Projects</h2>
     </section>
     <div class="btn">
-        <a href="#" style="--clr:#6eff3e"><span>Explore</span><i></i></a>
+        <a href="{{ route('project') }}" style="--clr:#6eff3e"><span>Explore</span><i></i></a>
     </div>
 @endsection
 

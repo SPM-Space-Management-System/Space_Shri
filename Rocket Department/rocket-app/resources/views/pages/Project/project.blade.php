@@ -159,12 +159,12 @@
             </div>
             <div class="detail">
                 <h3>Suranimala</h3>
-                <h1>Overview</h1>
+                <h1>Cost</h1>
 
                 <table class="table">
                     <tbody>
                       <tr>
-                        <td>Height</td>
+                        <td>Frame</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -173,10 +173,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>70m</td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                       <tr>
-                        <td>Width</td>
+                        <td>Engine</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -185,10 +185,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>12.2m</td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                       <tr>
-                        <td>Mass</td>
+                        <td>Fuel</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -197,10 +197,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>1,240,500kg</td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                       <tr>
-                        <td>Payload to leo</td>
+                        <td>Oxidizer</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -209,10 +209,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>63,000kg</td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                       <tr>
-                        <td>Payload to gto</td>
+                        <td>Pump</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -221,10 +221,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>15,200kg</td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                       <tr>
-                        <td>Payload to mars</td>
+                        <td>Nozzle</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -233,11 +233,26 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>11,800kg</td>
+                        <td>Rs. 2340256000.00</td>
+                      </tr>
+                      <tr>
+                        <td>Other</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Rs. 2340256000.00</td>
                       </tr>
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="ast">
+            <img src="astro.jpg" alt="astro-logo">
         </div>
     </div>
     
@@ -464,7 +479,7 @@
 
         .cost {
             display: flex;
-            padding-bottom: 50vh;
+            padding-bottom: 20vh;
         } 
         .cost .detail h3 {
             padding-top: 20vh;
@@ -480,6 +495,29 @@
             font-weight: 700;
             font-size: 3.8em;
             text-transform: uppercase;
+        }
+
+        .cost .detail table {
+            margin-top: 5vh;
+            margin-left: 120px;
+        }
+
+        .cost .detail table td {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        } 
+
+        .ast {
+            padding-bottom: 50vh;
+        }
+
+        .ast img {
+            position: relative;
+            width: 100%;
+            height: 750px;
+            object-fit: cover;
         }
     </style>
 @endpush

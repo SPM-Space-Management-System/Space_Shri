@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainHomeController;
 use App\Http\Controllers\RocketHomeController;
 use App\Http\Controllers\RocketController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RocketInsertController;
 use App\Http\Controllers\ProjectInsertController;
 use App\Http\Controllers\RocketViewController;
@@ -48,6 +49,9 @@ Route::prefix('/rocketview')->group(function () {
 
 //Rocket_project-Home
 Route::get('/projecthome', [RocketProjectController::class, "projectindex"])->name('projecthome');
+
+//project-Home
+Route::get('/project', [ProjectController::class, "projectview"])->name('project');
 
 //Project-Insert
 Route::prefix('/projectinsert')->group(function () {

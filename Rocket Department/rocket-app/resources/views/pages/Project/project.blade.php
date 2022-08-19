@@ -66,14 +66,178 @@
                 vehicle, the DELTA IV. Suranimala is composed of three Suranimala Turbo 5 none-engine cores <br>
                 whose 17 Merlin engines together generate more than 2 million pounds of <br>
                 thurst at liftoff, equal to approximately 12 747 aircraft.</p>
-                
+
                 <h3>Suranimala</h3>
                 <h1>Overview</h1>
+
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>Height</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>70m</td>
+                      </tr>
+                      <tr>
+                        <td>Width</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>12.2m</td>
+                      </tr>
+                      <tr>
+                        <td>Mass</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1,240,500kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to leo</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>63,000kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to gto</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>15,200kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to mars</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>11,800kg</td>
+                      </tr>
+                    </tbody>
+                </table>
+
         </div>
         <div class="background-video" width="320" height="240">
             <video autoplay loop>
                 <source src="bg.mp4" type="video/mp4">
             </video>
+        </div>
+        <div class="cost">
+            <div class="rocket-cost">
+                <img src="cost.png" alt="rocket-cost-logo">
+            </div>
+            <div class="detail">
+                <h3>Suranimala</h3>
+                <h1>Overview</h1>
+
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>Height</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>70m</td>
+                      </tr>
+                      <tr>
+                        <td>Width</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>12.2m</td>
+                      </tr>
+                      <tr>
+                        <td>Mass</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1,240,500kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to leo</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>63,000kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to gto</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>15,200kg</td>
+                      </tr>
+                      <tr>
+                        <td>Payload to mars</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>11,800kg</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     
@@ -245,7 +409,7 @@
         .background-video {
             margin-left: 43%;
             object-fit: cover;
-            padding-bottom: 100vh;
+            padding-bottom: 5vh;
         } 
 
         .section .para p {
@@ -256,6 +420,66 @@
             font-weight: 400;
             font-size: 1.5em;
             letter-spacing: 2px;
+        }
+
+        .section .para h3 {
+            position: absolute;
+            padding-top: 65vh;
+            margin-left: 120px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 2.2em;
+            text-transform: uppercase;
+        }
+
+        .section .para h1 {
+            position: absolute;
+            padding-top: 70vh;
+            margin-left: 120px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 3.8em;
+            text-transform: uppercase;
+        }
+
+        .section .para table {
+            position: absolute;
+            width: 35%;
+            margin-top: 85vh;
+            margin-left: 120px;
+        }
+
+        .section .para table td {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        .rocket-cost img {
+            margin-right: 50%;
+            width: 1000px;
+            height: 800px;
+        } 
+
+        .cost {
+            display: flex;
+            padding-bottom: 50vh;
+        } 
+        .cost .detail h3 {
+            padding-top: 20vh;
+            margin-left: 120px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 2.2em;
+            text-transform: uppercase;
+        }
+        .cost .detail h1 {
+            margin-left: 120px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 3.8em;
+            text-transform: uppercase;
         }
     </style>
 @endpush

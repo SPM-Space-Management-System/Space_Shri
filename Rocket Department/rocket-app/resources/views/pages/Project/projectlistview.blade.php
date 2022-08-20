@@ -92,7 +92,7 @@
             <div class="col-md-12 text-center">
                 <div class="btn">
                     <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
-                    <a href="#" role="button">Report >></a>
+                    <a href="{{ route('report') }}" role="button">REPORT >></a>
                 </div>
             </div>  
         </div>   

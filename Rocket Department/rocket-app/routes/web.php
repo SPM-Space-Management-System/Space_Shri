@@ -9,6 +9,7 @@ use App\Http\Controllers\RocketInsertController;
 use App\Http\Controllers\ProjectInsertController;
 use App\Http\Controllers\RocketViewController;
 use App\Http\Controllers\ProjectViewController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\RocketProjectController;
 
@@ -66,6 +67,9 @@ Route::prefix('/projectview')->group(function () {
     Route::post('/{post_id}/update', [ProjectViewController::class, "update"])->name('projectview.update');
     Route::get('/{post_id}/delete', [ProjectViewController::class, "delete"])->name('projectview.delete');
 }); 
+
+//Report
+Route::get('/report', [ReportController::class, "reportview"])->name('report');
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

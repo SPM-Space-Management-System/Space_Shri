@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('content')
     <div class="logo">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="title">
                     <p>Total Launches</p>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="card">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="title">
                     <p>Total Landings</p>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="card">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="title">
                     <p>Total Reflights</p>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -67,12 +67,12 @@
                 whose 17 Merlin engines together generate more than 2 million pounds of <br>
                 thurst at liftoff, equal to approximately 12 747 aircraft.</p>
 
-                <h3>Suranimala</h3>
-                <h1>Overview</h1>
+            <h3>Suranimala</h3>
+            <h1>Overview</h1>
 
-                <table class="table">
-                    <tbody>
-                      <tr>
+            <table class="table">
+                <tbody>
+                    <tr>
                         <td>Height</td>
                         <td></td>
                         <td></td>
@@ -83,8 +83,8 @@
                         <td></td>
                         <td></td>
                         <td>70m</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Width</td>
                         <td></td>
                         <td></td>
@@ -95,8 +95,8 @@
                         <td></td>
                         <td></td>
                         <td>12.2m</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Mass</td>
                         <td></td>
                         <td></td>
@@ -107,8 +107,8 @@
                         <td></td>
                         <td></td>
                         <td>1,240,500kg</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Payload to leo</td>
                         <td></td>
                         <td></td>
@@ -119,8 +119,8 @@
                         <td></td>
                         <td></td>
                         <td>63,000kg</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Payload to gto</td>
                         <td></td>
                         <td></td>
@@ -131,8 +131,8 @@
                         <td></td>
                         <td></td>
                         <td>15,200kg</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Payload to mars</td>
                         <td></td>
                         <td></td>
@@ -143,9 +143,9 @@
                         <td></td>
                         <td></td>
                         <td>11,800kg</td>
-                      </tr>
-                    </tbody>
-                </table>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
         <div class="background-video" width="320" height="240">
@@ -160,103 +160,106 @@
             <div class="detail">
                 <h3>Suranimala</h3>
                 <h1>Cost</h1>
-
-                <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>Frame</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Engine</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Fuel</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Oxidizer</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Pump</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Nozzle</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                      <tr>
-                        <td>Other</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Rs. 2340256000.00</td>
-                      </tr>
-                    </tbody>
-                </table>
+                @foreach ($posts as $post)
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Frame</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->fcost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->ecost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->fucost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Oxidizer</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->oxcost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Pump</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->pcost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Nozzle</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->ncost }}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Rs. {{ $post->ocost }}.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                @endforeach
             </div>
         </div>
         <div class="ast">
             <img src="astro.jpg" alt="astro-logo">
         </div>
+        <div class="quot">
+            <h6>THAT'S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND</h6>
+        </div>
     </div>
-    
-@endsection 
+@endsection
 
 @push('css')
     <style>
@@ -293,7 +296,7 @@
             color: #fff;
             font-size: 10vw;
             transition: 1s;
-        } 
+        }
 
         .header .banner h2 {
             position: absolute;
@@ -302,7 +305,7 @@
             transform: translate(-50%, -50%);
             color: #fff;
             font-size: 1.6vw;
-        } 
+        }
 
         .container {
             position: relative;
@@ -357,6 +360,7 @@
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
@@ -368,12 +372,13 @@
             z-index: 10;
             animation: animateDot 4s linear forwards;
 
-        } 
+        }
 
         @keyframes animateDot {
             0% {
                 transform: rotate(0deg);
-            } 
+            }
+
             100% {
                 transform: rotate(calc(36.0deg * var(--num)));
             }
@@ -391,6 +396,7 @@
             background: var(--clr);
             box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
         }
+
         .number {
             position: absolute;
             inset: 0;
@@ -400,7 +406,7 @@
             opacity: 0;
             animation: fadeIn 1s linear forwards;
             animation-delay: 4s;
-        } 
+        }
 
         .number h1 {
             display: flex;
@@ -409,9 +415,9 @@
             color: #fff;
             font-weight: 500;
             font-size: 10em;
-        } 
+        }
 
-        .title p{
+        .title p {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -420,12 +426,13 @@
             font-size: 2em;
             letter-spacing: 2px;
             text-transform: uppercase;
-        } 
+        }
+
         .background-video {
             margin-left: 43%;
             object-fit: cover;
             padding-bottom: 5vh;
-        } 
+        }
 
         .section .para p {
             position: absolute;
@@ -475,12 +482,13 @@
             margin-right: 50%;
             width: 1000px;
             height: 800px;
-        } 
+        }
 
         .cost {
             display: flex;
             padding-bottom: 20vh;
-        } 
+        }
+
         .cost .detail h3 {
             padding-top: 20vh;
             margin-left: 120px;
@@ -489,6 +497,7 @@
             font-size: 2.2em;
             text-transform: uppercase;
         }
+
         .cost .detail h1 {
             margin-left: 120px;
             color: #fff;
@@ -507,10 +516,6 @@
             font-weight: 600;
             font-size: 1.5em;
             text-transform: uppercase;
-        } 
-
-        .ast {
-            padding-bottom: 50vh;
         }
 
         .ast img {
@@ -518,6 +523,19 @@
             width: 100%;
             height: 750px;
             object-fit: cover;
+        }
+
+        .quot {
+            padding-top: 3vh;
+            padding-bottom: 40vh;
+        }
+
+        .quot h6 {
+            display: block;
+            text-align: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1em;
         }
     </style>
 @endpush

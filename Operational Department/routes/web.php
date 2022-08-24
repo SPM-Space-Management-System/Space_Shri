@@ -15,7 +15,7 @@ use App\Http\Controllers\MissonsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('operations.welcome');
 });
 
 Route::get('/missionshome',[PagesController::class,'indexmissionshome']);

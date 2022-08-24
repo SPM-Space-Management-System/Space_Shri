@@ -3,13 +3,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="func-link" href="{{ route('home') }}">Home</a>
+            <a class="func-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">News Room</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="{{ route('rockethome') }}">Fly with Rocket</a>
+            <a class="func-link" href="#">Fly with Rocket</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">Operations and Research</a>

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Missions Home</title>
-<style>
-
-</style>
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
+   
 
 <div class="jumbotron text-center">
   <h1 class="bg-secondary text-white">Missions and Researches</h1>
@@ -41,9 +25,15 @@
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
   </div><br><br>
-  <a href="/missionsinsert" class="btn btn-primary" input type="submit">Add new </a>
+  <div class="space" style="padding-bottom: 10vh">
+  <a href="/missionsinsert" class="btn btn-primary" type="submit">Add new </a>
+</div>
 </div>
 
-</body>
 
-</html>
+
+
+@endsection
+
+
+

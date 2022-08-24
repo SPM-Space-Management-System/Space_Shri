@@ -13,11 +13,11 @@
         <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
     </ul>
     <ul class="menu">
-        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Team</a></li>
-        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+        <li><a href="#">Contact Us</a></li>
     </ul>
     <p>&copy;2022 Space Shri | All Rights Reserved</p>
 </footer>

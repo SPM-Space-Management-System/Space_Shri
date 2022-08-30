@@ -16,6 +16,7 @@
             <img src="cloud3.png" style="--i:3;">
         </div>
         <div class="runway"></div>
+        <h1 class="title-finc">Welcome Rocket Department</h1>
         <img src="rocket_v.png" class="rocket">
     </section>
     <div class="button-func">
@@ -47,14 +48,13 @@
             min-height: 100vh;
             background: #000;
             overflow: hidden;
-            padding-bottom: 20vh;
         }
 
         section .runway {
             position: relative;
             width: 600px;
             height: 100vh;
-            background: #03a9f4;
+            background: #1378bc;
             border-left: 20px solid rgba(0, 0, 0, 0.25);
             border-right: 20px solid rgba(0, 0, 0, 0.25);
             transition: transform 1s;
@@ -94,6 +94,14 @@
             100% {
                 background-position-y: 640px;
             }
+        }
+
+        .title-finc {
+            position: absolute;
+            color: #fff;
+            font-family: Kero kero;
+            margin-bottom: 50vh;
+            font-size: 5vw;
         }
 
         .rocket {
@@ -170,6 +178,7 @@
             display: grid;
             justify-content: center;
             align-items: center;
+            padding-top: 20vh;
             padding-bottom: 40vh;
         }
 

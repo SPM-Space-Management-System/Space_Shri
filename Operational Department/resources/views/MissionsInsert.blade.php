@@ -1,42 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
-</head>
-
-<body>
-
-    <div class="container mt-3">
-        <h2>Add new Missions and Reasearches</h2>
-        <form action="/savemission" method="POST">
-            {{ csrf_field() }}
-            <div class="mb-3 mt-3">
-                <label for="topic">Topic :</label>
-                <input type="text" class="form-control"  placeholder="Enter Topic of the new mission or research " name="topic">
-            </div>
-            <div class="mb-3">
-                <label for="discription">Description :</label>
-                <textarea class="form-control" rows="10" id="comment" name="description" placeholder="Enter the informations"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="Date of the publish">Date:</label>
-                <input type="date" class="form-control" name="dateofadd">
-            </div>
-            <div class="mb-3">
-                <label for="Date of the publish">Image of the event :</label>
-                <input type="file" class="form-control" name="imageadd">
-            </div>
-            <button type="submit" class="btn btn-primary" value="submit">Save</button>
-            <button type="reset" class="btn btn-warning" value="CLEAR">Clear</button>
-        </form>
-    </div>
+@extends('layouts.app')
+@section('content')
     
-</body>
 
-</html>
+<div class="container mt-3">
+ 
+    <h2>Add New Post</h2>
+    <form action="/savemission" method="POST">
+        {{ csrf_field() }}
+        <div class="mb-3 mt-3" >
+            <label for="Topic Of The Mission" class="text-white">Topic :</label>
+            <input type="text" title="Please Enter topic of the operation" class="form-control"  placeholder="Enter Topic of the new mission or research " name="topic">
+        </div>
+        <div class="mb-3">
+            <label for="Discription" class="text-white">Description :</label>
+            <textarea class="form-control" rows="10" id="comment" title="Please Enter The Description " name="description" placeholder="Enter The Informations"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="Date of the publish" class="text-white">Date Of Publish :</label>
+            <input type="date" title="Choose date" class="form-control" name="dateofadd">
+        </div>
+        <div class="mb-3">
+            <label for="Date of the publish" class="text-white">Image Of The Event :</label>
+            <input type="file" class="form-control" name="imageadd">
+        </div>
+        <div class="mb-3 mt-3" >
+            <label for="Cost Of The Mission" class="text-white">Cost Of The Mission :</label>
+            <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="Enter Topic of the new mission or research " name="topic">
+        </div>
+        <div class="space" style="padding-bottom: 10vh">
+        <button type="reset" class="btn btn-warning me-md-2" value="CLEAR">Clear</button>
+        <button type="submit" class="btn btn-primary" value="submit">Save</button>
+       
+        </div>
+    </form>
+</div>
+@endsection
+
+
+@push('css')
+<style>
+    
+body{
+     background-color: black;
+    }
+h2{
+    color: rgb(22, 214, 48);
+    text-align: center;
+    font-size: 400%;   
+}    
+</style> 
+@endpush

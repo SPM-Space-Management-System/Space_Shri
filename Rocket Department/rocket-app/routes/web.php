@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainHomeController;
+use App\Http\Controllers\FunctionHomeController;
 use App\Http\Controllers\RocketHomeController;
 use App\Http\Controllers\RocketController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RocketInsertController;
+use App\Http\Controllers\ProjectInsertController;
 use App\Http\Controllers\RocketViewController;
+use App\Http\Controllers\ProjectViewController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\RocketProjectController;
 
@@ -23,15 +28,21 @@ use App\Http\Controllers\RocketProjectController;
 //Main-Home
 Route::get('/', [MainHomeController::class, "homeindex"])->name('home');
 
+//Rocket-Function-Home
+Route::get('/functionhome', [FunctionHomeController::class, "rocketfunction"])->name('functionhome');
+
 //Rocekt-Home
 Route::get('/rockethome', [RocketHomeController::class, "rocketindex"])->name('rockethome');
+
 //Rocket-Cards
 Route::get('/rocket', [RocketController::class, "rocketview"])->name('rocket');
+
 //Rocket-Insert
 Route::prefix('/rocketinsert')->group(function () {
     Route::get('/', [RocketInsertController::class, "rocketinsertview"])->name('rocketinsert');
     Route::post('/store', [RocketInsertController::class, "store"])->name('rocketinsert.store');
 }); 
+
 //Rocket-View
 Route::prefix('/rocketview')->group(function () {
     Route::get('/', [RocketViewController::class, "rocketview"])->name('rocketview');
@@ -43,6 +54,26 @@ Route::prefix('/rocketview')->group(function () {
 
 //Rocket_project-Home
 Route::get('/projecthome', [RocketProjectController::class, "projectindex"])->name('projecthome');
+
+//project-Home
+Route::get('/project', [ProjectController::class, "projectview"])->name('project');
+
+//Project-Insert
+Route::prefix('/projectinsert')->group(function () {
+    Route::get('/', [ProjectInsertController::class, "projectinsertview"])->name('projectinsert');
+    Route::post('/store', [ProjectInsertController::class, "store"])->name('projectinsert.store');
+});
+
+//Project-View
+Route::prefix('/projectview')->group(function () {
+    Route::get('/', [ProjectViewController::class, "projectview"])->name('projectview');
+    Route::get('/edit', [ProjectViewController::class, "edit"])->name('projectview.edit');
+    Route::post('/{post_id}/update', [ProjectViewController::class, "update"])->name('projectview.update');
+    Route::get('/{post_id}/delete', [ProjectViewController::class, "delete"])->name('projectview.delete');
+}); 
+
+//Report
+Route::get('/report', [ReportController::class, "reportview"])->name('report');
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

@@ -4,57 +4,34 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
-    <section>
-        <div class="container">
-            <h2>Contact Us Form</h2>
-            <div class="row100">
-                <div class="col">
-                    <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span class="text">First Name</span>
-                        <span class="line"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span class="text">Last Name</span>
-                        <span class="line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row100">
-                <div class="col">
-                    <div class="inputBox">
-                        <input type="email" name="" required="required">
-                        <span class="text">Email</span>
-                        <span class="line"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span class="text">Mobile</span>
-                        <span class="line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row100">
-                <div class="col">
-                    <div class="inputBox textarea">
-                        <textarea required="required"></textarea>
-                        <span class="text">Type Your Message Here...</span>
-                        <span class="line"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row100">
-                <div class="col">
-                    <input type="submit" value="Send">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="blog-container">
+        <h2>Contact Page</h2>
+        <p>The SPACE SHRI Office receives thousands of communications each week from all over the world and we endeavor to
+            provide timely information and answers to questions. However, we encourage you to use the SPACE SHRI Web site
+            for finding the information you are seeking or the answers to your questions before submitting a request for
+            information. SPACE SHRI also invites you to consider using one or more of the following easy and convenient
+            communications tools for receiving SPACE SHRI Updates on the exciting work SPACE SHRI is doing.</p>
+        <hr>
+        <h3>Current Topic(s):</h3>
+        <ul class="topic">
+            <li>Get the <a href="#">official Space Shri article room</a></li>
+            <li>Information on <a href="{{ route('rocket') }}">rockets</a> launched around the world</li>
+            <li>What is the current <a href="{{ route('projecthome') }}">rocket project</a> in the Space Shri?</li>
+            <li>Current <a href="#">space missions</a></li>
+            <li>Jobs at SPACE SHRI are advertised on <a href="#">SRI LANKA Jobs</a></li>
+        </ul>
+        <hr>
+        <br>
+        <p>If you are not able to locate the information you are seeking on one of our websites, you may write to us at:</p>
+        <br>
+        <pre>R.C.P Rajapaksha SPACE SHRI Headquarters,</pre>
+        <pre>300 E. Street SW, Galle Road,</pre>
+        <pre>Colombo 04.</pre>
+        <pre>(94) 715-264-449 (Office)</pre>
+        <pre>(94) 358-4338 (Fax)</pre>
+        <pre>contact@spaceshri.com (Email)</pre>
+        <img src="Sri Lanka.png" alt="Sri Lanka">
+    </div>
 @endsection
 
 @push('css')
@@ -71,149 +48,58 @@
             padding: auto;
         }
 
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            width: 100%;
-        } 
-        section::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(#ffeb3b, #e91e63);
-            border-radius: 50%;
-            transform: translate(-420px, -180px);
+        .blog-container {
+            padding-bottom: 250px;
         }
-        section::after {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(#2196f3, #83d8ff);
-            border-radius: 50%;
-            transform: translate(400px, 180px);
-        }
-        .container {
-            position: relative;
-            z-index: 1000;
-            width: 100%;
-            max-width: 1000px;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            backdrop-filter: blur(25px);
-        }
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -40%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            pointer-events: none;
-            transform: skewX(-15deg);
-        }
-        .container h2 {
-            width: 100%;
-            text-align: center;
+
+        .blog-container h2 {
+            margin-left: 120px;
             color: #fff;
+            font-family: 'Goudy Old Style';
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .blog-container h3 {
+            margin-left: 120px;
+            color: #fff;
+            font-family: 'Goudy Old Style';
             font-size: 36px;
             margin-bottom: 20px;
         }
-        .container .row100 {
-            position: relative;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        .container .row100 .col {
-            position: relative;
-            width: 100%;
-            padding: 0 10px;
-            margin: 30px 0 20px;
-        }
-        .container .row100 .col .inputBox {
-            position: relative;
-            width: 100%;
-            height: 40px;
+
+        .blog-container p {
             color: #fff;
+            margin-left: 120px;
+            font-size: 20px;
         }
-        .container .row100 .col .inputBox input, .container .row100 .col .inputBox textarea {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            box-shadow: none;
-            border: none;
-            outline: none;
-            font-size: 15px;
-            padding: 0 10px;
-            z-index: 1;
-            color: #000;
+
+        hr {
+            color: #fff;
+            opacity: 0.5;
+            margin-left: 120px;
+            margin-right: 50px;
         }
-        .container .row100 .col .inputBox .text {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .topic {
+            margin-left: 120px;
+        }
+
+        .topic li {
             line-height: 40px;
-            font-size: 18px;
-            padding: 0 10px;
-            display: block;
-            transition: 0.5s;
-            pointer-events: none;
+            color: #fff;
+            font-size: 20px;
         }
-        .container .row100 .col .inputBox input:focus + .text,
-        .container .row100 .col .inputBox input:valid + .text,
-        .container .row100 .col .inputBox textarea:focus + .text,
-        .container .row100 .col .inputBox textarea:valid + .text {
-            top: -35px;
-            left: -10px;
+
+        .topic li a {
+            color: #83d8ff;
+            text-decoration: none;
         }
-        .container .row100 .col .inputBox .line {
-            position: absolute;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #fff;
-            transition: 0.5s;
-            border-radius: 2px;
-            pointer-events: none;
-        }
-        .container .row100 .col .inputBox input:focus ~ .line,
-        .container .row100 .col .inputBox input:valid ~ .line {
-            height: 100%;
-        }
-        .container .row100 .col .inputBox.textarea {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 10px 0;
-        }
-        .container .row100 .col .inputBox textarea:focus ~ .line,
-        .container .row100 .col .inputBox textarea:valid ~ .line {
-            height: 100%;
-        }
-        .container .row100 .col input[type="submit"] {
-            border: none;
-            padding: 10px 40px;
-            cursor: pointer;
-            outline: none;
-            background: #fff;
-            color: #000;
-            font-weight: 600;
-            font-size: 18px;
-            border-radius: 2px;
+
+        pre {
+            color: #fff;
+            margin-left: 120px;
+            font-size: 20px;
         }
     </style>
 @endpush

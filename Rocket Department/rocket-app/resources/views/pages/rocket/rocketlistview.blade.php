@@ -101,8 +101,13 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-        </div>
+            <div class="col-md-12 text-center">
+                <div class="btn">
+                    <a href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                </div>
+            </div>  
+        </div>   
+        </div> 
     </div>
 
     <!-- Modal -->
@@ -133,7 +138,11 @@
             height: 500px;
             display: block;
             margin: auto;
-            1 padding: auto;
+            padding: auto;
+        }
+
+        .container {
+            padding-bottom: 30vh;
         }
 
         .page-title {
@@ -151,9 +160,16 @@
             height: 35px;
         }
 
-        a {
-            width: 70px;
-            height: 35px;
+       
+        .btn a {
+            position: relative;
+            font-size: 1.5em;
+            font-weight: 400;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #000;
+            text-decoration: none;
+            background-color: chartreuse;
         }
 
         .table-iamge {

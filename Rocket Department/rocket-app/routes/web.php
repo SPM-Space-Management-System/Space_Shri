@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainHomeController;
+use App\Http\Controllers\FunctionHomeController;
 use App\Http\Controllers\RocketHomeController;
 use App\Http\Controllers\RocketController;
 use App\Http\Controllers\ProjectController;
@@ -26,6 +27,9 @@ use App\Http\Controllers\RocketProjectController;
 
 //Main-Home
 Route::get('/', [MainHomeController::class, "homeindex"])->name('home');
+
+//Rocket-Function-Home
+Route::get('/functionhome', [FunctionHomeController::class, "rocketfunction"])->name('functionhome');
 
 //Rocekt-Home
 Route::get('/rockethome', [RocketHomeController::class, "rocketindex"])->name('rockethome');

@@ -9,6 +9,13 @@
         <div class="loader"></div>
     </section>
     <div class="loader"></div>
+    <div class="search-center">
+        <div class="searchBox">
+            <div class="shadow"></div>
+            <input type="text" placeholder="Search You Want...">
+            <ion-icon class="search-icon" name="search-outline"></ion-icon>
+        </div>
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             @forelse ($tasks as $task)
@@ -99,6 +106,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 30vh;
+            padding-bottom: 50vh;
         }
 
         .container .card {
@@ -213,6 +221,85 @@
             0% {
                 background-position: 500% 0;
             }
+        }
+
+        .search-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2vh;
+        }
+        .searchBox {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 30vh;
+            width: 65px;
+            height: 50px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .searchBox:hover {
+            width: 400px;
+        }
+
+        .searchBox::before {
+            content: '';
+            position: absolute;
+            top: 10;
+            left: 0;
+            width: 10px;
+            height: 20%;
+            background: linear-gradient(#fff, #fff, #e3e3e3);
+            z-index: 1;
+            filter: blur(2px);
+        }
+
+        .searchBox::after {
+            content: '';
+            position: absolute;
+            top: 10;
+            right: -1px;
+            width: 10px;
+            height: 20%;
+            background: #9d9d9d;
+            z-index: 1;
+            filter: blur(2px);
+        }
+        .searchBox input {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            border: none;
+            padding: 10px 25px;
+            outline: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4em;
+            color: #555;
+            background: linear-gradient(#dbdae1, #a3aaba);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+            15px 15px 15px rgba(182, 174, 174, 0.1),
+            20px 20px 20px rgba(182, 174, 174, 0.1),
+            30px 30px 30px rgba(182, 174, 174, 0.1),
+            inset 1px 1px 2px #fff;
+        }
+
+        .searchBox input::placeholder, .searchBox input {
+            color: transparent;
+        }
+
+        .searchBox:hover input::placeholder, .searchBox:hover input  {
+            color: #555;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            color: #555;
+            font-size: 1.5em;
+            cursor: pointer;
         }
     </style>
 @endpush

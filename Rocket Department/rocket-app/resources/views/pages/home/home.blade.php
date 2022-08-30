@@ -6,6 +6,9 @@
         <h2 id="text">Welcome</h2>
         <img src="man.png" id="man">
     </section>
+    <audio autoplay loop>
+        <source src="bg.mp3" type="audio/mpeg">
+    </audio>
     <div class="box">
         <h3>Awesome Parallex Scrolling</h3>
         <div class="container">

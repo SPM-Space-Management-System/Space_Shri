@@ -5,7 +5,7 @@
 <div class="container mt-3">
  
     <h2>Add New Post</h2>
-    <form action="/savemission" method="POST">
+    <form action="{{ route('postStore') }}" method="POST">
         {{ csrf_field() }}
         <div class="mb-3 mt-3" >
             <label for="Topic Of The Mission" class="text-white">Topic :</label>

@@ -14,7 +14,7 @@ class MissonsController extends Controller
         //Create new object from missions model
         $missionObj = new missions;
 
-        
+        // 'user_id'=> auth()->user()->id,
         $missionObj->topic = $request->topic;
         $missionObj->description = $request->description;
         $missionObj->pub_date = $request->dateofadd;

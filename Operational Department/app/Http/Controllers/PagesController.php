@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function indexmissionshome(){
 
-       
+        $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
         return view('operations/MissionsHome',compact('missionsALL'));
     }
 

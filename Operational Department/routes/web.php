@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 //
 Route::get('/missionshome',[PagesController::class,'indexmissionshome'])->name('mhome');
+// Route::get('/missionshome',[MissonsController::class,'viewposts_function']);
 
 Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
 

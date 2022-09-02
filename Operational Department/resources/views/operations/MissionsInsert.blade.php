@@ -25,7 +25,7 @@
         </div>
         <div class="mb-3 mt-3" >
             <label for="Cost Of The Mission" class="text-white">Cost Of The Mission :</label>
-            <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="Enter Topic of the new mission or research " name="missioncost">
+            <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="Enter Cost mission or research " name="missioncost">
         </div>
         <div class="space" style="padding-bottom: 10vh">
         <button type="reset" class="btn btn-warning me-md-2" value="CLEAR">Clear</button>

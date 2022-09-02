@@ -23,8 +23,41 @@ class MissionFormRequest extends FormRequest
      */
     public function rules()
     {
-        $rule [
-            //
+        $rules = [
+            'topic' =>[
+                'required',
+                'string',
+                'max:191',
+            ],
+            'description' =>[
+                'required',
+                'text',
+                
+            ],
+            'dateofadd' =>[
+                'required',
+            ],
+            'imageadd' =>[
+                'required',
+            ],
+            'missioncost' =>[
+                'required',
+                'numeric',
+                
+            ],       
+        ];
+
+        return $rules;
+    }
+
+    public function messages(){
+
+        return[
+            'topic.required' => 'Please Enter Topic Of The Operation',
+            'description.required' => 'Please Enter The Description ',
+            'dateofadd.required' => 'Please Select The Current Date',
+            'imageadd.required' => 'Please Choose The Image',
+            'missioncost.required' => 'Please Enter The Mission Cost',
         ];
     }
 }

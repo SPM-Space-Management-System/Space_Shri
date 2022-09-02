@@ -14,10 +14,12 @@ class MissonsController extends Controller
         //Create new object from missions model
         $missionObj = new missions;
 
+        
         $missionObj->topic = $request->topic;
         $missionObj->description = $request->description;
         $missionObj->pub_date = $request->dateofadd;
         $missionObj->mission_image = $request->imageadd;
+        $missionObj->costOfMission = $request->missioncost;
         $missionObj->save();
         return redirect()->back();
 

@@ -10,6 +10,6 @@ class missions extends Model
     use HasFactory;
     protected $table = 'missions';
     protected $primaryKey = 'mission_id';
-    protected $fillable = ['topic', 'description', 'pub_date','mission_image'];
+    protected $fillable = ['topic', 'description', 'pub_date','mission_image','costOfMission'];
 
 }

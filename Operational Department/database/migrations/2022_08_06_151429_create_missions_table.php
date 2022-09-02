@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id('mission_id');
             // $table->unsignedBigInteger('user_id');
             $table->string('topic');
-            $table->string('description');
+            $table->text('description');
             $table->date('pub_date');
             $table->string('mission_image');
+            $table->double('costOfMission');
             $table->timestamps();
 
             // $table->foreign('user_id')->references('id')->on('users');

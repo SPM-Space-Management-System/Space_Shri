@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function indexmissionshome(){
-        return view('operations/MissionsHome');
+
+        $missionsALL = missions::all();
+
+
+        return view('operations/MissionsHome',compact('missionsALL'));
     }
 
     public function indexmissionsinsert(){

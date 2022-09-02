@@ -25,4 +25,7 @@ class MissonsController extends Controller
 
     }
 
+
+    // public function viewposts()
+
 }

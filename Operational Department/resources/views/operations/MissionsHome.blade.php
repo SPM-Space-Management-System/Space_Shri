@@ -30,7 +30,7 @@
             
             <p class="card-text mb-auto">{{ $mission->description}}</p>
             <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div>
-            <a href="#" class="stretched-link">Continue reading</a>
+            <a href="{{ route('operationsShow', $mission->mission_id) }}" class="stretched-link">Continue reading</a>
           </div>
           <div class="col-auto d-none d-lg-block">
             <svg class="bd-placeholder-img" name="mission_image" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>{{ $mission->mission_image}} </svg>

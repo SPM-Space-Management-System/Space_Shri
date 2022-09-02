@@ -25,3 +25,6 @@ Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->
 
 //insert mission new post
 Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');
+
+
+Route::get('/MissionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');                                                                               

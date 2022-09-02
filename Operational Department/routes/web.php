@@ -17,9 +17,11 @@ use App\Http\Controllers\MissonsController;
 Route::get('/', function () {
     return view('operations.welcome');
 });
+//
+Route::get('/missionshome',[PagesController::class,'indexmissionshome'])->name('mhome');
+// Route::get('/missionshome',[MissonsController::class,'viewposts_function']);
 
-Route::get('/missionshome',[PagesController::class,'indexmissionshome']);
+Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
 
-Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert']);
-
-Route::post('/savemission', [MissonsController::class, 'storemissions']);
+//insert mission new post
+Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');

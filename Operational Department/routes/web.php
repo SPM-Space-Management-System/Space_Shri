@@ -22,4 +22,5 @@ Route::get('/missionshome',[PagesController::class,'indexmissionshome'])->name('
 
 Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
 
+//insert mission new post
 Route::post('/savemission', [MissonsController::class, 'storemissions']);

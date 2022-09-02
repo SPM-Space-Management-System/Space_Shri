@@ -31,7 +31,7 @@ class MissionFormRequest extends FormRequest
             ],
             'description' =>[
                 'required',
-                'text',
+                'string',
                 
             ],
             'dateofadd' =>[
@@ -53,11 +53,11 @@ class MissionFormRequest extends FormRequest
     public function messages(){
 
         return[
-            'topic.required' => 'Please Enter Topic Of The Operation',
-            'description.required' => 'Please Enter The Description ',
-            'dateofadd.required' => 'Please Select The Current Date',
-            'imageadd.required' => 'Please Choose The Image',
-            'missioncost.required' => 'Please Enter The Mission Cost',
+            'topic.required' => '*Please Enter Topic Of The Operation',
+            'description.required' => '*Please Enter The Description ',
+            'dateofadd.required' => '*Please Select The Currect Date',
+            'imageadd.required' => '*Please Choose The Image',
+            'missioncost.required' => '*Please Enter The Correct Mission Cost',
         ];
     }
 }

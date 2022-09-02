@@ -45,7 +45,7 @@
                 
                 <h2 class="mb-0">{{ $mission->topic}}</h2>
                 <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div>
-                <a href="{{ route('operationsShow', $mission->mission_id) }}" >Continue reading</a>
+                <a href="{{ route('operationsShow', $mission->mission_id) }}" >Continue reading</a><br>
                 {{-- <a href="{{ route('operationsShow', $mission->mission_id) }}"  class="btn btn bg-primary" type="submit">Update/Remove Post</a> --}}
                 <a href="#"class="btn btn bg-warning" type="submit">Update/Remove Post</a>
             </div>

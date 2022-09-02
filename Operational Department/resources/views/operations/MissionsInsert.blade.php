@@ -3,11 +3,15 @@
     
 
 <div class="container mt-3">
- 
-    @if($errors->any())
-       
+    @if($errors->any())    
     @endif
+
     <h2>Add New Post</h2>
+    
+    @if(session('message'))
+    <div class="p-3 mb-2 bg-success text-white rounded">{{ session('message') }}</div>
+    
+    @endif
     <form action="{{ route('postStore') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="mb-3 mt-3" >
@@ -54,9 +58,10 @@ body{
      background-color: black;
     }
 h2{
-    color: rgb(22, 214, 48);
+    color: rgb(128, 180, 240);
     text-align: center;
     font-size: 400%;   
-}    
+}   
+
 </style> 
 @endpush

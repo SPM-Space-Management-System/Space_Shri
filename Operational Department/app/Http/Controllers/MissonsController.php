@@ -28,9 +28,9 @@ class MissonsController extends Controller
     try {
         $data = $request->validated();
         $missionObj->save();
-        return redirect()->back()->with('message','Post added successfully');
+        return redirect()->back()->with('message','Post added Successfully');
       } catch (Exception $ex) {
-        return view('mhome')->with('message','somthing went wrong'.$ex);
+        return redirect()->back()->with('message','somthing went wrong'.$ex);
       }
     }
 

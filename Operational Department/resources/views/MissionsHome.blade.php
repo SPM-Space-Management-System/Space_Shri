@@ -26,7 +26,7 @@
     </div>
   </div><br><br>
   <div class="space" style="padding-bottom: 10vh">
-  <a href="/missionsinsert" class="btn btn-primary" type="submit">Add new </a>
+  <a href="{{ route('minsert') }}" class="btn btn-primary" type="submit">Add new </a>
 </div>
 </div>
 

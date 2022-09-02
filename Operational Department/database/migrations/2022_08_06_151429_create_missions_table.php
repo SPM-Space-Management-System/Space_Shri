@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id('mission_id');
+            // $table->unsignedBigInteger('user_id');
             $table->string('topic');
             $table->string('description');
             $table->date('pub_date');
             $table->string('mission_image');
             $table->timestamps();
+
+            // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

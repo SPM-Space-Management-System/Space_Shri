@@ -100,7 +100,7 @@ margin-top:0px;
 label {
             color: #fff;
             font-size: 15px;
-            align: left;
+           
            
         }
         

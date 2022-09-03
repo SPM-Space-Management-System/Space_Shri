@@ -99,7 +99,8 @@
 label {
             color: #fff;
             font-size: 15px;
-            align: left;
+            
+            
         }
         h5 {
             text-align: center;

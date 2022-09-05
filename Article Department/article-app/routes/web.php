@@ -13,4 +13,6 @@ use App\Http\Controllers\ArticleHomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
+

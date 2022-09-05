@@ -1,6 +1,6 @@
 <footer>
     <div class="waves">
-        <div class="wave" id="wave1"></div>
+        
         <div class="wave" id="wave2"></div>
         <div class="wave" id="wave3"></div>
         <div class="wave" id="wave4"></div>
@@ -20,4 +20,6 @@
         <li><a href="#">Contact Us</a></li>
     </ul>
     <p>&copy;2022 Space Shri | All Rights Reserved</p>
+
+
 </footer>

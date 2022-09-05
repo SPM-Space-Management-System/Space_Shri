@@ -12,7 +12,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 <script>
     /*!

@@ -114,6 +114,24 @@
             </div>
         </div>
     </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img13.jpg"></div>
+            <div class="swiper-slide"><img src="img14.jpg"></div>
+            <div class="swiper-slide"><img src="img3.jpg"></div>
+            <div class="swiper-slide"><img src="img4.jpg"></div>
+            <div class="swiper-slide"><img src="img5.jpg"></div>
+            <div class="swiper-slide"><img src="img6.jpg"></div>
+            <div class="swiper-slide"><img src="img7.jpg"></div>
+            <div class="swiper-slide"><img src="img8.jpg"></div>
+            <div class="swiper-slide"><img src="img9.jpg"></div>
+            <div class="swiper-slide"><img src="img10.jpg"></div>
+            <div class="swiper-slide"><img src="img11.jpg"></div>
+            <div class="swiper-slide"><img src="img12.jpg"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
     <div class="cont">
         <div class="cards"></div>
         <div class="cards">
@@ -426,6 +444,29 @@
             transform: rotate(360deg);
             background: #03a9f4;
         }
+
+        .swiper-container {
+            display: flex;
+            width: 100%;
+            padding-top: 400px;
+           
+        } 
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 600px;
+            height: 450px;
+            background: #000;
+        }
+
+        .swiper-wrapper img {
+            background-position: center;
+            background-size: cover;
+            width: 600px;
+            height: 450px;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+        }
     </style>
 @endpush
 
@@ -451,5 +492,24 @@
             },
             y: 800,
         })
+
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows : true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 500,
+                disableOnInteraction: false,
+            },
+        });
     </script>
 @endpush

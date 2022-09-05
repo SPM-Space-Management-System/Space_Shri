@@ -19,14 +19,16 @@ Route::get('/', function () {
 });
 //
 Route::get('/missionshomea',[PagesController::class,'indexmissionshome'])->name('mhome');
-// Route::get('/missionshome',[MissonsController::class,'viewposts_function']);
 
+// Admin side..................................................................................................................................
+//insert new post for admin
 Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
-
-//insert mission new post
 Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');
+//view more for admin
+Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');    
+   
 
 
-Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');       
-
+//User side...................................................................................................................................
+//user read
 Route::get('/missionhomeU',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');

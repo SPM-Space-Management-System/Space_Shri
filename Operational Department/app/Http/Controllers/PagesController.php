@@ -6,31 +6,37 @@ use Illuminate\Http\Request;
 use App\Models\missions;
 class PagesController extends Controller
 {
-    public function indexmissionshome(){
-
-        $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
+    //admin read and search
+    public function indexmissionshome(Request $request){
+        if($request->has('searchposta')){
+            $searchposta = $request->get('searchposta');
+            $missionsALL = missions::where('topic','like','%'.$searchposta.'%')->orderBy('mission_id', 'DESC')->get();
+        }else{
+            $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
+        }
+        
         return view('operations/MissionsHome',compact('missionsALL'));
     }
 
+
+
+    //admin insert a post
     public function indexmissionsinsert(){
         return view('operations/MissionsInsert');
     }
 
+
+
+
+    //search and read for users
     public function indexmissionhomeuser(Request $request){
         if($request->has('searchpostu')){
             $searchpostu = $request->get('searchpostu');
             $missionsALL = missions::where('topic','like','%'.$searchpostu.'%')->orderBy('mission_id', 'DESC')->get();
-
         }else{
             $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
-        }
-       
+        } 
         return view('pages/home/UserMissionHome',compact('missionsALL'));
     }
-    // public function searchpostu(Request $request ){
-    //     $searchpostu = $request->get('searchpostu');
-    //     $searchPU = missions::where('topic',$searchpostu)->get();
-  
-    //   return redirect()->back()->with('searchPU',$searchPU);
-
+ 
 }

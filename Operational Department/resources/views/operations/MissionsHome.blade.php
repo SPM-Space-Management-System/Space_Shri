@@ -1,95 +1,195 @@
 @extends('layouts.app')
 @section('content')
-   
-<div class="bgimg">
-<div class="jumbotron text-center">
- 
-<h1 class="bg-secondary text-white">THE DREAM IS ALIVE!</h1>
-  
-</div>
+
+{{-- Search option for Admin --}}
 <div class="space" style="padding-top: 10vh"></div>
 <div class="container">
+    <div class="wrapper">
+        <div class="container">  
+            <form method="get" action="{{ route('mhome') }}">
+                <div class="search_wrap search_wrap_6">
+                    <div class="search_box">
+                        <input type="text" name="searchposta" class="input" placeholder="Search Topic Of The Mission">
+                        <div class="btn" input type="button" value="Search">
+                            <p>Search</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    {{-- All posts read for Admin --}}
+    <a href="{{ route('minsert') }}" class="btn btn-primary me-md-5 pl-5" type="submit">Add New Post </a>    
+    <a href="#"class="btn btn bg-warning me-md-5 pl-5" type="submit">Update/Remove Post</a>
+    <a href="#" class="btn btn btn-success" type="submit">Generate Report</a>
+    <div class="space" style="padding-top: 3vh"></div>
 
-
-  <div class="mx-auto" style="width: 200px;">
-     <div class="input-group" style="box-align: right">
-  <div class="form-outline">
-    <input type="search" id="form1" class="form-control" />
-    <label class="form-label" for="form1">Search</label>
-  </div>
-  <button type="button" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-  </button>
-</div>
-  </div>
-  
- 
-
-  <a href="{{ route('minsert') }}" class="btn btn-primary me-md-5 pl-5" type="submit">Add New Post </a>
-  <a href="#" class="btn btn btn-success" type="submit">Generate Report</a>
-  
-  <div class="space" style="padding-top: 5vh"></div>
-  <h3>Latest Posts</h3>
-    <div class="row mb-2 " class="rounded">
-      @foreach ($missionsALL as $mission)  
-      <div class="col-md-6 p-3 mb-2 bg-dark text-white">
-        <div class="card" class="border border-primary"></div>
-
-        <div class="rounded bgcolo"></div>
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" class="border border-primary">
-          <img class="card-img-top" src="{{ asset('thumbnails/' . $mission->mission_image) }}" width="200" height="200"  alt="missions images">
-            <div class="col p-3 d-flex flex-column position-static">
-              <div class="aligns">
+    
+<h3>Latest Posts</h3>
+ <div class="row row-cols-1 row-cols-md-2 g-4"> 
+    @foreach ($missionsALL as $mission)
+    <div class="col" >
+      <div class="card ">
+        {{-- shadow-lg p-3 mb-5 bg-white rounded --}}
+        <div class="inner"> <img src="{{ asset('thumbnails/' . $mission->mission_image) }}" height="250" class="card-img-top"  alt="missions images"></div>
+        <div class="card-body">
+            <div class="aligns">
                 <div class="mb-1 text-muted text-dark text-primary">{{date('Y-m-d',strtotime($mission->created_at))}}</div> 
-              </div>
-                
-                <h2 class="mb-0">{{ $mission->topic}}</h2>
-                <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div>
-                <a href="{{ route('operationsShow', $mission->mission_id) }}" >Continue reading</a><br>
-                {{-- <a href="{{ route('operationsShow', $mission->mission_id) }}"  class="btn btn bg-primary" type="submit">Update/Remove Post</a> --}}
-                <a href="#"class="btn btn bg-warning" type="submit">Update/Remove Post</a>
             </div>
-           <div class="col-auto d-none d-lg-block"></div>
+          <h2 class="card-title">{{ $mission->topic}}</h2>
+          <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div> 
+          <div class="mb-1 text-muted">Editor : Admin Chandima  </div>        
+          <a href="{{ route('operationsShow', $mission->mission_id) }}" class="btn btn-success" >Continue Reading</a><br>
         </div>
       </div>
-      @endforeach
-
-    </div><br><br>
-  <div class="space" style="padding-bottom: 10vh">
- 
-</div>
-</div>
-</div>
+    </div> 
+    @endforeach
+  </div>
+</div> 
+  <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
 
 
+{{-- css  --}}
 @push('css')
 <style>
-    
-body{
-     
+  .card{
+    background-color: rgb(195, 250, 250);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+    transition: 0.5s
+  }
+    .container{
+        margin top: 5%;
+    }
+    .inner{
+        overflow: hidden;
+    }
+    .inner img{
+        transition: all 1.5s ease;
+    }
+    .inner:hover img{
+        transform: scale(1.5);
+    }
+    body{
+        background-color: black;
     }
     .aligns{
       text-align: right;
     }
     h2{
-      color: rgb(255, 255, 255);
-    text-align: center;
-    
-    }
-    .bgimg {
-        /* background-image: url("../images/BGFewSpa.jpg"); */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        background-color: rgb(15, 15, 15) 
-
-        /* background-color: rgb(12, 3, 7) */
+        text-align: center;
     }
     h3{
-      color: rgb(247, 16, 93);
+        color: rgb(38, 206, 32);
     }
-</style> 
+    p{
+        margin-top: 10%;
+    }
+    
+
+
+    /* search br css */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.header{
+	width: 1000px;
+	padding: 20px;
+	background: #7690da;
+	margin: 25px auto;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.header p{
+	font-size: 454px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #fff;
+}
+
+.container .input{
+	border: 0;
+	outline: none;
+	color: #8b7d77;
+}
+
+.search_wrap{
+	width: 500px;
+	margin: 38px auto;
+    margin-right: 1mm;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 100%;
+	background: #7690da;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #708bd2;	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+.search_wrap.search_wrap_6 .search_box .input{
+	border-radius: 50px;
+}
+.search_wrap.search_wrap_6 .search_box .btn{
+	width: 125px;
+	height: 45px;
+	top: 8px;
+	right: 5px;
+	border-radius: 1px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    cursor: pointer;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn{
+	border-radius: 25px;
+}
+.search_wrap.search_wrap_6 .search_box .input{
+	padding-right: 145px;
+}
+    </style>
 @endpush
-
-

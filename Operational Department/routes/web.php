@@ -29,4 +29,4 @@ Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('
 
 Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');       
 
-Route::get('/missionhomeU',[PagesController::class,'indexmissionhomeuser']);
+Route::get('/missionhomeU',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');

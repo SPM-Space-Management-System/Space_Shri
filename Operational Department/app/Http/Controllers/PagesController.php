@@ -16,10 +16,21 @@ class PagesController extends Controller
         return view('operations/MissionsInsert');
     }
 
-    public function indexmissionhomeuser(){
-        $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
+    public function indexmissionhomeuser(Request $request){
+        if($request->has('searchpostu')){
+            $searchpostu = $request->get('searchpostu');
+            $missionsALL = missions::where('topic','like','%'.$searchpostu.'%')->orderBy('mission_id', 'DESC')->get();
+
+        }else{
+            $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
+        }
+       
         return view('pages/home/UserMissionHome',compact('missionsALL'));
     }
-
+    // public function searchpostu(Request $request ){
+    //     $searchpostu = $request->get('searchpostu');
+    //     $searchPU = missions::where('topic',$searchpostu)->get();
+  
+    //   return redirect()->back()->with('searchPU',$searchPU);
 
 }

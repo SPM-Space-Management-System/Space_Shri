@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleHomeController;
+use App\Http\Controllers\ArticleInsertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use App\Http\Controllers\ArticleHomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
+Route::get('/add', [ArticleInsertController::class, "articleindex"])->name('addArticle');
+
 

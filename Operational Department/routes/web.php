@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('operations.welcome');
 });
 //
-Route::get('/missionshome',[PagesController::class,'indexmissionshome'])->name('mhome');
+Route::get('/missionshomea',[PagesController::class,'indexmissionshome'])->name('mhome');
 // Route::get('/missionshome',[MissonsController::class,'viewposts_function']);
 
 Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
@@ -27,4 +27,6 @@ Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->
 Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');
 
 
-Route::get('/MissionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');                                                                               
+Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');       
+
+Route::get('/missionhomeU',[PagesController::class,'indexmissionhomeuser']);

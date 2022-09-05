@@ -16,5 +16,10 @@ class PagesController extends Controller
         return view('operations/MissionsInsert');
     }
 
+    public function indexmissionhomeuser(){
+        $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
+        return view('pages/home/UserMissionHome',compact('missionsALL'));
+    }
+
 
 }

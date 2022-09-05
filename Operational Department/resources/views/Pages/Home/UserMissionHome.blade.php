@@ -5,31 +5,31 @@
 <div class="space" style="padding-top: 10vh"></div>
 <div class="container">
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+
+ <div class="row row-cols-1 row-cols-md-2 g-4"> 
+    @foreach ($missionsALL as $mission)
     <div class="col">
       <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="inner"> <img src="../thumbnails/1662121464.lunar_icecube_on_orbit_09-19-16_0.png"  height="300" class="card-img-top" alt="..."></div>
+        <div class="inner"> <img src="{{ asset('thumbnails/' . $mission->mission_image) }}" height="300" class="card-img-top"  alt="missions images"></div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="aligns">
+                <div class="mb-1 text-muted text-dark text-primary">{{date('Y-m-d',strtotime($mission->created_at))}}</div> 
+            </div>
+          <h2 class="card-title">{{ $mission->topic}}</h2>
+          <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div> 
+          <div class="mb-1 text-muted">Editor : Admin Chandima  </div>        
+          <a href="{{ route('operationsShow', $mission->mission_id) }}" class="btn btn-success" >Continue reading</a><br>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="inner"><img src="../thumbnails/1662124141.nauticus_2.jpg" height="300" class="card-img-top" alt="..."></div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-    </div>
+    </div> 
+    @endforeach
   </div>
 </div> 
   <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
 
 
+{{-- css  --}}
 @push('css')
 <style>
     .container{
@@ -46,6 +46,12 @@
     }
     body{
         background-color: black;
+    }
+    .aligns{
+      text-align: right;
+    }
+    h2{
+        text-align: center;
     }
     
 </style>

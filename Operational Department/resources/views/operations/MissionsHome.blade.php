@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+  <img src="../thumbnails/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
+
 {{-- Search option for Admin --}}
-<div class="space" style="padding-top: 10vh"></div>
+
 <div class="container">
     <div class="wrapper">
         <div class="container">  
@@ -54,6 +56,10 @@
 {{-- css  --}}
 @push('css')
 <style>
+  .html{
+    scroll-behavior: smooth;
+  }
+
   .card{
     background-color: rgb(195, 250, 250);
     padding-top: 20px;

@@ -14,8 +14,7 @@ class PagesController extends Controller
         }else{
             $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
         }
-        
-        return view('operations/MissionsHome',compact('missionsALL'));
+    return view('operations/MissionsHome',compact('missionsALL'));
     }
 
 

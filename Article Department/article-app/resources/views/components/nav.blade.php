@@ -6,7 +6,7 @@
             <a class="func-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">News Room</a>
+            <a class="func-link" href="{{ route('articlehome') }}">News Room</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">Fly with Rocket</a>

@@ -6,7 +6,13 @@
     </div>
     <!--generate successfull message-->
     @if (session('message'))
-        <h5>{{ session('message') }}</h5>
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+                <span class="fas fa-times"></span>
+            </span>
+        </div>
     @endif
     <form method="post" action="{{ route('rocketinsert.store') }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
@@ -121,10 +127,70 @@
             font-size: 35px;
         }
 
-        h5 {
-            text-align: center;
-            font-size: 35px;
-            color: #0f0;
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 70px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+
+        @keyframes show_slide {
+           0% {
+            transform: translateX(100%);
+           } 
+           40% {
+            transform: translateX(-10%);
+           } 
+           80% {
+            transform: translateX(0%);
+           } 
+           100% {
+            transform: translateX(-10px);
+           } 
+        }
+
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 20px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ffc766;
+        }
+
+        .close-btn .fa-times {
+            color: #ce8500;
+            font-size: 22px;
+            line-height: 40px;
         }
 
         .btn-group {
@@ -132,3 +198,4 @@
         }
     </style>
 @endpush
+

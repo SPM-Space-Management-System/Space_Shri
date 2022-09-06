@@ -1,146 +1,136 @@
 @extends('layouts.app')
 
 @section('content')
-<form >
-  {{ csrf_field() }}
-  <div class="container">
-      <div class="row"> 
-      </div>
-      <section >
+<div class="header">
+ 		<h1>UPDATE A JOB</h1>
+ 	</div>
+<div class="container">
+ 
+ 	<div class="main">
+ 		<form>
+ 			<center>
+        <table>
+          <tr>
+            <th> <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">JOB TITLE</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">PUBLISH DATE</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">SUMMARY</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+
+                            
+                    </div><div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">REQUIREMENTS</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">IMAGE</label>
+                       <input title="Insert a picture of the rocket." class="form-control form-control-lg" type="file"
+                            name="images" accept="image/jpg, image/jpeg, image/png" required>
+                    </div>
+                    </th>
+            <th> <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">NO.OF.VACANCIES</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">CLOSHING DATE</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">DUTIES</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div><div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">REQUIRED DOCUMENTS</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleFormControlInput1" class="form-label">NOTICES</label>
+                        <input title="The height of the rocket should be entered in 'meters' (M)."
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
+                            placeholder="" required>
+                    </div>
+                  </th>
+                    </tr>
+                    
+          
+        </table>
+      </center>
+ 				
          
-          <div class="form-group">
-            <table>
-              <tr>
-                <center><h2 class="form-title" style="color: antiquewhite" ><strong>Add Article</strong></h2> </center>
-              </tr>
-            </table>
-            
-              <div class="mb-5">
-                  <label for="exampleFormControlInput1" class="form-label">Topic</label>
-                  <input title="The topic of the article to be applied." type="text"
-                      class="form-control form-control-lg" id="exampleFormControlInput1" name="title"
-                      placeholder="Enter Article Title..." required>
-              </div>
-              <div class="mb-5">
-                  <label for="exampleFormControlInput1" class="form-label">Author</label>
-                  <input title="The name of author of the article to be applied." type="text"
-                      class="form-control form-control-lg"  id="exampleFormControlInput1" name="author"
-                      placeholder="Enter Author's name..." required>
-                  </select>
-              </div>
-              <div class="mb-5">
-                  <label for="exampleFormControlInput1" class="form-label">Date</label>
-                  <input title="The date of the article was written"
-                      class="form-control form-control-lg" type="date" id="exampleFormControlInput1" name="height"
-                      placeholder="xx/xx/xxxx" required>
-              </div>
-
-              <div class="mb-5">
-                <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>
-                <select title="Select the country of manufacture of the respective rocket from the drop-down list."
-                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country"
-                    required>
-                    <option selected>Open this country of origin select menu</option>
-                    <option value="United States">United States</option>
-                    <option value="France, ESA">France, ESA</option>
-                    <option value="Russia">Russia</option>
-                    <option value="China">China</option>
-                    <option value="India">India</option>
-                    <option value="Sri Lanka">Sri Lanka</option>
-                </select>
-            </div>
-
-              <div class="mb-5">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <input title="The description of the article to be applied." type="text"
-                      class="form-control form-control-lg"  id="exampleFormControlInput1" name="description"
-                      placeholder="Type Article description..." required>
-              </div>
-
-              <div class="mb-5">
-                  <label for="formFileLg" class="form-label">Image</label>
-                  <input title="Insert a picture of the rocket." class="form-control form-control-lg" type="file"
-                      name="images" accept="image/jpg, image/jpeg, image/png" required>
-              </div>
-          </div>
-          <div class="col-md-12 text-center">
-            <div class="btn-group">
-                <p><input type="submit" title="Click this button to save the entered data." class="btn btn-warning btn-lg"
-                        value="ADD DETAILS">
-                   
-                </p>
-            </div>
-      
-        </div>
-      </section>
-  </div>
-  
-</form>
-
+                    <button>login</button>
+ 		</form>
+ 	</div>
+ </div>
+<div class="Fline">
+    </div> 
 @endsection
-  
+
 @push('css')
 <style>
      body {
-  margin-top:0px;
 	font-family: sans-serif;	
-	background-image: url(Articleinsert1.png);
-  background-position: center;
-  background-color: #333;
+	background-image: url(inser2.jpg);
 	background-repeat: no-repeat;
-  background-size: cover
+	background-size: 105%;
+  
 }
 label {
             color: #fff;
             font-size: 15px;
-            length:10%;
-           
-           
+          
+            
         }
-        
-        h1 {
+        h5 {
             text-align: center;
             font-size: 35px;
-            color: rgb(67, 31, 4);
+            color: #0f0;
         }
         .mb-5{
-          margin-right:50px;
+          margin-right:30px;
           padding:0;
         }
-      
-.form-title {
-  margin-top:0px;
-  text-align: center;
-  font-size: 30px;
-  font-color: rgb(19, 118, 105);
-}
-        
- 
 .container {
-  background-color:#1f0c0c;
-	width: 500px;
-	margin:0% 0% 3% 15%;
-	border-radius: 0px;
-	box-shadow: 0 0 17px rgb(120, 83, 200);
+	width: 780px;
+	margin:0% 0% 10% 15%;
+	border-radius: 25px;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 0 0 17px #333;
 }
-
 .header {
 	text-align: center;
 	padding-top: 40px;
   padding-right:200px
 }
-
 .header h1 {
-	color:rgb(43, 1, 1);
+	color:white;
 	font-size: 45px;
 	margin-bottom: 20px;
 }
-
 .main {
 	text-align: center;
-  background-color: #333;
 }
-
 .main input, button {
 	width: 300px;
 	height: 40px;
@@ -152,7 +142,6 @@ label {
 	color: #333;
 	margin-bottom: 40px;
 }
-
 .main button {
 	padding-left: 0;
 	background-color: #83acf1;
@@ -160,7 +149,6 @@ label {
 	font-weight: bold;
 	margin-bottom: 70px;
 }
-
 .main button:hover {
 	box-shadow: 2px 2px 5px #555;
 	background-color: #7799d4;
@@ -169,18 +157,15 @@ label {
 	box-shadow: 2px 2px 5px #555;
 	background-color: #ddd;
 }
-
 .main span {
 	position: relative;
 }
-
 .main i {
 	position: absolute;
 	left: 15px;
-	color: rgb(116, 189, 133);
+	color: #333;
 	font-size: 16px;
 	top: 2px;
 }
-
 </style>
 @endpush

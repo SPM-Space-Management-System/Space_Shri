@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="logo">
+    <img src="logo.png" alt="logo" />
+</div>
+
 <img src="UserView1.webp" alt="" width="550" height="700" id="hp"/>
  
 
@@ -91,6 +95,14 @@
 	background-repeat: no-repeat;
   background-size: cover
 }
+
+img {
+            width: 400px;
+            height: 100px;
+            display: block;
+            margin: auto;
+            padding: auto;
+        }
 label {
             color:#00000;
             font-size: 18px;

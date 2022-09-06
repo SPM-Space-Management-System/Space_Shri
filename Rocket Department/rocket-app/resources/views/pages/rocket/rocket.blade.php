@@ -16,6 +16,13 @@
             <ion-icon class="search-icon" name="search-outline"></ion-icon>
         </div>
     </div>
+    <div class="scan-body">
+        <div class="scan">
+            <div class="rocket-fingerprint">
+                <h3 style="margin-top: 350px; text-align: center;">Searching...</h3>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             @forelse ($tasks as $task)
@@ -229,6 +236,7 @@
             align-items: center;
             padding-bottom: 2vh;
         }
+
         .searchBox {
             position: relative;
             display: flex;
@@ -268,6 +276,7 @@
             z-index: 1;
             filter: blur(2px);
         }
+
         .searchBox input {
             position: relative;
             width: 100%;
@@ -280,17 +289,19 @@
             color: #555;
             background: linear-gradient(#dbdae1, #a3aaba);
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
-            15px 15px 15px rgba(182, 174, 174, 0.1),
-            20px 20px 20px rgba(182, 174, 174, 0.1),
-            30px 30px 30px rgba(182, 174, 174, 0.1),
-            inset 1px 1px 2px #fff;
+                15px 15px 15px rgba(182, 174, 174, 0.1),
+                20px 20px 20px rgba(182, 174, 174, 0.1),
+                30px 30px 30px rgba(182, 174, 174, 0.1),
+                inset 1px 1px 2px #fff;
         }
 
-        .searchBox input::placeholder, .searchBox input {
+        .searchBox input::placeholder,
+        .searchBox input {
             color: transparent;
         }
 
-        .searchBox:hover input::placeholder, .searchBox:hover input  {
+        .searchBox:hover input::placeholder,
+        .searchBox:hover input {
             color: #555;
         }
 
@@ -300,6 +311,95 @@
             color: #555;
             font-size: 1.5em;
             cursor: pointer;
+        }
+
+        .scan-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scan {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scan .rocket-fingerprint {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: url(rocket_f1.png);
+            background-size: 300px;
+        }
+
+        .scan .rocket-fingerprint::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(rocket_f2.png);
+            background-size: 300px;
+            animation: animatef 4s ease-in-out infinite;
+        }
+
+        @keyframes animatef {
+
+            0%,
+            100% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+        }
+
+        .scan .rocket-fingerprint::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #76ff03;
+            border-radius: 8px;
+            filter: drop-shadow(0 0 20px #76ff03) drop-shadow(0 0 60px #76ff03);
+            animation: animate_line 4s ease-in-out infinite;
+        }
+
+        @keyframes animate_line {
+
+            0%,
+            100% {
+                top: 0%;
+            }
+
+            50% {
+                top: 100%;
+            }
+        }
+
+        .scan h3 {
+            text-transform: uppercase;
+            font-size: 2em;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            color: #76ff03;
+            filter: drop-shadow(0 0 20px #76ff03) drop-shadow(0 0 60px #76ff03);
+            animation: animate_text 0.5s steps(1) infinite;
+        }
+
+        @keyframes animate_text {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
         }
     </style>
 @endpush

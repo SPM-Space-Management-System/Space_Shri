@@ -1,3 +1,6 @@
+@livewireScripts
+@vite(['resources/js/app.js'])
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -15,6 +18,7 @@
 <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 <script>
+   
     /*!
          * DEPRECATED Elements Extension for Jarallax. Use lax.js instead https://github.com/alexfoxy/lax.js
          */

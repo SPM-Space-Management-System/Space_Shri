@@ -6,7 +6,7 @@ use App\Models\missions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class MissonsController extends Controller
+class MissonsController extends ParentController
 {
     //Store new missions Details.....
     public function storemissions(MissionFormRequest $request){

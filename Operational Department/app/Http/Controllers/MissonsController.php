@@ -42,6 +42,6 @@ class MissonsController extends Controller
         return view('operations/MissionShow', compact('post'));
     }
 
-    
+
 
 }

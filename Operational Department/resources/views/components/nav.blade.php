@@ -12,7 +12,7 @@
             <a class="func-link" href="#">Fly with Rocket</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="{{ route('mhome') }}">Operations and Research</a>
+            <a class="func-link" href="{{ route('mhomeu') }}">Operations and Research</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">Jobs & Career</a>

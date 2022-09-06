@@ -16,7 +16,7 @@ class RocketViewController extends Controller
 
     public function delete($task_id) {
         RocketViewFacade::delete($task_id);
-        return redirect()->back();
+        return redirect()->back()->with('message','Details Deleted Successfully!');
     } 
 
     public function done($task_id) {
@@ -34,7 +34,7 @@ class RocketViewController extends Controller
     public function update(Request $request, $task_id) {
         
         RocketViewFacade::update($request->all(), $task_id);
-        return redirect()->back();
+        return redirect()->back()->with('message','Details Updated Successfully!');
     }
 
 }

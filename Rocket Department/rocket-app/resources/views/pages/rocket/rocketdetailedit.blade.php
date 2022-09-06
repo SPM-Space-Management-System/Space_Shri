@@ -12,8 +12,15 @@
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
             <label for="country-name" class="col-form-label">Country of Origin:</label>
-            <input type="text" class="form-control form-control-lg" name="country" value="{{ $task->country }}"
-                required>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country"
+                value="{{ $task->country }}" required>
+                <option value="United States">United States</option>
+                <option value="France, ESA">France, ESA</option>
+                <option value="Russia">Russia</option>
+                <option value="China">China</option>
+                <option value="India">India</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+            </select>
             <br>
         </div>
     </div>
@@ -39,7 +46,7 @@
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
             <label for="date-name" class="col-form-label">First Flight:</label>
-            <input type="text" class="form-control form-control-lg" name="date" value="{{ $task->date }}"
+            <input type="date" class="form-control form-control-lg" name="date" value="{{ $task->date }}"
                 required>
             <br>
         </div>
@@ -48,8 +55,11 @@
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
             <label for="status-name" class="col-form-label">Status:</label>
-            <input type="text" class="form-control form-control-lg" name="status" value="{{ $task->status }}"
-                required>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="status"
+                value="{{ $task->status }}" required>
+                <option value="Retired">Retired</option>
+                <option value="Active">Active</option>
+            </select>
             <br>
         </div>
     </div>

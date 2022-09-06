@@ -16,7 +16,7 @@
           <div class="form-group">
             <table class="table">
               <td style="background-color:rgb(247, 247, 225)">
-                <center><h2 class="form-title" style="color: rgb(39, 36, 33);font-family:Roboto;font-size:32;font-weight:bold" ><strong>Add Article</strong></h2> </center>
+                <center><h2 class="form-title" style="color: rgb(39, 36, 33);font-family:Roboto;font-size:32;font-weight:bold" ><strong>Update Article</strong></h2> </center>
               </td>
             </table>
             
@@ -70,7 +70,7 @@
           </div>
           <div class="col-md-5 text-center">
             <div class="btn-group">
-              <button type="submit" style="margin:2px;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit</button>
+              <button type="submit" style="margin:2px;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Update</button>
               <button type="submit" style="margin:2px;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cancel</button>
             </div>
       

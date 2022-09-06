@@ -2,82 +2,47 @@
 
 @section('content')
     <div class="logo">
-        <img src="logo.png" alt="logo" />
+        <img src="logo.png" alt="logo"/>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h1 class="page-title">job List</h1>
-            </div>
-            <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="" role="button">+ ADD A NEW JOB</a>
-                </div>
-            </div>
-            <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="" role="button">GENARATE REPORT</a>
-                </div>
-            </div>
-            <div class="bottom">
-            <table class="table table-hover"> 
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <h3>Job Title</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>N.O.V</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>P. date</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>C.date</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Summary</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Duties</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Requirements</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>image</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Done</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Action</h3>
-                        </th>
-                    </tr>
-                </thead>
-                
-                </tbody>
-            </table>
-              
-        </div>   
-        </div> 
-    </div>
+   
+        <div class="right">
+        <form action="search/query" method="GET" >
+            @csrf
+            <input class="SearchInput"
+                type="text"
+                name="search"
+                placeholder="search...">
 
-    <!-- Modal -->
-    <div class="modal fade" id="rocketEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="rocketEditLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="rocketEditLabel">Job Details Update</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="rocketEditContent">
-
-                </div>
-            </div>
+                <button class="Search"
+                type="submit">
+                Search
+                </button>
         </div>
-    </div>
+
+        <div class="row mb-2">A
+            <div class="col-md-6">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-10">Release Rocket</h3>
+                  <img src="UserView1.webp" alt="User1"/>
+                  <div class="mb-1 text-muted">nov 12</div>
+                  <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="stretched-link">Continue reading</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <img src="UserView1.webp" alt="User1"/>
+                  <h3 class="mb-0">Post title</h3>
+                  <div class="mb-1 text-muted">Nov 11</div>
+                  <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="stretched-link">Continue reading</a>
+                </div>
+              </div>
+            </div>
+          </div></div>
 @endsection
 
 @push('css')
@@ -86,49 +51,54 @@
             background-color: #000;
         }
         img {
-            width: 400px;
-            height: 100px;
-            display: block;
-            margin: auto;
-            padding: auto;
+          margin-top: 0%;
+           float: right;
+           border-width: 10px; 
+            width: 300px; 
+            height:300px;
+            padding:0px 0;
         }
-        .container {
-            padding-bottom: 30vh;
+
+        .right{
+            float:right;
         }
-        .page-title {
-            margin-top: 10px;
-            margin-bottom: 50px;
-            font-size: 50px;
-        }
-        h3{
-            font-size: 20px;
-        }
-        h5 {
-            color: #fff;
-        }
-        span {
-            width: 70px;
-            height: 35px;
-        }
-       
-        .btn a {
-           
-            font-size: 1.5em;
-            font-weight: 400;
-            padding: 5px 5px;
-            border-radius: 5px;
-            color: #000;
-            margin-left:823px;
+
+        .SearchInput{
+            border: 1px;
+            color: white;
+            outline-color: blue;
+            border-radius: 12px;
+            padding: 10px 20px;
+            text-align: center;
             text-decoration: none;
-            background-color: chartreuse;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
         }
-        .table-image {
-            width: 150px;
-            height: 120px;
+        .Search{
+            background-color: #2593e2;
+            border: 1px;
+            color: white;
+            border-radius: 12px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
         }
-        .bottom {
-            padding-bottom: 120px;
-            padding-top: 40px;
+        .card-img-top{
+            width: 18rem;
+            height: 10rem;
+
         }
+        img{
+            width: 15em;
+            height: 15em;
+        }
+      
     </style>
 @endpush
+

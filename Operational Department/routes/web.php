@@ -31,4 +31,4 @@ Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions
 
 //User side...................................................................................................................................
 //user read
-Route::get('/missionhomeU',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');
+Route::get('/missionshomeu',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');

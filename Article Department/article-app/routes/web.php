@@ -17,7 +17,10 @@ use App\Http\Controllers\ArticleListViewController;
 |
 */
 Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
-Route::get('/Articleadd', [ArticleInsertController::class, "articleindex"])->name('addArticle');
-Route::get('/Articleupdate',[ArticleUpdateController::class, "articleindex"] )->name('updateArticle');
-Route::get('/Articlelist',[ArticleListViewController::class, "articleindex"] )->name('ListArticle');
+
+Route::prefix('/articleinsert')->group(function () {
+    Route::get('/', [ArticleInsertController::class, "articleinsertview"])->name('articleinsert');
+    Route::post('/store', [ArticleInsertController::class, "store"])->name('articleinsert.store');
+});
+
 

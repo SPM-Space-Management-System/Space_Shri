@@ -5,7 +5,7 @@
 <img src="UserView1.webp" alt="" width="550" height="700" id="hp"/>
  
 
-<form >
+<form method="post" action="{{ route('articleinsert.store') }}" enctype="multipart/form-data" role="form">
   {{ csrf_field() }}
   <div class="container">
     
@@ -23,7 +23,7 @@
               <div class="mb-5">
                   <label for="exampleFormControlInput1" class="form-label">Topic</label>
                   <input title="The topic of the article to be applied." type="text"
-                      class="form-control form-control-lg" id="exampleFormControlInput1" name="title"
+                      class="form-control form-control-lg" id="exampleFormControlInput1" name="topic"
                       placeholder="Enter Article Title..." required>
               </div>
               <div class="mb-5">
@@ -36,16 +36,16 @@
               <div class="mb-5">
                   <label for="exampleFormControlInput1" class="form-label">Date</label>
                   <input title="The date of the article was written"
-                      class="form-control form-control-lg" type="date" id="exampleFormControlInput1" name="height"
+                      class="form-control form-control-lg" type="date" id="exampleFormControlInput1" name="date"
                       placeholder="xx/xx/xxxx" required>
               </div>
 
               <div class="mb-5">
-                <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>
+                <label for="exampleFormControlInput1" class="form-label">Country</label>
                 <select title="Select the country of manufacture of the respective rocket from the drop-down list."
                     class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country"
                     required>
-                    <option selected>Open this country of origin select menu</option>
+                    <option selected>Open this country select menu</option>
                     <option value="United States">United States</option>
                     <option value="France, ESA">France, ESA</option>
                     <option value="Russia">Russia</option>
@@ -64,7 +64,7 @@
 
               <div class="mb-5">
                   <label for="formFileLg" class="form-label">Image</label>
-                  <input title="Insert a picture of the rocket." class="form-control form-control-lg" type="file"
+                  <input title="Insert a picture of the article related picture." class="form-control form-control-lg" type="file"
                       name="images" accept="image/jpg, image/jpeg, image/png" required>
               </div>
           </div>
@@ -97,8 +97,7 @@ label {
             color:#00000;
             font-size: 18px;
             length:15%;
-           
-           
+
         }
         
         h1 {
@@ -110,6 +109,10 @@ label {
           margin-right:50px;
           length:25px;
           padding:0;
+        }
+
+        form{
+          padding-bottom: 50vh;
         }
 #hp{
   float: right;    

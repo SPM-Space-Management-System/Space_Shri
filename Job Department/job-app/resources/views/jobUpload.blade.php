@@ -5,102 +5,100 @@
  		<h1>UPLOAD A JOB</h1>
  	</div>
 <div class="container">
- 
- 	<div class="main">
- 		<form>
- 			<center>
-        <table>
-          <tr>
-            <th> <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">JOB TITLE</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:LAB SPECIALIST" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">PUBLISH DATE</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="XXXX/XX/XX" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">SUMMARY</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:Coordinates, collaborates,develops " required>
 
-                            
-                    </div><div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">REQUIREMENTS</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:Coordinates, collaborates,develops " required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">IMAGE</label>
-                       <input title="Insert a picture of the rocket." class="form-control form-control-lg" type="file"
-                            name="images" accept="image/jpg, image/jpeg, image/png" required>
-                    </div>
-                    </th>
-            <th> <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">NO.OF.VACANCIES</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:05" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">CLOSHING DATE</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="XXXX/XX/XX" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">DUTIES</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:Coordinates, collaborates,develops " required>
-                    </div><div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">REQUIRED DOCUMENTS</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:Coordinates, collaborates,develops " required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">NOTICES</label>
-                        <input title="The height of the rocket should be entered in 'meters' (M)."
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="EX:Coordinates, collaborates,develops " required>
-                    </div>
-                  </th>
+ 	<div class="main">
+ 		<form method="get" action="{{route('jobstore')}}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+ 			<center>
+                <table>
+                    <tr>
+                        <th>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">JOB TITLE</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput1" name="jobtitle" placeholder="EX:LAB SPECIALIST" >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput2" class="form-label">PUBLISH DATE</label>
+
+                                <input type="date" class="form-control form-control-lg" id="exampleFormControlInput2" name="P_date" placeholder="XXXX/XX/XX" >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput3" class="form-label">SUMMARY</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput3" name="Summary" placeholder="EX:Coordinates, collaborates,develops " >
+
+
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput4" class="form-label">REQUIREMENTS</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput4" name="Requirements" placeholder="EX:Coordinates, collaborates,develops " >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">IMAGE</label>
+
+                                <input class="form-control form-control-lg" type="file" name="imageadd" accept="image/jpg, image/jpeg, image/png" >
+                            </div>
+                        </th>
+                        <th>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">NO.OF.VACANCIES</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput1" name="NOV" placeholder="EX:05" >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">CLOSHING DATE</label>
+
+                                <input type="date" title="The height of the rocket should be entered in 'meters' (M)." class="form-control form-control-lg" id="exampleFormControlInput1" name="C_date" placeholder="XXXX/XX/XX" >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">DUTIES</label>
+
+                                <input title="The height of the rocket should be entered in 'meters' (M)." class="form-control form-control-lg" id="exampleFormControlInput1" name="Duties" placeholder="EX:Coordinates, collaborates,develops " >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label"> DOCUMENTS</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput1" name="Req_Doc" placeholder="EX:Coordinates, collaborates,develops " >
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">STATUS</label>
+
+                                <input class="form-control form-control-lg" id="exampleFormControlInput1" name="done" placeholder="EX:Coordinates, collaborates,develops " >
+                            </div>
+                        </th>
                     </tr>
-                    
-          
-        </table>
+
+
+                </table>
+
+
       </center>
- 				
-         
-                    <button>login</button>
+
+
+                    <button type="submit">UPLOAD</button>
  		</form>
  	</div>
  </div>
 <div class="Fline">
-    </div> 
+    </div>
 @endsection
 
 @push('css')
 <style>
      body {
-	font-family: sans-serif;	
+	font-family: sans-serif;
 	background-image: url(rokert.jpg);
 	background-repeat: no-repeat;
 	background-size: 105%;
-  
+
 }
 label {
             color: #fff;
             font-size: 15px;
-            
-            
+
+
         }
         h5 {
             text-align: center;
@@ -111,7 +109,7 @@ label {
           margin-right:30px;
           padding:0;
         }
-        
+
 
 .container {
 	width: 780px;

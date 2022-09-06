@@ -37,5 +37,18 @@ class PagesController extends Controller
         } 
         return view('pages/home/UserMissionHome',compact('missionsALL'));
     }
+
+
+
+    public function indexadmindashboard(){
+        return view('pages/admin/AdminDashboard');
+    }
+
+
+
+    public function indexuserdashboard(){
+        return view('pages/home/UserDashboard');
+    }
+
  
 }

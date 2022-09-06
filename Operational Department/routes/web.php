@@ -26,9 +26,13 @@ Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->
 Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');
 //view more for admin
 Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');    
+//admin dashboard
+Route::get('/admindashboard', [PagesController::class, 'indexadmindashboard'])->name('admindashboard'); 
    
 
 
 //User side...................................................................................................................................
 //user read
 Route::get('/missionshomeu',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');
+//user dashboard
+Route::get('/userdashboard', [PagesController::class, 'indexuserdashboard'])->name('userdashboard'); 

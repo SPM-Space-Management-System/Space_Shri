@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+dd
 <div class="night">
     <div class="star"></div>
     <div class="star"></div>

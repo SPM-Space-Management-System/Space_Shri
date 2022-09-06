@@ -10,104 +10,106 @@
                 <h1 class="page-title">Rocket List</h1>
             </div>
             <div class="bottom">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <h3>Title</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Country</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Height</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Stages</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>First Flight</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Status</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Image</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Done</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Action</h3>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($tasks as $task)
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td>
-                                <h5>{{ $task->title }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $task->country }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $task->height }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $task->stages }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $task->date }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $task->status }}</h5>
-                            </td>
-                            <td><img src="{{ config('images.upload_path') }}/{{ $task->images->name }}" class="table-iamge">
-                            </td>
-                            <td>
-                                @if ($task->done == 0)
-                                    <span class="badge bg-danger">
-                                        <h6>Inactive</h6>
-                                    </span>
-                                @else
-                                    <span class="badge bg-primary">
-                                        <h6>Active</h6>
-                                    </span>
-                                @endif
-                            </td>
-                            <td>
-                                <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('rocketview.delete', $task->id) }}" role="button">
-                                    <h6>DELETE</h6>
-                                </a>
-                                @if ($task->done == 0)
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('rocketview.done', $task->id) }}" role="button">
-                                        <h6>PUBLISH</h6>
-                                    </a>
-                                @else
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('rocketview.done', $task->id) }}" role="button">
-                                        <h6>DRAFT</h6>
-                                    </a>
-                                @endif
-                                <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
-                                    onclick="rocketEditModal({{ $task->id }})">
-                                    <h6>EDIT</h6>
-                                </a>
-                            </td>
+                            <th scope="col">
+                                <h3>Title</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Country</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Height</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Stages</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>First Flight</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Status</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Image</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Done</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Action</h3>
+                            </th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                    </thead>
+                    <tbody>
+                        @foreach ($tasks as $task)
+                            <tr>
+                                <td>
+                                    <h5>{{ $task->title }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $task->country }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $task->height }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $task->stages }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $task->date }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $task->status }}</h5>
+                                </td>
+                                <td><img src="{{ config('images.upload_path') }}/{{ $task->images->name }}"
+                                        class="table-iamge">
+                                </td>
+                                <td>
+                                    @if ($task->done == 0)
+                                        <span class="badge bg-danger">
+                                            <h6>Inactive</h6>
+                                        </span>
+                                    @else
+                                        <span class="badge bg-primary">
+                                            <h6>Active</h6>
+                                        </span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm btn-block" role="button"
+                                        href="{{ route('rocketview.delete', $task->id) }}">
+                                        <h6>DELETE</h6>
+                                    </a>
+                                    @if ($task->done == 0)
+                                        <a class="btn btn-warning btn-sm btn-block"
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button">
+                                            <h6>PUBLISH</h6>
+                                        </a>
+                                    @else
+                                        <a class="btn btn-warning btn-sm btn-block"
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button">
+                                            <h6>DRAFT</h6>
+                                        </a>
+                                    @endif
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                        onclick="rocketEditModal({{ $task->id }})">
+                                        <h6>EDIT</h6>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+                <div class="col-md-12 text-center">
+                    <div class="btn">
+                        <a href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                    </div>
                 </div>
-            </div>  
-        </div>   
-        </div> 
+            </div>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -160,7 +162,7 @@
             height: 35px;
         }
 
-       
+
         .btn a {
             position: relative;
             font-size: 1.5em;
@@ -176,6 +178,7 @@
             width: 150px;
             height: 120px;
         }
+
         .bottom {
             padding-bottom: 120px;
         }

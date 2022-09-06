@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleHomeController;
 use App\Http\Controllers\ArticleInsertController;
 use App\Http\Controllers\ArticleUpdateController;
+use App\Http\Controllers\ArticleListViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,5 @@ use App\Http\Controllers\ArticleUpdateController;
 Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
 Route::get('/Articleadd', [ArticleInsertController::class, "articleindex"])->name('addArticle');
 Route::get('/Articleupdate',[ArticleUpdateController::class, "articleindex"] )->name('updateArticle');
+Route::get('/Articlelist',[ArticleListViewController::class, "articleindex"] )->name('ListArticle');
 

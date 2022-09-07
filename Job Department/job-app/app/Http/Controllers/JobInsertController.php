@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\job;
+use App\Http\Requests\JobRequest;
 use Illuminate\Http\Request;
+
 
 class JobInsertController extends Controller
 {
@@ -12,7 +14,7 @@ class JobInsertController extends Controller
     return view('home');
 }
 
-public function indexjobupload(Request $request)
+public function indexjobupload(JobRequest $request)
 {
 
     $jobObj = new job;
@@ -36,8 +38,20 @@ public function indexjobupload(Request $request)
     $jobObj->done = $request->done;
      $jobObj->save();
  //dd($jobObj);
+try{
+    $data=$request->validate();
+    job::create($data);
 
-    return view('jobUpload');
+    return view('home')->with('message','Student Added Successfully');
 }
+catch(\Exception $ex){
+
+    return view('jobUpload')->with('message','Somthing went Wrong'.$ex);
+}
+
+
+
+}
+
 
 }

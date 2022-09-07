@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobInsertController;
 use App\Http\Controllers\JoblistviewController;
+use App\Http\Controllers\JobDeleteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/addjob', [JobInsertController::class, 'indexjobupload'])->name('job
 
 //show job list
 Route::get('/joblist', [JoblistviewController::class, 'show']);
+
+Route::get('delete/{job}',[JobDeleteController::class,'delete']);

@@ -20,4 +20,13 @@ class Article extends Model
         'done'
 
     ];
+
+    public function images()
+    {
+
+        return $this->hasOne(Image::class, 'id', 'image_id');
+    }
+    public function allActive() {
+        return $this->where('done', 1)->get();
+    }
 }

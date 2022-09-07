@@ -6,7 +6,7 @@
 <div class="row row-cols-1 row-cols-md-2 g-4">   
     <div class="col">
       <div class="card">
-        <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+        <div class="inner"> <img src="../images/job.jpg" height="150" class="card-img-top"  alt="missions images"></div>
          <div class="card-body">           
           <h2 class="card-title">News Room</h2>
             <div class="aligns">
@@ -19,7 +19,7 @@
 
     <div class="col">
         <div class="card">
-          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+          <div class="inner"> <img src="../images/rocket.jpg" height="150" class="card-img-top"  alt="missions images"></div>
            <div class="card-body">           
             <h2 class="card-title">Fly with Rocket</h2>
               <div class="aligns">
@@ -32,7 +32,7 @@
 
       <div class="col">
         <div class="card">
-          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+          <div class="inner"> <img src="../images/missions and re.jpg" height="150" class="card-img-top"  alt="missions images"></div>
            <div class="card-body">           
             <h2 class="card-title">Operations and Research</h2>
               <div class="aligns">
@@ -45,7 +45,7 @@
 
       <div class="col">
         <div class="card">
-          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+          <div class="inner"> <img src="../images/newsroom.jpg" height="150" class="card-img-top"  alt="missions images"></div>
            <div class="card-body">           
             <h2 class="card-title">Jobs & Career</h2>
               <div class="aligns">

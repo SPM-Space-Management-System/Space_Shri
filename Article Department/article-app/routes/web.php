@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleHomeController;
 use App\Http\Controllers\ArticleInsertController;
-use App\Http\Controllers\ArticleUpdateController;
 use App\Http\Controllers\ArticleListViewController;
 
 /*
@@ -17,7 +16,19 @@ use App\Http\Controllers\ArticleListViewController;
 |
 */
 Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
-Route::get('/Articleadd', [ArticleInsertController::class, "articleindex"])->name('addArticle');
-Route::get('/Articleupdate',[ArticleUpdateController::class, "articleindex"] )->name('updateArticle');
-Route::get('/Articlelist',[ArticleListViewController::class, "articleindex"] )->name('ListArticle');
+
+Route::prefix('/articleinsert')->group(function () {
+    Route::get('/', [ArticleInsertController::class, "articleinsertview"])->name('articleinsert');
+    Route::post('/store', [ArticleInsertController::class, "store"])->name('articleinsert.store');
+});
+
+Route::prefix('/articleview')->group(function () {
+    Route::get('/', [ArticleListViewController::class, "articleview"])->name('articleview');
+    Route::get('/edit', [ArticleListViewController::class, "edit"])->name('articleview.edit');
+    Route::post('/{art_id}/update', [ArticleListViewController::class, "update"])->name('articleview.update');
+    Route::get('/{art_id}/delete', [ArticleListViewController::class, "delete"])->name('articleview.delete');
+    Route::get('/{art_id}/done', [ArticleListViewController::class, "done"])->name('articleview.done');
+});
+
+
 

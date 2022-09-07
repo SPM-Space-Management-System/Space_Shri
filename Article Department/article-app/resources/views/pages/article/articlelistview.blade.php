@@ -7,20 +7,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1 class="page-title" style="color: rgb(166, 160, 154);font-family:Roboto;font-size:32;font-weight:bold" ><strong>Article List </strong></h1>
-            </div>
-            <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="" role="button">+ ADD Article</a>
-                </div>
-            </div>
+                <h1 class="page-title">Article List</h1>
             </div>
             <div class="bottom">
-            <table class="table table-hover"> 
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">
-                            <h3>Tpoic</h3>
+                            <h3>Topic</h3>
                         </th>
                         <th scope="col">
                             <h3>Author</h3>
@@ -32,101 +26,165 @@
                             <h3>Country</h3>
                         </th>
                         <th scope="col">
-                            <h3>Images</h3>
-                        </th>
-                        <th scope="col">
                             <h3>Description</h3>
                         </th>
                         <th scope="col">
+                            <h3>Image</h3>
+                        </th>
+                        <th scope="col">
                             <h3>Status</h3>
+                        </th>
+                        <th scope="col">
+                            <h3>Done</h3>
                         </th>
                         <th scope="col">
                             <h3>Action</h3>
                         </th>
                     </tr>
                 </thead>
-                
+                <tbody>
+                    @foreach ($arts as $art)
+                        <tr>
+                            <td>
+                                <h5>{{ $art->topic }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $art->author }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $art->date }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $art->country }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $art->description }}</h5>
+                            </td>
+                            <td>
+                                <h5>{{ $art->image }}</h5>
+                            </td>
+                            <td><img src="{{ config('images.upload_path') }}/{{ $art->images->name }}" class="table-iamge">
+                            </td>
+                            <td>
+                                @if ($art->done == 0)
+                                    <span class="badge bg-danger">
+                                        <h6>Inactive</h6>
+                                    </span>
+                                @else
+                                    <span class="badge bg-primary">
+                                        <h6>Active</h6>
+                                    </span>
+                                @endif
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm btn-block"
+                                    href="{{ route('articleview.delete', $art->id) }}" role="button">
+                                    <h6>DELETE</h6>
+                                </a>
+                                @if ($art->done == 0)
+                                    <a class="btn btn-warning btn-sm btn-block"
+                                        href="{{ route('articleview.done', $art->id) }}" role="button">
+                                        <h6>PUBLISH</h6>
+                                    </a>
+                                @else
+                                    <a class="btn btn-warning btn-sm btn-block"
+                                        href="{{ route('articleview.done', $art->id) }}" role="button">
+                                        <h6>DRAFT</h6>
+                                    </a>
+                                @endif
+                                <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                    onclick="articleEditModal({{ $art->id }})">
+                                    <h6>EDIT</h6>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
-            </table>             
-        </div>   
-        </div> 
+            </table>
+        </div>
+        </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="rocketEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="rocketEditLabel" aria-hidden="true">
+    <div class="modal fade" id="articleEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="articleEditLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="rocketEditLabel">Job Details Update</h4>
+                    <h4 class="modal-title" id="articleEditLabel">Article Details Update</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="rocketEditContent">
+                <div class="modal-body" id="articleEditContent">
 
                 </div>
             </div>
         </div>
     </div>
-
-    <center>
-        <div class="col-md-12 text-center">
-            <div class="btn" float:'left'>
-                <a href="" role="button">GENARATE REPORT</a>
-            </div>
-        </center> 
 @endsection
-
-
 
 @push('css')
     <style>
         body {
             background-color: #000;
         }
+
         img {
-            width: 400px;
-            height: 100px;
+            width: 800px;
+            height: 500px;
             display: block;
             margin: auto;
-            padding: auto;
+            1 padding: auto;
         }
-        .container {
-            padding-bottom: 30vh;
-        }
+
         .page-title {
             margin-top: 10px;
-            margin-bottom: 50px;
-            font-size: 50px;
+            margin-bottom: 150px;
+            font-size: 80px;
         }
-        h3{
-            font-size: 20px;
-        }
+
         h5 {
             color: #fff;
         }
+
         span {
             width: 70px;
             height: 35px;
         }
-       
-        .btn a {
-           
-            font-size: 1.5em;
-            font-weight: 400;
-            padding: 5px 5px;
-            border-radius: 5px;
-            color: #000;
-            margin-left:823px;
-            text-decoration: none;
-            background-color: chartreuse;
+
+        a {
+            width: 70px;
+            height: 35px;
         }
-        .table-image {
+
+        .table-iamge {
             width: 150px;
             height: 120px;
         }
         .bottom {
             padding-bottom: 120px;
-            padding-top: 40px;
         }
     </style>
+@endpush
+
+@push('js')
+    <script>
+        function articleEditModal(art_id) {
+            var data = {
+                art_id: art_id,
+            };
+            $.ajax({
+                url: "{{ route('articleview.edit') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'GET',
+                dataType: '',
+                data: data,
+                success: function(response) {
+                    $('#articleEdit').modal('show');
+                    $('#articleEditContent').html(response);
+                }
+            });
+        }
+    </script>
 @endpush

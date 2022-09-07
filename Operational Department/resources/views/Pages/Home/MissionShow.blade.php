@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="space" style="padding-top: 10vh"> </div> 
+<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
+
   <div class="container">
     <div class="card">
       <div class="card-header">
@@ -9,12 +10,12 @@
       </div>
     <div class="card-body">
        <div class="aligns">
-          <div class="mb-1 text-muted text-dark text-primary">{{date('Y-m-d',strtotime($post->created_at))}}</div> 
+          <div class="mb-1 text-muted text-dark text-primary" style="font-size: 16px">{{date('Y-m-d',strtotime($post->created_at))}}</div> 
        </div>
-       <h5 class="card-title text-center">{{ $post->topic}}</h5>
+       <h1 class="card-title text-center">{{ $post->topic}}</h1>
        <p class="card-text">{{ $post->description}}</p>   
-      <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
-      <div class="mb-1 text-muted">Editor : {{ $post->editor_name}} </div> 
+      <div class="mb-1 text-muted" style="font-size: 16px">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
+      <div class="mb-1 text-muted" style="font-size: 16px">Editor : {{ $post->editor_name}} </div> 
       <div class="col-md-12 text-center">
          <a href="{{ route('mhomeu') }}" class="btn btn-success  border-warning">Back</a>
       </div>
@@ -31,9 +32,12 @@
 .html{
   scroll-behavior: smooth;
 }
+p{
+  font-size: 18px;
+}
 
 .card{
-  background-color: rgb(215, 255, 255);
+  background-color: rgb(181, 247, 247);
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;

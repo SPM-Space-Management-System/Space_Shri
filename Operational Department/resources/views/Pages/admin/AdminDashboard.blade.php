@@ -1,16 +1,19 @@
 @extends('layouts.app')
 @section('content')
+<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
-<div class="space" style="padding-top: 10vh">  
+
 <div class="container">
+  <h2 style="text-align: center;color:rgb(189, 126, 9)">Admin Dashboard</h2>
+  <div class="space" style="padding-top: 1vh">  </div>
 <div class="row row-cols-1 row-cols-md-2 g-4">   
     <div class="col">
       <div class="card">
-        <div class="inner"> <img src="../images/job.jpg" height="150" class="card-img-top"  alt="missions images"></div>
+        <div class="inner"> <img src="../images/newsroom.jpg" height="150" class="card-img-top"  alt="missions images"></div>
          <div class="card-body">           
           <h2 class="card-title">News Room</h2>
             <div class="aligns">
-                <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                <div class="mb-1 text-muted"> Manage All News Of The Space Shri</div>        
                 <a href="#" class="btn btn-warning border-success" >Display </a><br>
             </div>
         </div>
@@ -23,7 +26,7 @@
            <div class="card-body">           
             <h2 class="card-title">Fly with Rocket</h2>
               <div class="aligns">
-                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <div class="mb-1 text-muted"> Manage All Rocket Deatils Of The Space Shri </div>        
                   <a href="#" class="btn btn-warning border-success" >Display </a><br>
               </div>
           </div>
@@ -36,7 +39,7 @@
            <div class="card-body">           
             <h2 class="card-title">Operations and Research</h2>
               <div class="aligns">
-                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <div class="mb-1 text-muted"> Manage All Missions Of The Space Shri </div>        
                   <a href="{{ route('mhome') }}" class="btn btn-warning border-success" >Display </a><br>
               </div>
           </div>
@@ -45,11 +48,11 @@
 
       <div class="col">
         <div class="card">
-          <div class="inner"> <img src="../images/newsroom.jpg" height="150" class="card-img-top"  alt="missions images"></div>
+          <div class="inner"> <img src="../images/job.jpg" height="150" class="card-img-top"  alt="missions images"></div>
            <div class="card-body">           
             <h2 class="card-title">Jobs & Career</h2>
               <div class="aligns">
-                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <div class="mb-1 text-muted"> Manage All Jobs & Career Of The Space Shri </div>        
                   <a href="#" class="btn btn-warning border-success" >Display </a><br>
               </div>
           </div>

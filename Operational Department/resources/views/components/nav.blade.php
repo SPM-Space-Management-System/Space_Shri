@@ -3,7 +3,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="func-link" href="#">Home</a>
+            <a class="func-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">News Room</a>
@@ -30,7 +30,7 @@
         </form>
           @else
           <li class="nav-item">
-            <a class="func-link" href="{{ route('login') }}" style="margin-left: 580px;">Login</a>
+            <a class="func-link" href="{{ route('login') }}" style="margin-left: 560px;">Login</a>
           </li>
 
           <li class="nav-item">

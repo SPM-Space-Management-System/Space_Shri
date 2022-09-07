@@ -1,3 +1,4 @@
+<div class="space" style="padding-top: 10vh"></div>
 <footer>
     <div class="waves">
         <div class="wave" id="wave1"></div>

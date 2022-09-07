@@ -30,7 +30,7 @@
         </form>
           @else
           <li class="nav-item">
-            <a class="func-link" href="{{ route('login') }}" style="margin-left: 580px;">Login</a>
+            <a class="func-link" href="{{ route('login') }}" style="margin-left: 560px;">Login</a>
           </li>
 
           <li class="nav-item">

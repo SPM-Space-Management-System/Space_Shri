@@ -9,7 +9,7 @@
     <div class="star"></div>
    
 </div>
-<img src="../thumbnails/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
+<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 {{-- Search option for user --}}
 
 <div class="container">

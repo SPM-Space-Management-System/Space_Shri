@@ -5,6 +5,9 @@
         <img src="logo.png" alt="logo" />
     </div>
     <!--generate successfull message-->
+    @if ($errors->any())
+        
+    @endif
     @if (session('message'))
         <div class="alert show">
             <span class="fas fa-exclamation-circle"></span>
@@ -151,6 +154,8 @@
                         <input title="The title should include the name of the rocket to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="title"
                             placeholder="Enter rocket name here (e.g. 'Saturn V')" required>
+                            <br>
+                            <div class="alert-danger">{{ $errors->first('title') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>
@@ -212,7 +217,6 @@
                         DETAILS</a>
                 </p>
             </div>
-
         </div>
     </form>
 @endsection
@@ -302,7 +306,7 @@
             top: 50%;
             transform: translateY(-50%);
             background: #ffd080;
-            padding: 20px 18px;
+            padding: 32px 18px;
             cursor: pointer;
         }
 

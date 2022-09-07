@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\MissionFormRequest;
 use App\Models\missions;
+use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -18,7 +19,8 @@ class MissonsController extends ParentController
         $imageName = time() . "." . $request->imageadd->getClientOriginalName();
         $request->imageadd->move(public_path('thumbnails'), $imageName);
         
-        // 'user_id'=> auth()->user()->id,
+        $missionObj->user_id=auth()->user()->id;
+        $missionObj->editor_name=auth()->user()->name;
         $missionObj->topic = $request->topic;
         $missionObj->description = $request->description;
         $missionObj->pub_date = $request->dateofadd;

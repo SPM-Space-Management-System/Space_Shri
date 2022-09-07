@@ -49,7 +49,7 @@
             </div>
           <h2 class="card-title">{{ $mission->topic}}</h2>
           <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($mission->updated_at))}} </div> 
-          <div class="mb-1 text-muted">Editor : Admin Chandima  </div>        
+          <div class="mb-1 text-muted">Editor : {{ $mission->editor_name}} </div>        
           <a href="{{ route('operationsShow', $mission->mission_id) }}" class="btn btn-success" >Continue Reading</a><br>
         </div>
       </div>

@@ -15,7 +15,7 @@
        <p class="card-text">{{ $post->description}}</p>   
       <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
       <div class="mb-1 text-muted">Editor : {{ $post->editor_name}} </div> 
-         <a href="/missionshomea" class="btn btn-primary me-md-1 pl-3 border-light">Back</a>
+         <a href="{{ route('mhome') }}" class="btn btn-primary me-md-1 pl-3 border-light">Back</a>
          <div class="space" style="padding-left: 110vh"> 
           <a href="#" class="btn btn-warning me-md-1 pl-3 border-light">Update</a>
           <a href="#" class="btn btn-danger  border-light">Remove</a>

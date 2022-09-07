@@ -41,7 +41,7 @@ class MissonsController extends ParentController
     // 
     public function usershowMissions_function($mission_id){
         $post = missions::findorFail($mission_id);
-        return view('operations/MissionShow', compact('post'));
+        return view('pages/Home/MissionShow', compact('post'));
     }
 
     public function adminshowMissions_function($mission_id){

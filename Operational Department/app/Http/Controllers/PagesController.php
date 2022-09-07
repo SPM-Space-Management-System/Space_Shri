@@ -15,14 +15,14 @@ class PagesController extends ParentController
         }else{
             $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
         }
-    return view('operations/MissionsHome',compact('missionsALL'));
+    return view('pages/Admin/MissionsHome',compact('missionsALL'));
     }
 
 
 
     //admin insert a post
     public function indexmissionsinsert(){
-        return view('operations/MissionsInsert');
+        return view('pages/Admin/MissionsInsert');
     }
 
 

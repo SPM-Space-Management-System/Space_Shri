@@ -16,7 +16,7 @@
       <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
       <div class="mb-1 text-muted">Editor : {{ $post->editor_name}} </div> 
       <div class="col-md-12 text-center">
-         <a href="/missionshomeu" class="btn btn-success  border-warning">Back</a>
+         <a href="{{ route('mhomeu') }}" class="btn btn-success  border-warning">Back</a>
       </div>
     </div>
   </div>

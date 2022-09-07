@@ -9,13 +9,15 @@
         <div class="loader"></div>
     </section>
     <div class="loader"></div>
-    <div class="search-center">
-        <div class="searchBox">
-            <div class="shadow"></div>
-            <input type="text" placeholder="Search You Want...">
-            <ion-icon class="search-icon" name="search-outline"></ion-icon>
+    <form action="" class="col-9">
+        <div class="form-group">
+            <input type="search" name="search" class="form-control" placeholder="Search..." />
         </div>
-    </div>
+        <button class="btn btn-primary">Search</button>
+        <a href="{{ route('rocket')}}">
+            <button class="btn btn-primary" type="button">Reset</button>
+        </a>
+    </form>
     <div class="scan-body">
         <div class="scan">
             <div class="rocket-fingerprint">

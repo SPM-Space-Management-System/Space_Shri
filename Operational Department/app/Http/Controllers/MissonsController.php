@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\MissionFormRequest;
 use App\Models\missions;
+use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class MissonsController extends Controller
+class MissonsController extends ParentController
 {
     //Store new missions Details.....
     public function storemissions(MissionFormRequest $request){
@@ -18,7 +19,8 @@ class MissonsController extends Controller
         $imageName = time() . "." . $request->imageadd->getClientOriginalName();
         $request->imageadd->move(public_path('thumbnails'), $imageName);
         
-        // 'user_id'=> auth()->user()->id,
+        $missionObj->user_id=auth()->user()->id;
+        $missionObj->editor_name=auth()->user()->name;
         $missionObj->topic = $request->topic;
         $missionObj->description = $request->description;
         $missionObj->pub_date = $request->dateofadd;
@@ -37,11 +39,15 @@ class MissonsController extends Controller
 
 
     // 
-    public function showMissions_function($mission_id){
+    public function usershowMissions_function($mission_id){
         $post = missions::findorFail($mission_id);
-        return view('operations/MissionShow', compact('post'));
+        return view('pages/Home/MissionShow', compact('post'));
     }
 
+    public function adminshowMissions_function($mission_id){
+      $post = missions::findorFail($mission_id);
+      return view('pages/admin/AdminMissionShow', compact('post'));
+  }
 
 
 }

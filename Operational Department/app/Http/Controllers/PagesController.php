@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\missions;
-class PagesController extends Controller
+use Illuminate\Support\Facades\Auth;
+class PagesController extends ParentController
 {
     //admin read and search
     public function indexmissionshome(Request $request){
@@ -14,14 +15,14 @@ class PagesController extends Controller
         }else{
             $missionsALL = missions::orderBy('mission_id', 'DESC')->get();
         }
-    return view('operations/MissionsHome',compact('missionsALL'));
+    return view('pages/Admin/MissionsHome',compact('missionsALL'));
     }
 
 
 
     //admin insert a post
     public function indexmissionsinsert(){
-        return view('operations/MissionsInsert');
+        return view('pages/Admin/MissionsInsert');
     }
 
 
@@ -40,14 +41,28 @@ class PagesController extends Controller
 
 
 
-    public function indexadmindashboard(){
-        return view('pages/admin/AdminDashboard');
-    }
+    // public function indexadmindashboard(){
+    //     return view('pages/admin/AdminDashboard');
+    // }
 
 
 
-    public function indexuserdashboard(){
-        return view('pages/home/UserDashboard');
+    
+    // public function indexuserdashboard(){
+    //     return view('pages/home/UserDashboard');
+    // }
+
+
+
+
+    public function indexdashboard(){
+        $role = Auth::user()->role;
+
+        if($role == '1'){
+            return view('pages/admin/AdminDashboard');
+        }else{
+            return view('pages/home/UserDashboard');
+        }
     }
 
  

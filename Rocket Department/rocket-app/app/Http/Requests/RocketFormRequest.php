@@ -24,6 +24,7 @@ class RocketFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
+
             'title' => [
                 'required',
                 'string',

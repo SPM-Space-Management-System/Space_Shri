@@ -17,6 +17,7 @@ class RocketInsertController extends Controller
     public function store(RocketFormRequest $request) {
 
         try {
+            $data = $request->validated();
             RocketInsertFacade::store($request->all());
             return redirect()->back()->with('message','Details Added Successfully!');
         }

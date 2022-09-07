@@ -9,13 +9,14 @@
         <div class="loader"></div>
     </section>
     <div class="loader"></div>
-    <form action="" class="col-9">
+    <form action="" class="col-5">
         <div class="form-group">
-            <input type="search" name="search" class="form-control" placeholder="Search..." />
+            <input type="search" name="search" class="form-control form-control-lg" placeholder="Search..." />
         </div>
-        <button class="btn btn-primary">Search</button>
+        <br>
+        <button class="btn btn-primary btn-lg">Search</button>
         <a href="{{ route('rocket')}}">
-            <button class="btn btn-primary" type="button">Reset</button>
+            <button class="btn btn-primary btn-lg" type="button">Reset</button>
         </a>
     </form>
     <div class="scan-body">
@@ -402,6 +403,21 @@
             50% {
                 opacity: 1;
             }
+        }
+
+        form {
+            padding-top: 10vh;
+            margin-left: 60vh;
+            padding-bottom: 10vh;
+        }
+
+        .form-group {
+            display: flex;
+            height: 50px;
+            background: #000;
+        }
+        .form-group input {
+            background-color: #212121;
         }
     </style>
 @endpush

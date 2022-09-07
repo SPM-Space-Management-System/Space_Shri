@@ -24,8 +24,8 @@ Route::get('/missionshomea',[PagesController::class,'indexmissionshome'])->name(
 //insert new post for admin
 Route::get('/missionsinsert', [PagesController::class, 'indexmissionsinsert'])->name('minsert');
 Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('postStore');
-//view more for admin
-Route::get('/missionShow/{mission_id}', [MissonsController::class, 'showMissions_function'])->name('operationsShow');    
+//admin mission show more
+Route::get('/missionShowa/{mission_id}', [MissonsController::class, 'adminshowMissions_function'])->name('adminoperationsShow');    
 //admin dashboard
 Route::get('/admindashboard', [PagesController::class, 'indexadmindashboard'])->name('admindashboard'); 
    
@@ -36,6 +36,9 @@ Route::get('/admindashboard', [PagesController::class, 'indexadmindashboard'])->
 Route::get('/missionshomeu',[PagesController::class,'indexmissionhomeuser'])->name('mhomeu');
 //user dashboard
 Route::get('/userdashboard', [PagesController::class, 'indexuserdashboard'])->name('userdashboard'); 
+//user mission show more
+Route::get('/missionShowu/{mission_id}', [MissonsController::class, 'usershowMissions_function'])->name('useroperationsShow'); 
+
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),

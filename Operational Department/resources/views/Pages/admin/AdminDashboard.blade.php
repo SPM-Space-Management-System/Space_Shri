@@ -1,30 +1,63 @@
 @extends('layouts.app')
 @section('content')
-<h1>admin dashboard </h1>
-<div class="space" style="padding-left: 3vh">  
-    <div class="space" style="padding-top: 10vh"></div>
-<a href="{{ route('mhome') }}" class="btn btn-primary me-md-5 pl-5" type="submit">GO Admin</a> </div>  
- 
 
-
-
+<div class="space" style="padding-top: 10vh">  
 <div class="container">
-<div class="row row-cols-1 row-cols-md-2 g-4"> 
-    
+<div class="row row-cols-1 row-cols-md-2 g-4">   
     <div class="col">
       <div class="card">
         <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
-        <div class="card-body">           
-          <h2 class="card-title">topic</h2>
-          <div class="mb-1 text-muted">Editor : Admin Chandima  </div>        
-          <a href="#" class="btn btn-success" >Continue Reading</a><br>
+         <div class="card-body">           
+          <h2 class="card-title">News Room</h2>
+            <div class="aligns">
+                <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                <a href="#" class="btn btn-warning border-success" >Display </a><br>
+            </div>
         </div>
       </div>
     </div> 
-   
+
+    <div class="col">
+        <div class="card">
+          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+           <div class="card-body">           
+            <h2 class="card-title">Fly with Rocket</h2>
+              <div class="aligns">
+                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <a href="#" class="btn btn-warning border-success" >Display </a><br>
+              </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="col">
+        <div class="card">
+          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+           <div class="card-body">           
+            <h2 class="card-title">Operations and Research</h2>
+              <div class="aligns">
+                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <a href="{{ route('mhome') }}" class="btn btn-warning border-success" >Display </a><br>
+              </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="col">
+        <div class="card">
+          <div class="inner"> <img src="" height="150" class="card-img-top"  alt="missions images"></div>
+           <div class="card-body">           
+            <h2 class="card-title">Jobs & Career</h2>
+              <div class="aligns">
+                  <div class="mb-1 text-muted"> Manage All Missions Regarding Operations and Research </div>        
+                  <a href="#" class="btn btn-warning border-success" >Display </a><br>
+              </div>
+          </div>
+        </div>
+      </div> 
   </div>
 </div>
-<div class="space" style="padding-top: 10vh"></div>
+<div class="space" style="padding-top: 20vh"></div>
 @endsection
 
 
@@ -32,7 +65,7 @@
 @push('css')
 <style>
      .card{
-    background-color: rgb(195, 250, 250);
+    background-color: rgb(247, 210, 176);
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -51,11 +84,9 @@
     .inner:hover img{
         transform: scale(1.5);
     }
-    body{
-        background-color: black;
-    }
+    
     .aligns{
-      text-align: right;
+      text-align: center;
     }
     h2{
         text-align: center;
@@ -66,4 +97,8 @@
     p{
         margin-top: 10%;
     }
-    
+    body{
+        background-color: rgb(0, 0, 0);
+    }
+</style>
+@endpush

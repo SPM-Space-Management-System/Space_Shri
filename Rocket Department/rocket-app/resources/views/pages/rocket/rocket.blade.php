@@ -9,14 +9,16 @@
         <div class="loader"></div>
     </section>
     <div class="loader"></div>
-    <form action="" class="col-9">
+    <form>
         <div class="form-group">
-            <input type="search" name="search" class="form-control" placeholder="Search..." />
+            <input type="search" name="search" class="form-control form-control-lg" placeholder="Search..." />
         </div>
-        <button class="btn btn-primary">Search</button>
-        <a href="{{ route('rocket')}}">
-            <button class="btn btn-primary" type="button">Reset</button>
-        </a>
+        <div class="btn-group">
+            <p><button style="margin-right: 10px;" class="btn btn-primary btn-lg">Search</button>
+            <a href="{{ route('rocket') }}">
+                <button class="btn btn-primary btn-lg" type="button">Reset</button>
+            </a></p>
+        </div>
     </form>
     <div class="scan-body">
         <div class="scan">
@@ -396,12 +398,37 @@
         }
 
         @keyframes animate_text {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0;
             }
+
             50% {
                 opacity: 1;
             }
+        }
+
+        form {
+            display: flex;
+            padding-top: 20vh;
+            margin-left: 60vh;
+            padding-bottom: 10vh;
+        }
+
+        .form-group {
+            display: flex;
+            height: 50px;
+            background: #000;
+        }
+
+        .form-group input {
+            width: 70vh;
+            background-color: #212121;
+        }
+        
+        .btn-group {
+            margin-left: 40px;
         }
     </style>
 @endpush

@@ -3,7 +3,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="func-link" href="#">Home</a>
+            <a class="func-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">News Room</a>

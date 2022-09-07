@@ -209,12 +209,10 @@
 
 
 
-    </style>
+ </style>
 @endpush
 
 <style>
-
-
 .night{
   position: absolute;
   width: 50%;

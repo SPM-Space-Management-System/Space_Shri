@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     
+<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
 <div class="container mt-3">
     @if($errors->any())    
@@ -37,7 +38,7 @@
         <div class="mb-3 mt-3" >
             <label for="Cost Of The Mission" class="text-white">Cost Of The Mission :</label>
             <div class="alert-danger text-danger">{{$errors->first('missioncost')}}</div>
-            <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="Enter Cost mission or research " name="missioncost">
+            <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="00000000.00 " name="missioncost">
         </div>
         <div class="space" style="padding-bottom: 10vh">
         <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>

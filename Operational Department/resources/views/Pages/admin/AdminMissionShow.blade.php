@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
 <div class="space" style="padding-top: 10vh"> </div> 
   <div class="container">
@@ -8,13 +9,14 @@
         <div class="inner"> <img src="{{ asset('thumbnails/' . $post->mission_image) }}" height="400" class="card-img-top"  alt="missions images"></div>
       </div>
     <div class="card-body">
-       <div class="aligns">
-          <div class="mb-1 text-muted text-dark text-primary">{{date('Y-m-d',strtotime($post->created_at))}}</div> 
-       </div>
-       <h5 class="card-title text-center">{{ $post->topic}}</h5>
-       <p class="card-text">{{ $post->description}}</p>   
-      <div class="mb-1 text-muted">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
-      <div class="mb-1 text-muted">Editor : {{ $post->editor_name}} </div> 
+      <div class="aligns">
+        <div class="mb-1 text-muted text-dark text-primary" style="font-size: 16px">{{date('Y-m-d',strtotime($post->created_at))}}</div> 
+     </div>
+     <h1 class="card-title text-center">{{ $post->topic}}</h1>
+     <p class="card-text">{{ $post->description}}</p>   
+    <div class="mb-1 text-muted" style="font-size: 16px">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
+    <div class="mb-1 text-muted" style="font-size: 16px">Editor : {{ $post->editor_name}} </div> 
+   
          <a href="{{ route('mhome') }}" class="btn btn-primary me-md-1 pl-3 border-light">Back</a>
          <div class="space" style="padding-left: 110vh"> 
           <a href="#" class="btn btn-warning me-md-1 pl-3 border-light">Update</a>
@@ -23,7 +25,7 @@
     </div>
   </div>
 </div>
-<div class="space" style="padding-top: 10vh"></div>
+<div class="space" style="padding-bottom: 15vh"></div>
 
 @endsection
 {{-- css  --}}
@@ -33,7 +35,9 @@
 .html{
   scroll-behavior: smooth;
 }
-
+p{
+  font-size: 18px;
+}
 .card{
   background-color: rgb(215, 255, 255);
   padding-top: 20px;

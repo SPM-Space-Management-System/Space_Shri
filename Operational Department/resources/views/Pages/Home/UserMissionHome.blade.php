@@ -49,7 +49,7 @@
     @endforeach
   </div>
 </div> 
-  <div class="space" style="padding-bottom: 10vh"></div>
+  <div class="space" style="padding-bottom: 15vh"></div>
 @endsection
 
 
@@ -208,14 +208,15 @@
 } */
 
 .night{
-  position: absolute;/* position: relative; */
+  position: absolute;
   width: 50%;
-  height: 100%;
+  height: 40%;
   transform: rotateZ(40deg);
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-left: 40px;
+  margin-left: 400px;
+  margin-top: 200px;
 }
 
 .star{

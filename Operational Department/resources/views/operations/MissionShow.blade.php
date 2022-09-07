@@ -10,7 +10,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ $post->topic}}</h5>
       <p class="card-text">{{ $post->description}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="#" class="btn btn-primary">Go Home</a>
     </div>
     <div class="card-footer text-muted">
         Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} 

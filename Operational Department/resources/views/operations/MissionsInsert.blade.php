@@ -40,8 +40,8 @@
             <input type="text" title="Please Enter The Mission Cost" class="form-control"  placeholder="Enter Cost mission or research " name="missioncost">
         </div>
         <div class="space" style="padding-bottom: 10vh">
-        <button type="submit" a href="{{ url()->previous() }}" class="btn btn-info me-md-2" value="back">Back</button>
-        <button type="reset" class="btn btn-warning me-md-2" value="CLEAR">Clear</button>
+        <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
+        <button type="reset" class="btn btn-warning me-md-3" value="CLEAR">Clear</button>
         <button type="submit" class="btn btn-primary" value="submit">Save</button>
         
         

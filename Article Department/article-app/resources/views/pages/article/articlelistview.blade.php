@@ -121,6 +121,11 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="col-md-12 text-center">
+                <div class="btn-group">
+                    <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block" style="width:6cm; height:1% "
+                        href="{{ route('articlehome') }}" role="button">User View</a>
+                </div>
         </div>
         </div>
     </div>

@@ -47,7 +47,7 @@
     <div class="col-md-8 mb-4">
         <label for="description-name" class="col-form-label">Description:</label>
         <input type="text" class="form-control form-control-lg" name="description" value="{{ $art->description }}"
-            required>
+        rows="4" cols="50" required>
         <br>
     </div>
 </div>

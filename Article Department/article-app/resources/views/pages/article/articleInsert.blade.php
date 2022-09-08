@@ -208,8 +208,7 @@
     <div class="col-md-12 text-center">
         <div class="btn-group">
             <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block"
-                href="{{ route('articleview') }}" role="button">VIEW
-                DETAILS</a>
+                href="{{ route('articleview') }}" role="button">VIEW DETAILS</a>
 
         </div>
 

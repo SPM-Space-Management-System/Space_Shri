@@ -15,7 +15,7 @@ use App\Http\Controllers\ArticleListViewController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [ArticleHomeController::class, "articleindex"])->name('articlehome');
+Route::get('/articlehome', [ArticleHomeController::class, "articleindex"])->name('articlehome');
 
 Route::prefix('/articleinsert')->group(function () {
     Route::get('/', [ArticleInsertController::class, "articleinsertview"])->name('articleinsert');

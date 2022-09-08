@@ -5,6 +5,20 @@
         <img src="logo.png" alt="logo" />
     </div>
 
+    <!--validation part-->
+    @if ($errors->any())
+        
+    @endif
+    <!--generate successfull message-->
+    @if (session('message'))
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+            </span>
+        </div>
+    @endif
+
     <div class="article-image">
         <svg xmlns="http://www.w3.org/2000/svg" width="492.45944" height="596.97748" viewBox="0 0 492.45944 596.97748"
             xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -122,28 +136,32 @@
                         <label for="exampleFormControlInput1" class="form-label">Topic</label>
                         <input title="The topic of the article to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="topic"
-                            placeholder="Enter Article Title..." required>
+                            placeholder="Enter Article Title...">
+                            <br>
+                            <div class="text-danger">{{ $errors->first('topic') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Author</label>
                         <input title="The name of author of the article to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="author"
-                            placeholder="Enter Author's name..." required>
-                        </select>
+                            placeholder="Enter Author's name..." >
+                            <br>
+                            <div class="text-danger">{{ $errors->first('author') }}</div>
+                    
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Date</label>
                         <input title="The date of the article was written" class="form-control form-control-lg"
-                            type="date" id="exampleFormControlInput1" name="date" placeholder="xx/xx/xxxx"
-                            required>
+                            type="date" id="exampleFormControlInput1" name="date" >
+                            <br>
+                            <div class="text-danger">{{ $errors->first('date') }}</div>
                     </div>
 
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Country</label>
                         <select title="Select the country of manufacture of the respective rocket from the drop-down list."
-                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country"
-                            required>
-                            <option selected>Open this country select menu</option>
+                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country">
+                            <option value="">Open this country select menu</option>
                             <option value="United States">United States</option>
                             <option value="France, ESA">France, ESA</option>
                             <option value="Russia">Russia</option>
@@ -151,27 +169,34 @@
                             <option value="India">India</option>
                             <option value="Sri Lanka">Sri Lanka</option>
                         </select>
+                        <br>
+                        <div class="text-danger">{{ $errors->first('country') }}</div>
                     </div>
 
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Description</label>
                         <textarea class="form-control form-control-lg" id="exampleFormControlInput1" name="description"
-                        rows="5" cols="33" placeholder="Type Article description..." required></textarea>
+                        rows="5" cols="33" placeholder="Type Article description..." ></textarea>
+                        <br>
+                        <div class="text-danger">{{ $errors->first('description') }}</div>
                     </div>
 
                     <div class="mb-5">
                         <label for="formFileLg" class="form-label">Image</label>
                         <input title="Insert a picture of the article related picture."
                             class="form-control form-control-lg" type="file" name="images"
-                            accept="image/jpg, image/jpeg, image/png" required>
+                            accept="image/jpg, image/jpeg, image/png" >
+                            <br>
+                            <div class="text-danger">{{ $errors->first('images') }}</div>
                     </div>
                 </div>
                 <div class="col-md-5 text-center">
                     <div class="btn-group">
                         <button type="submit" style="margin:10px;" class="btn btn-primary btn-lg active" role="button"
                             aria-pressed="true">Submit</button>
+                            <a href="{{ route('articleinsert') }}">
                         <button type="submit" style="margin:10px;" class="btn btn-primary btn-lg active" role="button"
-                            aria-pressed="true">Cancel</button>
+                            aria-pressed="true">Cancel</button></a>
                     </div>
 
                 </div>
@@ -255,7 +280,7 @@
 
         .container {
             width: 640px;
-            height: 1060px;
+            height: 1100px;
             margin: 0% 0% 3% 5%;
             border-radius: 0;
             box-shadow: 0 0 17px rgb(120, 83, 200);
@@ -272,5 +297,68 @@
             font-size: 45px;
             margin-bottom: 20px;
         }
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 70px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+
+        @keyframes show_slide {
+            0% {
+                transform: translateX(100%);
+            }
+
+            40% {
+                transform: translateX(-10%);
+            }
+
+            80% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 32px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ffc766;
+        }
+    
     </style>
 @endpush

@@ -154,15 +154,15 @@
                         <label for="exampleFormControlInput1" class="form-label">Title</label>
                         <input title="The title should include the name of the rocket to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="title"
-                            placeholder="Enter rocket name here (e.g. 'Saturn V')" required>
-                        <div class="alert-danger">{{ $errors->first('title') }}</div>
+                            placeholder="Enter rocket name here (e.g. 'Saturn V')">
+                            <br>
+                        <div class="text-danger">{{ $errors->first('title') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Country of Origin</label>
                         <select title="Select the country of manufacture of the respective rocket from the drop-down list."
-                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country"
-                            required>
-                            <option selected>Open this country of origin select menu</option>
+                            class="form-select form-select-lg mb-3" name="country">
+                            <option value="">Open this country of origin select menu</option>
                             <option value="United States">United States</option>
                             <option value="France, ESA">France, ESA</option>
                             <option value="Russia">Russia</option>
@@ -170,47 +170,50 @@
                             <option value="India">India</option>
                             <option value="Sri Lanka">Sri Lanka</option>
                         </select>
-                       
-                        <div class="alert-danger">{{ $errors->first('country') }}</div>
+                        <br>
+                        <div class="text-danger">{{ $errors->first('country') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Height</label>
                         <input title="The height of the rocket should be entered in 'meters' (M)."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
-                            placeholder="Enter rocket height here (e.g. 70)" required>
-                        <div class="alert-danger">{{ $errors->first('height') }}</div>
+                            placeholder="Enter rocket height here (e.g. 70)">
+                            <br>
+                        <div class="text-danger">{{ $errors->first('height') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Stages</label>
                         <input title="The number of stages of the rocket must be entered."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
-                            placeholder="Enter no of rocket stages here (e.g. 2)" required>
-                        <div class="alert-danger">{{ $errors->first('stages') }}</div>
+                            placeholder="Enter no of rocket stages here (e.g. 2)">
+                            <br>
+                        <div class="text-danger">{{ $errors->first('stages') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">First Flight</label>
                         <input title="The date of the first flight of the rocket should be entered."
                             class="form-control form-control-lg" type="date" id="exampleFormControlInput1"
-                            name="date" required>
-                        <div class="alert-danger">{{ $errors->first('date') }}</div>
+                            name="date">
+                            <br>
+                        <div class="text-danger">{{ $errors->first('date') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Status</label>
                         <select title="Select the status of the respective rocket from the drop-down list."
-                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="status"
-                            required>
-                            <option selected>Open this status select menu</option>
+                            class="form-select form-select-lg mb-3" name="status">
+                            <option value="">Open this status select menu</option>
                             <option value="Retired">Retired</option>
                             <option value="Active">Active</option>
                         </select>
-                        <div class="alert-danger">{{ $errors->first('status') }}</div>
+                        <br>
+                        <div class="text-danger">{{ $errors->first('status') }}</div>
                     </div>
                     <div class="mb-5">
                         <label for="formFileLg" class="form-label">Image</label>
                         <input title="Insert a picture of the rocket." class="form-control form-control-lg"
-                            type="file" name="images" accept="image/jpg, image/jpeg, image/png" required>
-                        
-                        <div class="alert-danger">{{ $errors->first('images') }}</div>
+                            type="file" name="images" accept="image/jpg, image/jpeg, image/png">
+                            <br>
+                        <div class="text-danger">{{ $errors->first('images') }}</div>
                     </div>
                 </div>
             </section>

@@ -28,29 +28,32 @@ class RocketFormRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
             ],
             'country' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
             ],
             'height' => [
                 'required',
-                'numeric',
+                'numeric'
             ],
             'stages' => [
                 'required',
-                'numeric',
+                'numeric'
             ],
             'date' => [
                 'required',
-                'date',
+                'date'
             ],
             'status' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
+            ],
+            'images' => [
+                'required'
             ],
         ];
 
@@ -60,12 +63,13 @@ class RocketFormRequest extends FormRequest
     public function messages() {
 
         return [
-            'title.required' => 'Please enter Rocket Name',
-            'country.required' => 'Please enter Country of Origin',
-            'height.required' => 'Please enter Rocket Height',
-            'stages.required' => 'Please enter No of Rocket Stages',
-            'date.required' => 'Please enter First Flight Date',
-            'status.required' => 'Please enter Rocket Status',
+            'title.required' => 'Please enter rocket name',
+            'country.required' => 'Please enter country of origin',
+            'height.required' => 'Please enter rocket height',
+            'stages.required' => 'Please enter no of rocket stages',
+            'date.required' => 'Please enter first flight date',
+            'status.required' => 'Please enter rocket status',
+            'images.required' => 'Please select image',
         ];
     }
 

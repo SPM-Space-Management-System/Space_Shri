@@ -28,29 +28,29 @@ class RocketFormRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
             ],
             'country' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
             ],
             'height' => [
                 'required',
-                'numeric',
+                'numeric'
             ],
             'stages' => [
                 'required',
-                'numeric',
+                'numeric'
             ],
             'date' => [
                 'required',
-                'date',
+                'date'
             ],
             'status' => [
                 'required',
                 'string',
-                'max:191',
+                'max:191'
             ],
         ];
 

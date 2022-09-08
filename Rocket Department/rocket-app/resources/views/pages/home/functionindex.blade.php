@@ -24,6 +24,16 @@
         <a href="{{ route('projectinsert') }}"><span>Add Project Details</span></a>
         <a href="{{ route('report') }}"><span>View Report Details</span></a>
     </div>
+    <div class="pulse">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <div class="rock">
+            <img src="ro.png">
+        </div>
+    </div>
 @endsection
 
 @push('css')
@@ -179,7 +189,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 20vh;
-            padding-bottom: 40vh;
+            padding-bottom: 15vh;
         }
 
         .button-func a {
@@ -271,5 +281,85 @@
             height: 50%;
             background: rgba(255, 255, 255, 0.1);
         }
+
+        .pulse {
+            position: relative;
+            margin-left: 130vh;
+            width: 250px;
+            height: 250px;
+            background: #ff5722;
+            border-radius: 50%;
+            margin-bottom: 50vh;
+        }
+
+        .pulse span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #ff5722;
+            display: inline-block;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            animation: circle 2.5s linear infinite;
+            animation-delay: calc(-0.5s * var(--i));
+        }
+
+        @keyframes circle {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            90% {
+                transform: scale(3);
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .rock {
+            position: relative;
+            top: 50px;
+            text-align: center;
+            animation: rock 0.1s ease infinite; 
+        } 
+
+        @keyframes rock {
+            0%,100% {
+                transform: translateY(-1px);
+            } 
+            50% {
+                transform: translateY(1px); 
+            }
+        }
+
+        .rock img {
+            width: 100px;
+            height: 150px;
+        }
+
+        .rock::before {
+            content: '';
+            position: absolute;
+            bottom: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 250px;
+            background: linear-gradient(#ffc107,transparent);
+        }
+        .rock::after {
+            content: '';
+            position: absolute;
+            bottom: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 250px;
+            background: linear-gradient(#ffc107,transparent);
+            filter: blur(20px);
+        }  
     </style>
 @endpush

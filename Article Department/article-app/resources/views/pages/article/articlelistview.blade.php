@@ -129,16 +129,16 @@
         }
 
         img {
-            width: 800px;
-            height: 500px;
+            width: 500px;
+            height: 400px;
             display: block;
             margin: auto;
-            1 padding: auto;
+            padding: auto;
         }
 
         .page-title {
-            margin-top: 10px;
-            margin-bottom: 150px;
+            margin-top: 0vh;
+            margin-bottom: 300px;
             font-size: 80px;
         }
 
@@ -161,8 +161,10 @@
             height: 120px;
         }
         .bottom {
+            padding-top: 0%;
             padding-bottom: 120px;
         }
+
     </style>
 @endpush
 

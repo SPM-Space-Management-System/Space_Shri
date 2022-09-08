@@ -154,10 +154,9 @@
                     </div>
 
                     <div class="mb-5">
-                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                        <input title="The description of the article to be applied." type="text"
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="description"
-                            placeholder="Type Article description..." required>
+                        <label for="exampleFormControlInput1" class="form-label">Description</label>
+                        <textarea class="form-control form-control-lg" id="exampleFormControlInput1" name="description"
+                        rows="5" cols="33" placeholder="Type Article description..." required></textarea>
                     </div>
 
                     <div class="mb-5">
@@ -169,9 +168,9 @@
                 </div>
                 <div class="col-md-5 text-center">
                     <div class="btn-group">
-                        <button type="submit" style="margin:2px;" class="btn btn-primary btn-lg active" role="button"
+                        <button type="submit" style="margin:10px;" class="btn btn-primary btn-lg active" role="button"
                             aria-pressed="true">Submit</button>
-                        <button type="submit" style="margin:2px;" class="btn btn-primary btn-lg active" role="button"
+                        <button type="submit" style="margin:10px;" class="btn btn-primary btn-lg active" role="button"
                             aria-pressed="true">Cancel</button>
                     </div>
 
@@ -208,8 +207,8 @@
         }
 
         img {
-            width: 800px;
-            height: 500px;
+            width: 500px;
+            height: 400px;
             display: block;
             margin: auto;
             padding: auto;
@@ -235,7 +234,7 @@
         }
 
         form {
-            padding-top: 10vh;
+            padding-top: 0vh;
             padding-bottom: 10vh;
         }
 
@@ -256,7 +255,7 @@
 
         .container {
             width: 640px;
-            height: 930px;
+            height: 1060px;
             margin: 0% 0% 3% 5%;
             border-radius: 0;
             box-shadow: 0 0 17px rgb(120, 83, 200);

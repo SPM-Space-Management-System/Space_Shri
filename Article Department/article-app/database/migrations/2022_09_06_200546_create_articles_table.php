@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('author')->nullable();
             $table->date('date')->nullable();
             $table->string('country')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->bigInteger('image_id')->nullable();
             $table->integer('done')->default(0);
             $table->timestamps();

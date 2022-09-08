@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\job;
 use App\Http\Requests\JobRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
+use PhpParser\Node\Stmt\TryCatch;
 
 class JobInsertController extends Controller
 {
@@ -14,7 +15,7 @@ class JobInsertController extends Controller
     return view('home');
 }
 
-public function indexjobupload(JobRequest $request)
+public function indexjobupload(Request $request)
 {
 
     $jobObj = new job;
@@ -37,17 +38,9 @@ public function indexjobupload(JobRequest $request)
     $jobObj->Req_Doc = $request->Req_Doc;
     $jobObj->done = $request->done;
      $jobObj->save();
+     return view('JobUpload');
  //dd($jobObj);
-try{
-    $data=$request->validate();
-    job::create($data);
 
-    return view('home')->with('message','Student Added Successfully');
-}
-catch(\Exception $ex){
-
-    return view('jobUpload')->with('message','Somthing went Wrong'.$ex);
-}
 
 
 

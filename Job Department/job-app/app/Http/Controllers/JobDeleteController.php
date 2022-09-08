@@ -2,24 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\Models\job;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 class JobDeleteController extends Controller
 {
 
-public function delete(Request $jobObj)
-{
-    $jobObj = new job;
-// DB::table('jobs')->where('id',$jobObj)->delete();
-
-return ;
-
-
-
-}
-
+    public function destroy(Request $id)
+    {
+        job::destroy($id);
+        return view('joblistview')->with('flash_message', 'job deleted!');
+    }
 
 }
 

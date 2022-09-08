@@ -64,29 +64,8 @@
                         </tr>
                     </thead>
                     @foreach ($jobs as $job)
-                        <!-- Delete Modal -->
-                        <!-- Modal -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Delete Modal -->
+
+
                         <tr>
                             <td>
                                 <h5>{{ $job['id'] }} </h5>
@@ -133,15 +112,22 @@
                             <td>
                                 <div class=btndelete>
 
-                                    <a href="/delete/{{ $job->id }}"class="btn btn-outline-danger" role="button">
-                                        <h6>DELETE</h6>
-                                    </a>
+
+                                    <form method="POST" action="{{ url('/joblistview' . '/' . $job->id) }}" accept-charset="UTF-8" style="display:inline">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Job" onclick="return confirm("Confirm delete?" )">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i> DELETE</button>
+                                    </form>
+
                                 </div>
                                 <div class=btnedit>
-                                    <a class="btn btn-outline-success" role="button">
+                                    {{-- <a class="btn btn-outline-success" role="button">
 
                                         <h6>Edit</h6>
-                                    </a>
+                                    </a> --}}
+                                    <a href="{{ url('/joblisiview'  . $job->id . '/edit') }}" title="Edit job"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true">
+                                        </i> Edit</button></a>
                                 </div>
                             </td>
                         </tr>

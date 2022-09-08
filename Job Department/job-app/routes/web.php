@@ -25,4 +25,4 @@ Route::get('/addjob', [JobInsertController::class, 'indexjobupload'])->name('job
 //show job list
 Route::get('/joblist', [JoblistviewController::class, 'show']);
 
-Route::get('delete/{job}',[JobDeleteController::class,'delete']);
+Route::get('/delete',[JobDeleteController::class,'destroy']);

@@ -61,8 +61,8 @@
         }
 
         img {
-            width: 800px;
-            height: 500px;
+            width: 500px;
+            height: 400px;
             display: block;
             margin: auto;
             padding: auto;

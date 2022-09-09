@@ -154,7 +154,7 @@
         }
 
         img {
-            width: 500px;
+            width: 400px;
             height: 400px;
             display: block;
             margin: auto;

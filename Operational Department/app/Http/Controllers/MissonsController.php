@@ -52,21 +52,20 @@ class MissonsController extends ParentController
 
         //  Edit Missions Deails ...
 
-public function storeeditmissions(Request $request, $mission_id){
+    public function storeeditmissions(Request $request, $mission_id){
        $missionObj  = missions::find($mission_id);
 
+       if( $request->imageadd == true){
         $imageName = time() . "." . $request->imageadd->getClientOriginalName();
         $request->imageadd->move(public_path('thumbnails'), $imageName);
-        
-       // $missionObj->user_id=auth()->user()->id;
-      //  $missionObj->editor_name=auth()->user()->name;
-        $missionObj->topic = $request->topic;
-        $missionObj->description = $request->description;
-     //   $missionObj->pub_date = $request->dateofadd;
         $missionObj->mission_image = $imageName;
+       }
+
+        $missionObj->topic = $request->topic;
+        $missionObj->description = $request->description; 
         $missionObj->costOfMission = $request->missioncost;
         $missionObj->save();
-        return redirect()->back();
+        return redirect()->back()->with('message','Post Updated Successfully...');
 
     }
 

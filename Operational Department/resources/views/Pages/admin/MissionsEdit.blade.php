@@ -9,10 +9,10 @@
 
     <h2>Edit Post</h2>
     
-    {{-- @if(session('message'))
-    <div class="p-3 mb-2 bg-success text-white rounded">{{ session('message') }}</div> --}}
+    @if(session('message'))
+    <div class="p-3 mb-2 bg-warning text-red rounded">{{ session('message') }}</div>
     
-    {{-- @endif --}}
+    @endif
     <form action="{{ route('editPostStore',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="mb-3 mt-3" >
@@ -32,7 +32,7 @@
               </div>
           <br>
             {{-- <div class="alert-danger text-danger">{{$errors->first('imageadd')}}</div> --}}
-            <input type="file" class="form-control" name="imageadd">
+            <input type="file"  class="form-control" name="imageadd">
         </div>
         <div class="mb-3 mt-3" >
             <label for="Cost Of The Mission" class="text-white">Cost Of The Mission :</label>
@@ -57,11 +57,11 @@
         <div class="space" style="padding-bottom: 10vh">
         <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
         <button type="submit" class="btn btn-warning me-md-3" value="submit">Update</button>
-        <button type="btn" class="btn btn-primary" value="">Delete</button>
-        
-        
+        <button type="btn" class="btn btn-primary" value="">Delete</button>  
         </div>
     </form>
+
+    
 </div>
 @endsection
 

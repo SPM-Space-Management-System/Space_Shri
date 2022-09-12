@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\MissionFormRequest;
+use App\Http\Requests\MissionForUpdatemRequest;
 use App\Models\missions;
 use App\Models\user;
 use Illuminate\Http\Request;
@@ -12,7 +13,6 @@ class MissonsController extends ParentController
     //Store new missions Details.....
     public function storemissions(MissionFormRequest $request){
         //dd($request->all());
-
         //Create new object from missions model
         $missionObj = new missions;
 
@@ -50,9 +50,14 @@ class MissonsController extends ParentController
   }
 
 
-        //  Edit Missions Deails ...
 
-    public function storeeditmissions(Request $request, $mission_id){
+
+
+
+
+
+        //  Edit Missions Deails ...
+    public function storeeditmissions(MissionForUpdatemRequest $request, $mission_id){
        $missionObj  = missions::find($mission_id);
 
        if( $request->imageadd == true){
@@ -64,9 +69,13 @@ class MissonsController extends ParentController
         $missionObj->topic = $request->topic;
         $missionObj->description = $request->description; 
         $missionObj->costOfMission = $request->missioncost;
-        $missionObj->save();
-        return redirect()->back()->with('message','Post Updated Successfully...');
-
+        try {
+          $data = $request->validated();
+          $missionObj->save();
+          return redirect()->back()->with('message','Post Update Successfully');
+        } catch (Exception $ex) {
+          return redirect()->back()->with('message','somthing went wrong'.$ex);
+        }
     }
 
     

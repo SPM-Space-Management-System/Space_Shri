@@ -41,16 +41,6 @@ class PagesController extends ParentController
 
 
 
-    // public function indexadmindashboard(){
-    //     return view('pages/admin/AdminDashboard');
-    // }
-
-
-
-    
-    // public function indexuserdashboard(){
-    //     return view('pages/home/UserDashboard');
-    // }
 
 
 
@@ -64,6 +54,14 @@ class PagesController extends ParentController
             return view('pages/home/UserDashboard');
         }
     }
+
+
+
+
+    //admin edit missions
+    public function editmissions(){
+        return view('pages/admin/MissionsEdit');
+      }
 
  
 }

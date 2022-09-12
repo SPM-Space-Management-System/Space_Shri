@@ -49,6 +49,9 @@ class MissonsController extends ParentController
       return view('pages/admin/AdminMissionShow', compact('post'));
   }
 
+
+
+
   
 
 }

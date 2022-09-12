@@ -13,13 +13,15 @@
         <div class="mb-1 text-muted text-dark text-primary" style="font-size: 16px">{{date('Y-m-d',strtotime($post->created_at))}}</div> 
      </div>
      <h1 class="card-title text-center">{{ $post->topic}}</h1>
+     {{-- <textarea class="form-control"  rows="20" title="Please Enter The Description " name="description" placeholder="Enter The Informations">{{ $post->description}}</textarea>
+      --}}
      <p class="card-text">{{ $post->description}}</p>   
     <div class="mb-1 text-muted" style="font-size: 16px">Last Update Date : {{date('Y-m-d',strtotime($post->updated_at))}} </div> 
     <div class="mb-1 text-muted" style="font-size: 16px">Editor : {{ $post->editor_name}} </div> 
    
          <a href="{{ route('mhome') }}" class="btn btn-primary me-md-1 pl-3 border-light">Back</a>
          <div class="space" style="padding-left: 110vh"> 
-          <a href="#" class="btn btn-warning me-md-1 pl-3 border-light">Update</a>
+          <a href="{{ route('missionedit',$post->mission_id) }}" class="btn btn-warning me-md-1 pl-3 border-light">Update</a>
           <a href="#" class="btn btn-danger  border-light">Remove</a>
         </div>
     </div>

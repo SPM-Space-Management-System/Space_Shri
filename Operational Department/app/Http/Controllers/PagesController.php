@@ -59,8 +59,9 @@ class PagesController extends ParentController
 
 
     //admin edit missions
-    public function editmissions(){
-        return view('pages/admin/MissionsEdit');
+    public function indexmissionsedit($mission_id){
+        $post = missions::findorFail($mission_id);
+        return view('pages/admin/MissionsEdit',compact('post'));
       }
 
  

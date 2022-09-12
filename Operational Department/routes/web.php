@@ -29,7 +29,15 @@ Route::get('/missionShowa/{mission_id}', [MissonsController::class, 'adminshowMi
 //admin dashboard
 Route::get('/admindashboard', [PagesController::class, 'indexadmindashboard'])->name('admindashboard'); 
 //admin edit post
-Route::get('/missionedit', [PagesController::class, 'editmissions'])->name('missionedit'); 
+Route::get('/missionedit/{mission_id}', [PagesController::class, 'indexmissionsedit'])->name('missionedit');
+//admin save-edit post
+Route::post('/saveeditmission/{mission_id}', [MissonsController::class, 'storeeditmissions'])->name('editPostStore');
+
+
+
+
+
+
    
 
 

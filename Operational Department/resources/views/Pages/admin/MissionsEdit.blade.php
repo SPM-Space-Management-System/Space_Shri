@@ -57,10 +57,16 @@
         <div class="space" style="padding-bottom: 10vh">
         <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
         <button type="submit" class="btn btn-warning me-md-3" value="submit">Update</button>
-        <button type="btn" class="btn btn-primary" value="">Delete</button>  
-        </div>
     </form>
 
+
+        <form action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+        <button type="submit" class="btn btn-danger " value="delete">Delete</button>  
+        </form>
+
+        </div>
+   
 
 </div>
 @endsection
@@ -77,6 +83,39 @@ h2{
     text-align: center;
     font-size: 400%;   
 }   
-
+/* <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> */
 </style> 
+
+$(document).ready(function(){
+
+    $('.postdeletebtn').click(function (e){
+        e.prevenDefault();
+
+      
+
+
+        
+swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your imaginary file has been deleted!", {
+        icon: "success",
+      });
+    } 
+  });
+    })
+})
+
+
+
+<script>
+
+
+    </script>
 @endpush

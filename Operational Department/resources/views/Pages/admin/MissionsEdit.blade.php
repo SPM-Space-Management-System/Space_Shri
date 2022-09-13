@@ -13,6 +13,11 @@
     <div class="p-3 mb-2 bg-warning text-red rounded">{{ session('message') }}</div>
     
     @endif
+
+
+
+
+
     <form action="{{ route('editPostStore',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="mb-3 mt-3" >
@@ -55,18 +60,28 @@
             <input type="date" value="{{date('Y-m-d',strtotime($post->updated_at))}}" title="Can Not Update This Feild" class="form-control" placeholder="Can Not Update This Feild" name="dateofup">
         </div>
         <div class="space" style="padding-bottom: 10vh">
-        <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
-        <button type="submit" class="btn btn-warning me-md-3" value="submit">Update</button>
+        
+        <div style="width:1455px;">
+            <div style="float: left; width: 1150px"> 
+         <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
+         <div style="float: right; width: 5px">
+        <button type="submit" class="btn btn-warning me-md-5" value="submit">Update</button>
+         </div>
     </form>
-
-
+</div>
+<div style="float: right; width: 225px"> 
         <form action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
         <button type="submit" class="btn btn-danger " value="delete">Delete</button>  
         </form>
-
+    </div>
+</div>
         </div>
    
+
+
+        
+
 
 </div>
 @endsection

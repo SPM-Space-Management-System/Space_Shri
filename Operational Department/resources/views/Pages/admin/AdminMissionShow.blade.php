@@ -20,10 +20,9 @@
     <div class="mb-1 text-muted" style="font-size: 16px">Editor : {{ $post->editor_name}} </div> 
    
          <a href="{{ route('mhome') }}" class="btn btn-primary me-md-1 pl-3 border-light">Back</a>
-         <div class="space" style="padding-left: 110vh"> 
-          <a href="{{ route('missionedit',$post->mission_id) }}" class="btn btn-warning me-md-1 pl-3 border-light">Update</a>
-          <a href="{{ route('missionedit',$post->mission_id) }}" class="btn btn-danger  border-light">Remove</a>
-        </div>
+         {{-- <div class="space" style="padding-left: 110vh">  --}}
+          <a href="{{ route('missionedit',$post->mission_id) }}" class="btn btn-warning me-md-1 pl-3 border-light">Edit</a>
+           {{-- </div> --}}
     </div>
   </div>
 </div>

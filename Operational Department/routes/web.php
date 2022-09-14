@@ -26,6 +26,8 @@ Route::get('/missionedit/{mission_id}', [PagesController::class, 'indexmissionse
 Route::post('/saveeditmission/{mission_id}', [MissonsController::class, 'storeeditmissions'])->name('editPostStore');
 //admin delete missions
 Route::post('/deletemission/{mission_id}', [MissonsController::class, 'deletemissions'])->name('deletePost');
+//admin genarate report
+Route::get('/missionreport', [PagesController::class, 'indexmissionreport'])->name('missionreport');
 
 
 

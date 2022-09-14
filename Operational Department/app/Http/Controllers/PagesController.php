@@ -64,5 +64,13 @@ class PagesController extends ParentController
         return view('pages/admin/MissionsEdit',compact('post'));
       }
 
+
+
+
+      //admin genarate report
+      public function indexmissionreport(){
+        return view('pages/admin/MissionReport');
+      }
+
  
 }

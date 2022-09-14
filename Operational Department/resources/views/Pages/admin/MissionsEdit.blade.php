@@ -11,13 +11,8 @@
     
     @if(session('message'))
     <div class="p-3 mb-2 bg-warning text-red rounded">{{ session('message') }}</div>
-    
+ 
     @endif
-
-
-
-
-
     <form action="{{ route('editPostStore',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="mb-3 mt-3" >

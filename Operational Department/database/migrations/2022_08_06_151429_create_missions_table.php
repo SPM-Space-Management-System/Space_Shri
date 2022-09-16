@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('topic');
             $table->text('description');
             $table->date('pub_date');
-            $table->string('mission_image');
+            $table->string('mission_image')->nullable();
             $table->double('costOfMission');
             $table->timestamps();
 

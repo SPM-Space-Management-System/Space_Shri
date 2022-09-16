@@ -3,16 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MissonsController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
 
 Route::get('/', function () {
     return view('pages/Home.welcome');
@@ -28,6 +20,20 @@ Route::post('/savemission', [MissonsController::class, 'storemissions'])->name('
 Route::get('/missionShowa/{mission_id}', [MissonsController::class, 'adminshowMissions_function'])->name('adminoperationsShow');    
 //admin dashboard
 Route::get('/admindashboard', [PagesController::class, 'indexadmindashboard'])->name('admindashboard'); 
+//admin edit post
+Route::get('/missionedit/{mission_id}', [PagesController::class, 'indexmissionsedit'])->name('missionedit');
+//admin save-edit post
+Route::post('/saveeditmission/{mission_id}', [MissonsController::class, 'storeeditmissions'])->name('editPostStore');
+//admin delete missions
+Route::post('/deletemission/{mission_id}', [MissonsController::class, 'deletemissions'])->name('deletePost');
+//admin genarate report
+Route::get('/missionreport', [PagesController::class, 'indexmissionreport'])->name('missionreport');
+
+
+
+
+
+
    
 
 

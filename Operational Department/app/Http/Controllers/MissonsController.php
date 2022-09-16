@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\MissionFormRequest;
+use App\Http\Requests\MissionForUpdatemRequest;
 use App\Models\missions;
 use App\Models\user;
 use Illuminate\Http\Request;
@@ -12,7 +13,6 @@ class MissonsController extends ParentController
     //Store new missions Details.....
     public function storemissions(MissionFormRequest $request){
         //dd($request->all());
-
         //Create new object from missions model
         $missionObj = new missions;
 
@@ -48,6 +48,48 @@ class MissonsController extends ParentController
       $post = missions::findorFail($mission_id);
       return view('pages/admin/AdminMissionShow', compact('post'));
   }
+
+
+
+
+
+
+
+
+        //  Edit Missions Deails ...
+    public function storeeditmissions(MissionForUpdatemRequest $request, $mission_id){
+       $missionObj  = missions::find($mission_id);
+
+       if( $request->imageadd == true){
+        $imageName = time() . "." . $request->imageadd->getClientOriginalName();
+        $request->imageadd->move(public_path('thumbnails'), $imageName);
+        $missionObj->mission_image = $imageName;
+       }
+
+        $missionObj->topic = $request->topic;
+        $missionObj->description = $request->description; 
+        $missionObj->costOfMission = $request->missioncost;
+        try {
+          $data = $request->validated();
+          $missionObj->save();
+          return redirect()->back()->with('message','Post Update Successfully');
+        } catch (Exception $ex) {
+          return redirect()->back()->with('message','somthing went wrong'.$ex);
+        }
+    }
+
+    
+
+
+
+
+
+      public function deletemissions($mission_id){
+        $missionObj  = missions::find($mission_id)->delete();
+        $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
+        return view('pages/Admin/MissionsHome',compact('missionsALL'));
+      }
+      
 
   
 

@@ -72,5 +72,9 @@ class PagesController extends ParentController
         return view('pages/admin/MissionReport');
       }
 
+
+      public function indexeditall(){
+        return view ('pages/admin/RemoveAll');
+      }
  
 }

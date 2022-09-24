@@ -74,7 +74,7 @@
     padding-right: 20px;
     box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
     transition: 0.5s
-  }
+  } 
     .container{
         margin top: 5%;
     }

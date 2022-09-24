@@ -28,6 +28,8 @@ Route::post('/saveeditmission/{mission_id}', [MissonsController::class, 'storeed
 Route::post('/deletemission/{mission_id}', [MissonsController::class, 'deletemissions'])->name('deletePost');
 //admin genarate report
 Route::get('/missionreport', [PagesController::class, 'indexmissionreport'])->name('missionreport');
+//admin view update/delete all
+Route::get('/admin/editallposts', [PagesController::class, 'indexeditall'])->name('editallposts');
 
 
 

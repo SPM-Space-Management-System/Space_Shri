@@ -77,5 +77,12 @@ class PagesController extends ParentController
       $post = missions::all();
       return view ('pages/admin/RemoveAll', compact('post'));
   }
+
+  
+  public function reomvepost($mission_id){
+    $missionObj  = missions::find($mission_id)->delete();
+    // $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
+    return redirect()->back();
+  }
  
 }

@@ -25,21 +25,26 @@
       <tr>
         @foreach ($post as $Post)
         <td>{{ $Post->mission_id}}</td>
-        <td>{{ $Post->topic}}</td>
         <td>{{ $Post->editor_name}}</td>
+        <td>{{ $Post->topic}}</td>
         <td><img src="{{ asset('thumbnails/' . $Post->mission_image) }}" height="50" class="card-img-top"  alt="missions images"></td>
         <td>{{ $Post->costOfMission}}</td>
         <td>{{ $Post->created_at}}</td>
         <td>{{ $Post->updated_at}}</td>
         
-        <td><button type="button" class="btn btn-warning">Update</button></td>
-        <td><button type="button" class="btn btn-danger">Remove</button></td>
+        
+        {{-- <button type="button" class="btn btn-warning">Update</button></td> --}}
+        <td><a href="/missionedit/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-warning" >Edit</button></a></td>
+      
+        <td><a href="/admin/remove/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-danger" >Remove</button></a></td>
+   
       </tr>
       @endforeach
     </tbody>
-    
+
+       
   </table>
- 
+  <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
 </div>
 @endsection
 

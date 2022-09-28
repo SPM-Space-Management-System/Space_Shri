@@ -2,10 +2,45 @@
 @section('content')
 <img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
-<h2>Update/Remove All Posts</h2>
+<div class="container">
 
+<h1>Update/Remove All Posts</h1>
 
+<table class="table table-striped table-dark">
 
+    <thead>
+      <tr>
+        <th scope="col">Mission ID</th>
+        <th scope="col">Editor Name</th>
+        <th scope="col">Topic</th>
+        <th scope="col">Mission Image</th>
+        <th scope="col">Cost Of Mission</th>
+        <th scope="col">Public Date</th>
+        <th scope="col">Last Update Date</th>
+        <th scope="col" >Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        @foreach ($post as $Post)
+        <td>{{ $Post->mission_id}}</td>
+        <td>{{ $Post->topic}}</td>
+        <td>{{ $Post->editor_name}}</td>
+        <td><img src="{{ asset('thumbnails/' . $Post->mission_image) }}" height="50" class="card-img-top"  alt="missions images"></td>
+        <td>{{ $Post->costOfMission}}</td>
+        <td>{{ $Post->created_at}}</td>
+        <td>{{ $Post->updated_at}}</td>
+        
+        <td><button type="button" class="btn btn-warning">Update</button></td>
+        <td><button type="button" class="btn btn-danger">Remove</button></td>
+      </tr>
+      @endforeach
+    </tbody>
+    
+  </table>
+ 
+</div>
 @endsection
 
 
@@ -36,6 +71,9 @@
     
     .aligns{
       text-align: center;
+    }
+    h1{
+        color: rgb(16, 189, 39);
     }
     h2{
         text-align: center;

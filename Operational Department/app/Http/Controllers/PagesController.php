@@ -74,7 +74,8 @@ class PagesController extends ParentController
 
 
       public function indexeditall(){
-        return view ('pages/admin/RemoveAll');
-      }
+      $post = missions::all();
+      return view ('pages/admin/RemoveAll', compact('post'));
+  }
  
 }

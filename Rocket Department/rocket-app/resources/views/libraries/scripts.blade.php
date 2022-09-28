@@ -15,6 +15,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script>
     /*!

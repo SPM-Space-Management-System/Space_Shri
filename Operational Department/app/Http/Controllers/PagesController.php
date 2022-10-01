@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\missions;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class PagesController extends ParentController
 {
@@ -66,11 +67,34 @@ class PagesController extends ParentController
 
 
 
-
-      //admin genarate report
       public function indexmissionreport(){
-        return view('pages/admin/MissionReport');
-      }
+        //$post = missions::all();
+    
+        $label = ['Shirts', 'T-Shirt', 'Pants', 'Coat', 'Kurta', 'Pajama'];
+
+       $price = ['10', '5', '100', '90', '50', '30'];
+
+      
+        $date = Carbon::now();
+        $currentMoth = $date->format('F');
+
+       
+        $maxPrice = missions::whereMonth('created_at', Carbon::now()->month)->max('costOfMission');
+
+        // $topic = missions::select('topic')->whereMonth('created_at', Carbon::now()->month)->max('costOfMission');
+        // $maxPrice = missions::where('topic', $topic)->max('costOfMission');
+        // $maxPrice = missions::where('topic')->max('costOfMission');
+        
+        $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
+
+        // $label = missions::whereMonth('created_at', Carbon::now()->month)->select('id');
+        // $price = missions::whereMonth('created_at', Carbon::now()->month)->select('costOfMission');
+        
+       
+      
+        // dd($totalPrice,  $currentMoth, $maxPrice, $label, $price);
+        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('maxPrice',$maxPrice)->with('totalPrice',$totalPrice);
+    }
 
 
       public function indexeditall(){

@@ -93,9 +93,9 @@ h2{
     text-align: center;
     font-size: 400%;   
 }   
-/* <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> */
-</style> 
 
+</style> 
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 $(document).ready(function(){
 
     $('.postdeletebtn').click(function (e){
@@ -124,7 +124,7 @@ swal({
 
 
 
-<script>
+<script> --}}
 
 
     </script>

@@ -46,6 +46,7 @@
   </table>
   <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
 </div>
+<div class="space" style="padding-bottom: 10vh"></div>
 @endsection
 
 

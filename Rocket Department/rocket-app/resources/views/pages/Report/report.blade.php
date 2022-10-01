@@ -261,7 +261,7 @@ if (!$conn) {
         <img src="report_rocket.jpg">
     </div>
     <div class="quot_1">
-        <h6><a href="#">"Generate project reports</a> will provide important detail that can be used to help develop
+        <h6><a href="{{ route('export_report_pdf') }}">"Generate project reports</a> will provide important detail that can be used to help develop
             future forecasts, and marketing plans, guide budget planning and improve decision-making"...</h6>
     </div>
 @endsection

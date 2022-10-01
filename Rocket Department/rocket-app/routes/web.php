@@ -13,6 +13,7 @@ use App\Http\Controllers\ProjectViewController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\RocketProjectController;
+use App\Http\Controllers\pdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,7 @@ Route::prefix('/projectview')->group(function () {
 //Report
 Route::get('/report', [ReportController::class, "reportview"])->name('report');
 Route::get('/export_report_pdf', [ReportController::class, "export_report_pdf"])->name('export_report_pdf');
+Route::get('/pdf', [pdfController::class, "pdfManage"]);
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

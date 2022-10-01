@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\missions;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class PagesController extends ParentController
 {
     //admin read and search
@@ -70,30 +71,46 @@ class PagesController extends ParentController
       public function indexmissionreport(){
         //$post = missions::all();
     
-        $label = ['Shirts', 'T-Shirt', 'Pants', 'Coat', 'Kurta', 'Pajama'];
+    //     $label = ['Shirts', 'T-Shirt', 'Pants', 'Coat', 'Kurta', 'Pajama'];
 
-       $price = ['10', '5', '100', '90', '50', '30'];
+    //    $price = ['10', '5', '100', '90', '50', '30'];
 
       
         $date = Carbon::now();
         $currentMoth = $date->format('F');
 
        
-        $maxPrice = missions::whereMonth('created_at', Carbon::now()->month)->max('costOfMission');
-
+        $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
+        // $user = DB::table('missions')->whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
         // $topic = missions::select('topic')->whereMonth('created_at', Carbon::now()->month)->max('costOfMission');
         // $maxPrice = missions::where('topic', $topic)->max('costOfMission');
         // $maxPrice = missions::where('topic')->max('costOfMission');
         
         $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
 
-        // $label = missions::whereMonth('created_at', Carbon::now()->month)->select('id');
-        // $price = missions::whereMonth('created_at', Carbon::now()->month)->select('costOfMission');
-        
-       
+        // $label = missions::find('mission_id')whereMonth('created_at', Carbon::now()->month);
+        // $price = missions::whereMonth('created_at', Carbon::now()->month)->('costOfMission');
       
-        // dd($totalPrice,  $currentMoth, $maxPrice, $label, $price);
-        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('maxPrice',$maxPrice)->with('totalPrice',$totalPrice);
+       
+        // $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month);
+        // $label =  $monthlyAll->('mission_id');
+        
+        $labels = missions::all('mission_id');
+        // $labels = missionsall('mission_id');
+        $label = array();
+    foreach ($labels as $l) {
+        array_push($label,$l->mission_id);
+    }
+
+    $prices = missions::all('costOfMission');
+    // $prices = missions::all('costOfMission');
+        $price = array();
+    foreach ($prices as $p) {
+        array_push($price,$p->costOfMission);
+        // $price =   $monthlyAll->('costOfMission');
+    }
+        //   dd($totalPrice,  $currentMoth, $maxPrice,  $label, $price);
+           return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice);
     }
 
 

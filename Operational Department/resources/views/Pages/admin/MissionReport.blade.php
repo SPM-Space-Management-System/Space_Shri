@@ -10,8 +10,8 @@
         <h4 class="card-header bg-success">Department  : Operations and Research</h4>
         <div class="card-body">
           <h5 class="card-title">Month : {{$currentMoth}}</h5>
-          <h5 class="card-title">Maximum Expenses Topic Of The Month : </h5>
-          <h5 class="card-title">Maximum Expenses Topic's Price Of The Month : {{ $maxPrice }}</h5>
+          <h5 class="card-title">Maximum Expenses Topic Of The Month : {{$monthlyAll->topic}}</h5>
+          <h5 class="card-title">Maximum Expenses Topic's Price Of The Month : {{ $monthlyAll->costOfMission }}</h5>
           <h5 class="card-title">Total Monthly Expenses : {{ $totalPrice }}</h5>
           <div class="space" style="padding-bottom: 5vh"></div>
           {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
@@ -55,10 +55,10 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                max: 200,
+                max: 10000000000,
                 min: 0,
                 ticks: {
-                    stepSize: 50
+                    stepSize: 1000000000
                 }
             }
         },

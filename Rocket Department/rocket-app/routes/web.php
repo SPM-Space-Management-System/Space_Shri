@@ -74,6 +74,7 @@ Route::prefix('/projectview')->group(function () {
 
 //Report
 Route::get('/report', [ReportController::class, "reportview"])->name('report');
+Route::get('/export_report_pdf', [ReportController::class, "export_report_pdf"])->name('export_report_pdf');
 
 //Contact Us
 Route::get('/contact', [ContactUsController::class, "contactview"])->name('contact');

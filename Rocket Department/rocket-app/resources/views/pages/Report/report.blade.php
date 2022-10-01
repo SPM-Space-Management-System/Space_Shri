@@ -248,8 +248,21 @@ if (!$conn) {
             </svg>
         </div>
     </section>
-    <div class="bar-chart">
-        <div id="barchart_values" style="width: 500px; height: 500px;"></div>
+
+    <div class="chart">
+        <div id="curve_chart" style="width: 600px; height: 600px"></div>
+    </div>
+    <div class="quot">
+        <h6>--THE TOTAL AMOUNT THAT WENT TO THE {{ $post->pname }} ROCKET PROJECT WAS RS.
+            {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}.00--
+        </h6>
+    </div>
+    <div class="report-img">
+        <img src="report_rocket.jpg">
+    </div>
+    <div class="quot_1">
+        <h6><a href="#">"Generate project reports</a> will provide important detail that can be used to help develop
+            future forecasts, and marketing plans, guide budget planning and improve decision-making"...</h6>
     </div>
 @endsection
 
@@ -301,10 +314,54 @@ if (!$conn) {
             height: 1000px;
         }
 
-        .bar-chart {
-            margin-left: 50px;
+        .chart {
+            margin-left: 190px;
             margin-top: -200px;
-            padding-bottom: 60vh;
+        }
+
+        .quot {
+            padding-top: 10vh;
+            padding-bottom: 15vh;
+        }
+
+        .quot h6 {
+            display: block;
+            text-transform: capitalize;
+            text-align: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.8em;
+        }
+
+        .report-img {
+            padding-bottom: 10vh;
+        }
+
+        .report-img img {
+            width: 100%;
+            height: 800px;
+            ;
+        }
+
+        .quot_1 {
+            padding-top: 10vh;
+            padding-bottom: 50vh;
+        }
+
+        .quot_1 h6,
+        .quot_1 a {
+            display: block;
+            text-transform: capitalize;
+            text-align: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .quot_1 a {
+            color: #ffab00;
+            text-decoration: none;
+
         }
     </style>
 @endpush
@@ -318,9 +375,7 @@ if (!$conn) {
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ["Expenses", "Amount", {
-                    role: "style"
-                }],
+                ['Costs', 'Expenses'],
                 <?php 
                 $query = "select fcost, ecost, fucost, oxcost, pcost, ncost, ocost from projects";
                 $res = mysqli_query($conn,$query);
@@ -332,41 +387,27 @@ if (!$conn) {
                     $pcost = $data['pcost'];
                     $ncost = $data['ncost'];
                     $ocost = $data['ocost'];
-            ?>["Frame Cost", <?php echo $fcost; ?>, "#b87333"],
-                ["Engine Cost", <?php echo $ecost; ?>, "#b87333"],
-                ["Fuel Cost", <?php echo $fucost; ?>, "#b87333"],
-                ["Oxidizer Cost", <?php echo $oxcost; ?>, "#b87333"],
-                ["Pump Cost", <?php echo $pcost; ?>, "#b87333"],
-                ["Nozzle Cost", <?php echo $ncost; ?>, "#b87333"],
-                ["Other Cost", <?php echo $ocost; ?>, "#b87333"],
+            ?>["Frame Cost", <?php echo $fcost; ?>],
+                ["Engine Cost", <?php echo $ecost; ?>],
+                ["Fuel Cost", <?php echo $fucost; ?>],
+                ["Oxidizer Cost", <?php echo $oxcost; ?>],
+                ["Pump Cost", <?php echo $pcost; ?>],
+                ["Nozzle Cost", <?php echo $ncost; ?>],
+                ["Other Cost", <?php echo $ocost; ?>],
                 <?php 
                 }
             ?>
             ]);
-
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                {
-                    calc: "stringify",
-                    sourceColumn: 1,
-                    type: "string",
-                    role: "annotation"
-                },
-                2
-            ]);
-
             var options = {
-                width: 800,
-                height: 600, 
-                bar: {
-                    groupWidth: "95%"
-                },
+                width: 1500,
+                colors: ['#ff4d4d'],
+                curveType: 'function',
                 legend: {
-                    position: "none"
-                },
+                    position: 'bottom'
+                }
             };
-            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-            chart.draw(view, options);
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            chart.draw(data, options);
         }
     </script>
 @endpush

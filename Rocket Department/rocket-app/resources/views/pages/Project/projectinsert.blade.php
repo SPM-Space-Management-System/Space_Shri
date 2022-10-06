@@ -21,54 +21,54 @@
                         <label for="exampleFormControlInput1" class="form-label">Project Name</label>
                         <input title="The project name should include the name of the rocket project to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="pname"
-                            placeholder="Enter the project name here in English capital letters (e.g. 'SURANIMALA')" required>
+                            placeholder="Enter the project name here in English capital letters (e.g. 'SURANIMALA')">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Project Date</label>
                         <input title="The date of commencement of the project should be entered." type="date"
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name="pdate"required>
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="pdate">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Frame Cost</label>
                         <input title="Enter the frame cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="fcost"
-                            placeholder="Enter frame cost here (e.g. 200000)" required>
+                            placeholder="Enter frame cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Engine Cost</label>
                         <input title="Enter the engine cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="ecost"
-                            placeholder="Enter engine cost here (e.g. 200000)" required>
+                            placeholder="Enter engine cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Fuel Cost</label>
                         <input title="Enter the fuel cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="fucost"
-                            placeholder="Enter Fuel cost here (e.g. 200000)" required>
+                            placeholder="Enter Fuel cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Oxidizer Cost</label>
                         <input title="Enter the oxidizer cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="oxcost"
-                            placeholder="Enter oxidizer cost here (e.g. 200000)" required>
+                            placeholder="Enter oxidizer cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Pump Cost</label>
                         <input title="Enter the pump cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="pcost"
-                            placeholder="Enter pump cost here (e.g. 200000)" required>
+                            placeholder="Enter pump cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Nozzle Cost</label>
                         <input title="Enter the nozzle cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="ncost"
-                            placeholder="Enter nozzle cost here (e.g. 200000)" required>
+                            placeholder="Enter nozzle cost here (e.g. 200000)">
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Other Cost</label>
                         <input title="Enter the other cost incurred for the project in Rs."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="ocost"
-                            placeholder="Enter other cost here (e.g. 200000)" required>
+                            placeholder="Enter other cost here (e.g. 200000)">
                     </div>
                 </div>
             </section>

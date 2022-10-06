@@ -21,7 +21,7 @@
                         <label for="exampleFormControlInput1" class="form-label">Project Name</label>
                         <input title="The project name should include the name of the rocket project to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="pname"
-                            placeholder="Enter project name here (e.g. 'Suranimala')" required>
+                            placeholder="Enter the project name here in English capital letters (e.g. 'SURANIMALA')" required>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Project Date</label>

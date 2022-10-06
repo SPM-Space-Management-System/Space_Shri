@@ -74,12 +74,35 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+<div class="space" style="padding-bottom: 5vh"></div>
+         <table class="table table-striped table-dark">
+            <thead>
+      <tr>
+        <th scope="col">Mission ID</th>
+        <th scope="col">Editor Name</th>
+        <th scope="col">Topic</th>
+        <th scope="col">Mission Image</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2</td><td>2</td><td>2</td><td>2</td>
+      </tr>
+    </tbody>
+         </table>
          
-         
-          <a href="#" class="btn btn-primary bg-info">Go Dashboard</a>
+          <a href="{{ route('mhome') }}" class="btn btn-primary bg-info">Go Dashboard</a>
         </div>
+
+
+        
       </div>
+      
 </div>
+
+
+
 
 
 <div class="space" style="padding-bottom: 10vh"></div>

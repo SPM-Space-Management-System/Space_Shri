@@ -14,8 +14,8 @@ class ReportController extends Controller
     }
 
     public function export_report_pdf() {
-        $response['posts'] = ProjectViewFacade::all();
-        $pdf = PDF::loadView('pages.Report.report_pdf');
+        $posts = ProjectViewFacade::all();
+        $pdf = PDF::loadView('pages.Report.report_pdf', ['posts' => $posts]);
 
         return $pdf->download('report_pdf.pdf');
 

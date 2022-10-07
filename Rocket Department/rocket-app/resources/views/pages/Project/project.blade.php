@@ -21,7 +21,7 @@
                         <circle cx="150" cy="150" r="150"></circle>
                     </svg>
                     <div class="number">
-                        <h1>7</h1>
+                        <h1>{{ $post->noOfLaunch }}</h1>
                     </div>
                     <div class="title">
                         <p>Total Launches</p>
@@ -36,7 +36,7 @@
                         <circle cx="150" cy="150" r="150"></circle>
                     </svg>
                     <div class="number">
-                        <h1>4</h1>
+                        <h1>{{ $post->noOfLand }}</h1>
                     </div>
                     <div class="title">
                         <p>Total Landings</p>
@@ -51,7 +51,7 @@
                         <circle cx="150" cy="150" r="150"></circle>
                     </svg>
                     <div class="number">
-                        <h1>3</h1>
+                        <h1>{{ $post->noOfReflight }}</h1>
                     </div>
                     <div class="title">
                         <p>Total Reflights</p>

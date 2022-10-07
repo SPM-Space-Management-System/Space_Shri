@@ -20,7 +20,7 @@
 
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
-            <label for="pdate-name" class="col-form-label">Project Date:</label>
+            <label for="pdate-name" class="col-form-label">Total Launches:</label>
             <input type="date" class="form-control form-control-lg" name="noOfLaunch" value="{{ $post->noOfLaunch }}"
                 required>
             <br>
@@ -29,7 +29,7 @@
 
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
-            <label for="pdate-name" class="col-form-label">Project Date:</label>
+            <label for="pdate-name" class="col-form-label">Total Landings:</label>
             <input type="date" class="form-control form-control-lg" name="noOfLand" value="{{ $post->noOfLand }}"
                 required>
             <br>
@@ -38,7 +38,7 @@
 
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
-            <label for="pdate-name" class="col-form-label">Project Date:</label>
+            <label for="pdate-name" class="col-form-label">Total Reflights:</label>
             <input type="date" class="form-control form-control-lg" name="noOfReflight" value="{{ $post->noOfReflight }}"
                 required>
             <br>

@@ -64,7 +64,8 @@
                 <p>{{ $post->pname }} is the most powerful rocket in Sri Lanka. With the ability <br>
                     to lift nearly 64 metric tons(141,000lb). {{ $post->pname }} can <br>
                     lift more than twice the payload of the next closest operational <br>
-                    vehicle, the DELTA IV. {{ $post->pname }} is composed of three {{ $post->pname }} Turbo 5 none-engine cores <br>
+                    vehicle, the DELTA IV. {{ $post->pname }} is composed of three {{ $post->pname }} Turbo 5 none-engine
+                    cores <br>
                     whose 17 Merlin engines together generate more than 2 million pounds of <br>
                     thurst at liftoff, equal to approximately 12 747 aircraft.</p>
 
@@ -174,7 +175,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->fcost }}.00</td>
+                                <td>Rs. {{ $post->fcost }}</td>
                             </tr>
                             <tr>
                                 <td>Engine</td>
@@ -186,7 +187,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->ecost }}.00</td>
+                                <td>Rs. {{ $post->ecost }}</td>
                             </tr>
                             <tr>
                                 <td>Fuel</td>
@@ -198,7 +199,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->fucost }}.00</td>
+                                <td>Rs. {{ $post->fucost }}</td>
                             </tr>
                             <tr>
                                 <td>Oxidizer</td>
@@ -210,7 +211,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->oxcost }}.00</td>
+                                <td>Rs. {{ $post->oxcost }}</td>
                             </tr>
                             <tr>
                                 <td>Pump</td>
@@ -222,7 +223,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->pcost }}.00</td>
+                                <td>Rs. {{ $post->pcost }}</td>
                             </tr>
                             <tr>
                                 <td>Nozzle</td>
@@ -234,7 +235,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->ncost }}.00</td>
+                                <td>Rs. {{ $post->ncost }}</td>
                             </tr>
                             <tr>
                                 <td>Other</td>
@@ -246,7 +247,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>Rs. {{ $post->ocost }}.00</td>
+                                <td>Rs. {{ $post->ocost }}</td>
                             </tr>
                         </tbody>
                     </table>

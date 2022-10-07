@@ -245,7 +245,7 @@
                         <input title="The project name should include the name of the rocket project to be applied."
                             type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
                             name="pname"
-                            placeholder="Enter the project name here in English capital letters (e.g. 'SURANIMALA')">
+                            placeholder="Enter the project name here (e.g.'Suranimala')">
                         <br>
                         <div class="text-danger">{{ $errors->first('pname') }}</div>
                     </div>

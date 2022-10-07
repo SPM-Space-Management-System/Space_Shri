@@ -4,99 +4,108 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
+    <!--generate successfull message-->
+    @if (session('message'))
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+            </span>
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1 class="page-title">Project List</h1>
             </div>
             <div class="bottom">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <h3>Project</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Date</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Frame</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Engine</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Fuel</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Oxidizer</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Pump</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Nozzle</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Other</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Action</h3>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($posts as $post)
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td>
-                                <h5>{{ $post->pname }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->pdate }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->fcost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->ecost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->fucost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->oxcost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->pcost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->ncost }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $post->ocost }}</h5>
-                            </td>
-                            <td>
-                                <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('projectview.delete', $post->id) }}" role="button">
-                                    <h6>DELETE</h6>
-                                </a>
-                                <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
-                                    onclick="projectEditModal({{ $post->id }})">
-                                    <h6>EDIT</h6>
-                                </a>
-                            </td>
+                            <th scope="col">
+                                <h3>Project</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Date</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Frame</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Engine</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Fuel</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Oxidizer</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Pump</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Nozzle</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Other</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Action</h3>
+                            </th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
-                    <a href="{{ route('report') }}" role="button">REPORT >></a>
+                    </thead>
+                    <tbody>
+                        @foreach ($posts as $post)
+                            <tr>
+                                <td>
+                                    <h5>{{ $post->pname }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->pdate }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->fcost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->ecost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->fucost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->oxcost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->pcost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->ncost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->ocost }}</h5>
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning btn-sm btn-block"
+                                        href="{{ route('projectview.delete', $post->id) }}" role="button">
+                                        <h6>DELETE</h6>
+                                    </a>
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                        onclick="projectEditModal({{ $post->id }})">
+                                        <h6>EDIT</h6>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class="col-md-12 text-center">
+                    <div class="btn">
+                        <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
+                        <a href="{{ route('report') }}" role="button">REPORT >></a>
+                    </div>
                 </div>
-            </div>  
-        </div>   
-        </div> 
+            </div>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -159,8 +168,72 @@
             text-decoration: none;
             background-color: chartreuse;
         }
+
         .bottom {
             padding-bottom: 120px;
+        }
+
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 80px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+
+        @keyframes show_slide {
+            0% {
+                transform: translateX(100%);
+            }
+
+            40% {
+                transform: translateX(-10%);
+            }
+
+            80% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 32px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ffc766;
         }
     </style>
 @endpush

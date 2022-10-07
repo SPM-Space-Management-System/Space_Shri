@@ -107,6 +107,7 @@
                                         href="{{ route('projectview.delete', $post->id) }}" role="button">
                                         <h6>DELETE</h6>
                                     </a>
+                                    <br><br>
                                     <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
                                         onclick="projectEditModal({{ $post->id }})">
                                         <h6>EDIT</h6>
@@ -169,11 +170,6 @@
 
         h5 {
             color: #fff;
-        }
-
-        span {
-            width: 70px;
-            height: 35px;
         }
 
         .btn a {

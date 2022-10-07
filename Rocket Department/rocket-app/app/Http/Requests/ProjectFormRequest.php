@@ -34,6 +34,18 @@ class ProjectFormRequest extends FormRequest
                 'required',
                 'date'
             ],
+            'noOfLaunch' => [
+                'required',
+                'numeric'
+            ],
+            'noOfLand' => [
+                'required',
+                'numeric'
+            ],
+            'noOfReflight' => [
+                'required',
+                'numeric'
+            ],
             'fcost' => [
                 'required',
                 'numeric'
@@ -72,6 +84,9 @@ class ProjectFormRequest extends FormRequest
         return [
             'pname.required' => 'Please enter project name',
             'pdate.required' => 'Please enter project date',
+            'noOfLaunch.required' => 'Please enter the no of total launches',
+            'noOfLand.required' => 'Please enter the no of total landings',
+            'noOfReflight.required' => 'Please enter the no of total re-flights',
             'fcost.required' => 'Please enter frame cost in Rs',
             'ecost.required' => 'Please enter engine cost in Rs',
             'fucost.required' => 'Please enter fuel cost in Rs',

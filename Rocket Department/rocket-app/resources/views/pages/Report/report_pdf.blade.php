@@ -7,6 +7,9 @@
         <h2>Project Details...</h2>
         <h3>Project Name :- {{ $post->pname }}</h3>
         <h3>Project Date :- {{ $post->pdate }}</h3>
+        <h3>Total Launches :- {{ $post->noOfLaunch }}</h3>
+        <h3>Total Landings :- {{ $post->noOfLand }}</h3>
+        <h3>Total Reflights :- {{ $post->noOfReflight }}</h3>
         <hr>
         <h2>Project Expenses...</h2>
         <div class="expense-table">

@@ -295,7 +295,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
-            font-size: 10vw;
+            font-size: 9vw;
             transition: 1s;
             text-transform: uppercase;
         }

@@ -29,6 +29,15 @@
                                 <h3>Date</h3>
                             </th>
                             <th scope="col">
+                                <h3>Launches</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Landings</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Reflights</h3>
+                            </th>
+                            <th scope="col">
                                 <h3>Frame</h3>
                             </th>
                             <th scope="col">
@@ -62,6 +71,15 @@
                                 </td>
                                 <td>
                                     <h5>{{ $post->pdate }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->noOfLaunch }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->noOfLand }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $post->noOfReflight }}</h5>
                                 </td>
                                 <td>
                                     <h5>{{ $post->fcost }}</h5>

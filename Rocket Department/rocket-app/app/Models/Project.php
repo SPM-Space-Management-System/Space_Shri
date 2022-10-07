@@ -12,6 +12,9 @@ class Project extends Model
     protected $fillable = [
         'pname',
         'pdate',
+        'noOfLaunch',
+        'noOfLand',
+        'noOfReflight',
         'fcost',
         'ecost',
         'fucost',

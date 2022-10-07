@@ -244,8 +244,7 @@
                         <label for="exampleFormControlInput1" class="form-label">Project Name</label>
                         <input title="The project name should include the name of the rocket project to be applied."
                             type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
-                            name="pname"
-                            placeholder="Enter the project name here in English capital letters (e.g. 'SURANIMALA')">
+                            name="pname" placeholder="Enter the project name here (e.g.'Suranimala')">
                         <br>
                         <div class="text-danger">{{ $errors->first('pname') }}</div>
                     </div>
@@ -255,6 +254,41 @@
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="pdate">
                         <br>
                         <div class="text-danger">{{ $errors->first('pdate') }}</div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-lg-4">
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">Total Launches</label>
+                                <input
+                                    title="This includes the total number of launches of the rocket related to the rocket project."
+                                    type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                                    name="noOfLaunch" placeholder="Enter the no of total launches here (e.g. 5)">
+                                <br>
+                                <div class="text-danger">{{ $errors->first('noOfLaunch') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">Total Landings</label>
+                                <input
+                                    title="This includes the total number of landings of the rocket related to the rocket project."
+                                    type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                                    name="noOfLand" placeholder="Enter the no of total launches here (e.g. 5)">
+                                <br>
+                                <div class="text-danger">{{ $errors->first('noOfLand') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-5">
+                                <label for="exampleFormControlInput1" class="form-label">Total Reflights</label>
+                                <input
+                                    title="This includes the total number of reflights of the rocket related to the rocket project."
+                                    type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                                    name="noOfReflight" placeholder="Enter the no of total launches here (e.g. 5)">
+                                <br>
+                                <div class="text-danger">{{ $errors->first('noOfReflight') }}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Frame Cost</label>

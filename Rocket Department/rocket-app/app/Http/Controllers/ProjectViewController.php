@@ -16,7 +16,7 @@ class ProjectViewController extends Controller
 
     public function delete($post_id) {
         ProjectViewFacade::delete($post_id);
-        return redirect()->back();
+        return redirect()->back()->with('message','Details Deleted Successfully!');
     } 
 
     public function edit(Request $request) { 
@@ -29,7 +29,7 @@ class ProjectViewController extends Controller
     public function update(Request $request, $post_id) {
         
         ProjectViewFacade::update($request->all(), $post_id);
-        return redirect()->back();
+        return redirect()->back()->with('message','Details Updated Successfully!');
     }
 
 }

@@ -4,163 +4,164 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
-    <div class="header">
-        <div class="banner">
-            <img src="project.jpg" alt="project-logo" />
-            <h1>SURANIMALA</h1>
-            <h2>THE SRI LANKA FIRST POWERFUL ROCKET</h2>
+    @foreach ($posts as $post)
+        <div class="header">
+            <div class="banner">
+                <img src="project.jpg" alt="project-logo" />
+                <h1>{{ $post->pname }}</h1>
+                <h2>THE SRI LANKA POWERFUL ROCKET</h2>
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="card">
-            <div class="percent" style="--clr:#fff;--num:7;">
-                <div class="dot"></div>
-                <svg>
-                    <circle cx="150" cy="150" r="150"></circle>
-                    <circle cx="150" cy="150" r="150"></circle>
-                </svg>
-                <div class="number">
-                    <h1>7</h1>
+        <div class="container">
+            <div class="card">
+                <div class="percent" style="--clr:#fff;--num:7;">
+                    <div class="dot"></div>
+                    <svg>
+                        <circle cx="150" cy="150" r="150"></circle>
+                        <circle cx="150" cy="150" r="150"></circle>
+                    </svg>
+                    <div class="number">
+                        <h1>7</h1>
+                    </div>
+                    <div class="title">
+                        <p>Total Launches</p>
+                    </div>
                 </div>
-                <div class="title">
-                    <p>Total Launches</p>
+            </div>
+            <div class="card">
+                <div class="percent" style="--clr:#fff;--num:4;">
+                    <div class="dot"></div>
+                    <svg>
+                        <circle cx="150" cy="150" r="150"></circle>
+                        <circle cx="150" cy="150" r="150"></circle>
+                    </svg>
+                    <div class="number">
+                        <h1>4</h1>
+                    </div>
+                    <div class="title">
+                        <p>Total Landings</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="percent" style="--clr:#fff;--num:3;">
+                    <div class="dot"></div>
+                    <svg>
+                        <circle cx="150" cy="150" r="150"></circle>
+                        <circle cx="150" cy="150" r="150"></circle>
+                    </svg>
+                    <div class="number">
+                        <h1>3</h1>
+                    </div>
+                    <div class="title">
+                        <p>Total Reflights</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="percent" style="--clr:#fff;--num:4;">
-                <div class="dot"></div>
-                <svg>
-                    <circle cx="150" cy="150" r="150"></circle>
-                    <circle cx="150" cy="150" r="150"></circle>
-                </svg>
-                <div class="number">
-                    <h1>4</h1>
-                </div>
-                <div class="title">
-                    <p>Total Landings</p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="percent" style="--clr:#fff;--num:3;">
-                <div class="dot"></div>
-                <svg>
-                    <circle cx="150" cy="150" r="150"></circle>
-                    <circle cx="150" cy="150" r="150"></circle>
-                </svg>
-                <div class="number">
-                    <h1>3</h1>
-                </div>
-                <div class="title">
-                    <p>Total Reflights</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="para">
-            <p>Suranimala is the most powerful rocket in Sri Lanka. With the ability <br>
-                to lift nearly 64 metric tons(141,000lb). Suranimala can <br>
-                lift more than twice the payload of the next closest operational <br>
-                vehicle, the DELTA IV. Suranimala is composed of three Suranimala Turbo 5 none-engine cores <br>
-                whose 17 Merlin engines together generate more than 2 million pounds of <br>
-                thurst at liftoff, equal to approximately 12 747 aircraft.</p>
+        <div class="section">
+            <div class="para">
+                <p>{{ $post->pname }} is the most powerful rocket in Sri Lanka. With the ability <br>
+                    to lift nearly 64 metric tons(141,000lb). {{ $post->pname }} can <br>
+                    lift more than twice the payload of the next closest operational <br>
+                    vehicle, the DELTA IV. {{ $post->pname }} is composed of three {{ $post->pname }} Turbo 5 none-engine cores <br>
+                    whose 17 Merlin engines together generate more than 2 million pounds of <br>
+                    thurst at liftoff, equal to approximately 12 747 aircraft.</p>
 
-            <h3>Suranimala</h3>
-            <h1>Overview</h1>
+                <h3>{{ $post->pname }}</h3>
+                <h1>Overview</h1>
 
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>Height</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>70m</td>
-                    </tr>
-                    <tr>
-                        <td>Width</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>12.2m</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>1,240,500kg</td>
-                    </tr>
-                    <tr>
-                        <td>Payload to leo</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>63,000kg</td>
-                    </tr>
-                    <tr>
-                        <td>Payload to gto</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>15,200kg</td>
-                    </tr>
-                    <tr>
-                        <td>Payload to mars</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>11,800kg</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Height</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>70m</td>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>12.2m</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1,240,500kg</td>
+                        </tr>
+                        <tr>
+                            <td>Payload to leo</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>63,000kg</td>
+                        </tr>
+                        <tr>
+                            <td>Payload to gto</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>15,200kg</td>
+                        </tr>
+                        <tr>
+                            <td>Payload to mars</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>11,800kg</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        </div>
-        <div class="background-video" width="320" height="240">
-            <video autoplay loop>
-                <source src="bg.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="cost">
-            <div class="rocket-cost">
-                <img src="cost.png" alt="rocket-cost-logo">
             </div>
-            <div class="detail">
-                <h3>Suranimala</h3>
-                <h1>Cost</h1>
-                @foreach ($posts as $post)
+            <div class="background-video" width="320" height="240">
+                <video autoplay loop>
+                    <source src="bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="cost">
+                <div class="rocket-cost">
+                    <img src="cost.png" alt="rocket-cost-logo">
+                </div>
+                <div class="detail">
+                    <h3>{{ $post->pname }}</h3>
+                    <h1>Cost</h1>
+
                     <table class="table">
                         <tbody>
                             <tr>
@@ -249,15 +250,15 @@
                             </tr>
                         </tbody>
                     </table>
-                @endforeach
-            </div>
-        </div>
-        <div class="ast">
-            <img src="astro.jpg" alt="astro-logo">
-        </div>
-        <div class="quot">
-            <h6>THAT'S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND</h6>
-        </div>
+    @endforeach
+    </div>
+    </div>
+    <div class="ast">
+        <img src="astro.jpg" alt="astro-logo">
+    </div>
+    <div class="quot">
+        <h6>THAT'S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND</h6>
+    </div>
     </div>
 @endsection
 
@@ -294,8 +295,9 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
-            font-size: 10vw;
+            font-size: 9vw;
             transition: 1s;
+            text-transform: uppercase;
         }
 
         .header .banner h2 {

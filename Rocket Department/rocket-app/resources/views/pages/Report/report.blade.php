@@ -12,11 +12,11 @@ if (!$conn) {
         <img src="logo.png" alt="logo" />
     </div>
     <section>
-        <div class="title">
-            <h1>Suranimala</h1>
-        </div>
-        <div class="expense-table">
-            @foreach ($posts as $post)
+        @foreach ($posts as $post)
+            <div class="title">
+                <h1>{{ $post->pname }}</h1>
+            </div>
+            <div class="expense-table">
                 <table class="table">
                     <tbody>
                         <tr>
@@ -139,7 +139,7 @@ if (!$conn) {
                         </tr>
                     </tbody>
                 </table>
-            @endforeach
+        @endforeach
         </div>
         <div class="rocket-engine">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-name="Layer 1"
@@ -261,7 +261,8 @@ if (!$conn) {
         <img src="report_rocket.jpg">
     </div>
     <div class="quot_1">
-        <h6><a href="{{ route('export_report_pdf') }}">"Generate project reports</a> will provide important detail that can be used to help develop
+        <h6><a href="{{ route('export_report_pdf') }}">"Generate project reports</a> will provide important detail that
+            can be used to help develop
             future forecasts, and marketing plans, guide budget planning and improve decision-making"...</h6>
     </div>
 @endsection

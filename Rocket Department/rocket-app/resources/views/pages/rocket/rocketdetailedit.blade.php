@@ -67,6 +67,6 @@
     <br>
 
     <div class="col-md-12 text-center">
-        <input type="submit" class="btn btn-warning btn-lg" value="UPDATE">
+        <input title="Required data can be updated." type="submit" class="btn btn-warning btn-lg" value="UPDATE">
     </div>
 </form>

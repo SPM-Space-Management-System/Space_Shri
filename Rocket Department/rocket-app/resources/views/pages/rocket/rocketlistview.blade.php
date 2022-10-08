@@ -87,22 +87,22 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm btn-block" role="button"
+                                    <a class="btn btn-warning btn-sm btn-block" role="button" title="Unnecessary or incorrect rocket information can be deleted."
                                         href="{{ route('rocketview.delete', $task->id) }}">
                                         <h6>DELETE</h6>
                                     </a>
                                     @if ($task->done == 0)
                                         <a class="btn btn-warning btn-sm btn-block"
-                                            href="{{ route('rocketview.done', $task->id) }}" role="button">
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button" title="Only necessary data can be publish in the user interface.">
                                             <h6>PUBLISH</h6>
                                         </a>
                                     @else
                                         <a class="btn btn-warning btn-sm btn-block"
-                                            href="{{ route('rocketview.done', $task->id) }}" role="button">
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button" title="Only necessary data can be unpublish in the user interface.">
                                             <h6>DRAFT</h6>
                                         </a>
                                     @endif
-                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Directs to the update interface to edit the data."
                                         onclick="rocketEditModal({{ $task->id }})">
                                         <h6>EDIT</h6>
                                     </a>

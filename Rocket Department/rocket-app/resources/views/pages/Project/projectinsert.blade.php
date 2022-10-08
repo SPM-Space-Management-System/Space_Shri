@@ -358,9 +358,12 @@
                         DETAILS</a>
                 </p>
             </div>
-
         </div>
     </form>
+    <div class="text-button">
+        <a title="Redirects to rocket function home interface." href="{{ route('functionhome') }}">
+            << Go to functions</a>
+    </div>
 @endsection
 
 @push('css')
@@ -399,9 +402,6 @@
             color: #0f0;
         }
 
-        .btn-group {
-            padding-bottom: 25vh;
-        }
 
         .alert {
             background: #ffdb9b;
@@ -464,6 +464,19 @@
 
         .close-btn:hover {
             background: #ffc766;
+        }
+
+        .text-button {
+            padding-top: 10vh;
+            padding-bottom: 40vh;
+            margin-left: 100px;
+        }
+
+        .text-button a {
+            font-size: 1.8em;
+            color: #fff;
+            text-decoration: none;
+            font-style: italic;
         }
     </style>
 @endpush

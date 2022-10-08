@@ -45,7 +45,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->fcost }}.00</td>
+                            <td>{{ $post->fcost }}</td>
                         </tr>
                         <tr>
                             <td>Engine Cost</td>
@@ -57,7 +57,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->ecost }}.00</td>
+                            <td>{{ $post->ecost }}</td>
                         </tr>
                         <tr>
                             <td>Fuel Cost</td>
@@ -69,7 +69,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->fucost }}.00</td>
+                            <td>{{ $post->fucost }}</td>
                         </tr>
                         <tr>
                             <td>Oxidizer Cost</td>
@@ -81,7 +81,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->oxcost }}.00</td>
+                            <td>{{ $post->oxcost }}</td>
                         </tr>
                         <tr>
                             <td>Pump Cost</td>
@@ -93,7 +93,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->pcost }}.00</td>
+                            <td>{{ $post->pcost }}</td>
                         </tr>
                         <tr>
                             <td>Nozzle Cost</td>
@@ -105,7 +105,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->ncost }}.00</td>
+                            <td>{{ $post->ncost }}</td>
                         </tr>
                         <tr>
                             <td>Other Cost</td>
@@ -117,7 +117,7 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $post->ocost }}.00</td>
+                            <td>{{ $post->ocost }}</td>
                         </tr>
                         <tr>
                             <td>
@@ -133,7 +133,7 @@ if (!$conn) {
                             <td></td>
                             <td>
                                 <h2 id="total-cost">
-                                    {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}.00
+                                    {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}
                                 </h2>
                             </td>
                         </tr>
@@ -254,7 +254,7 @@ if (!$conn) {
     </div>
     <div class="quot">
         <h6>--THE TOTAL AMOUNT THAT WENT TO THE {{ $post->pname }} ROCKET PROJECT WAS RS.
-            {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}.00--
+            {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}--
         </h6>
     </div>
     <div class="report-img">
@@ -265,6 +265,14 @@ if (!$conn) {
             can be used to help develop
             future forecasts, and marketing plans, guide budget planning and improve decision-making"...</h6>
     </div>
+    <div class="text-button">
+        <div class="col-6">
+            <a href="{{ route('projectview') }}"><< Back</a>
+        </div>
+        <div class="col-4">
+            <a href="{{ route('functionhome') }}"><< Go to functions</a>
+        </div>
+    </div> 
 @endsection
 
 @push('css')
@@ -346,7 +354,6 @@ if (!$conn) {
 
         .quot_1 {
             padding-top: 10vh;
-            padding-bottom: 50vh;
         }
 
         .quot_1 h6,
@@ -363,6 +370,20 @@ if (!$conn) {
             color: #ffab00;
             text-decoration: none;
 
+        }
+
+        .text-button {
+            display: flex;
+            margin-left: 530px;
+            padding-top: 35vh;
+            padding-bottom: 40vh;
+        }
+
+        .text-button a{
+            font-size: 1.8em;
+            color: #fff;
+            text-decoration: none;
+            font-style: italic;
         }
     </style>
 @endpush

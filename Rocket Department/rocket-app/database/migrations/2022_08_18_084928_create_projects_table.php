@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('pname')->nullable();
             $table->date('pdate')->nullable();
-            $table->date('noOfLaunch')->nullable();
-            $table->date('noOfLand')->nullable();
-            $table->date('noOfReflight')->nullable();
+            $table->integer('noOfLaunch')->nullable();
+            $table->integer('noOfLand')->nullable();
+            $table->integer('noOfReflight')->nullable();
             $table->double('fcost', 14, 2)->nullable();
             $table->double('ecost', 14, 2)->nullable();
             $table->double('fucost', 14, 2)->nullable();

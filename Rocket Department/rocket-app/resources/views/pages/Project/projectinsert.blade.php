@@ -282,9 +282,9 @@
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">Total Reflights</label>
                                 <input
-                                    title="This includes the total number of reflights of the rocket related to the rocket project."
+                                    title="This includes the total number of re-flights of the rocket related to the rocket project."
                                     type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
-                                    name="noOfReflight" placeholder="Enter the no of total launches here (e.g. 5)">
+                                    name="noOfReflight" placeholder="Enter the no of total re-flights here (e.g. 5)">
                                 <br>
                                 <div class="text-danger">{{ $errors->first('noOfReflight') }}</div>
                             </div>

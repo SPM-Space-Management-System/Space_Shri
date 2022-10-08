@@ -6,7 +6,6 @@
     </div>
     <!--validation part-->
     @if ($errors->any())
-        
     @endif
     <!--generate successfull message-->
     @if (session('message'))
@@ -155,7 +154,7 @@
                         <input title="The title should include the name of the rocket to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="title"
                             placeholder="Enter rocket name here (e.g. 'Saturn V')">
-                            <br>
+                        <br>
                         <div class="text-danger">{{ $errors->first('title') }}</div>
                     </div>
                     <div class="mb-5">
@@ -178,7 +177,7 @@
                         <input title="The height of the rocket should be entered in 'meters' (M)."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="height"
                             placeholder="Enter rocket height here (e.g. 70)">
-                            <br>
+                        <br>
                         <div class="text-danger">{{ $errors->first('height') }}</div>
                     </div>
                     <div class="mb-5">
@@ -186,7 +185,7 @@
                         <input title="The number of stages of the rocket must be entered."
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="stages"
                             placeholder="Enter no of rocket stages here (e.g. 2)">
-                            <br>
+                        <br>
                         <div class="text-danger">{{ $errors->first('stages') }}</div>
                     </div>
                     <div class="mb-5">
@@ -194,7 +193,7 @@
                         <input title="The date of the first flight of the rocket should be entered."
                             class="form-control form-control-lg" type="date" id="exampleFormControlInput1"
                             name="date">
-                            <br>
+                        <br>
                         <div class="text-danger">{{ $errors->first('date') }}</div>
                     </div>
                     <div class="mb-5">
@@ -212,7 +211,7 @@
                         <label for="formFileLg" class="form-label">Image</label>
                         <input title="Insert a picture of the rocket." class="form-control form-control-lg"
                             type="file" name="images" accept="image/jpg, image/jpeg, image/png">
-                            <br>
+                        <br>
                         <div class="text-danger">{{ $errors->first('images') }}</div>
                     </div>
                 </div>
@@ -229,6 +228,10 @@
             </div>
         </div>
     </form>
+    <div class="text-button">
+        <a title="Redirects to rocket function home interface." href="{{ route('functionhome') }}">
+            << Go to functions</a>
+    </div>
 @endsection
 
 @push('css')
@@ -324,9 +327,17 @@
             background: #ffc766;
         }
 
+        .text-button {
+            padding-top: 10vh;
+            padding-bottom: 40vh;
+            margin-left: 100px;
+        }
 
-        .btn-group {
-            padding-bottom: 25vh;
+        .text-button a {
+            font-size: 1.8em;
+            color: #fff;
+            text-decoration: none;
+            font-style: italic;
         }
     </style>
 @endpush

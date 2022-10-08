@@ -7,6 +7,9 @@
         <h2>Project Details...</h2>
         <h3>Project Name :- {{ $post->pname }}</h3>
         <h3>Project Date :- {{ $post->pdate }}</h3>
+        <h3>Total Launches :- {{ $post->noOfLaunch }}</h3>
+        <h3>Total Landings :- {{ $post->noOfLand }}</h3>
+        <h3>Total Reflights :- {{ $post->noOfReflight }}</h3>
         <hr>
         <h2>Project Expenses...</h2>
         <div class="expense-table">
@@ -22,7 +25,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->fcost }}.00</td>
+                        <td>Rs. {{ $post->fcost }}</td>
                     </tr>
                     <tr>
                         <td>Engine Cost</td>
@@ -34,7 +37,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->ecost }}.00</td>
+                        <td>Rs. {{ $post->ecost }}</td>
                     </tr>
                     <tr>
                         <td>Fuel Cost</td>
@@ -46,7 +49,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->fucost }}.00</td>
+                        <td>Rs. {{ $post->fucost }}</td>
                     </tr>
                     <tr>
                         <td>Oxidizer Cost</td>
@@ -58,7 +61,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->oxcost }}.00</td>
+                        <td>Rs. {{ $post->oxcost }}</td>
                     </tr>
                     <tr>
                         <td>Pump Cost</td>
@@ -70,7 +73,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->pcost }}.00</td>
+                        <td>Rs. {{ $post->pcost }}</td>
                     </tr>
                     <tr>
                         <td>Nozzle Cost</td>
@@ -82,7 +85,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->ncost }}.00</td>
+                        <td>Rs. {{ $post->ncost }}</td>
                     </tr>
                     <tr>
                         <td>Other Cost</td>
@@ -94,7 +97,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>Rs. {{ $post->ocost }}.00</td>
+                        <td>Rs. {{ $post->ocost }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -102,7 +105,7 @@
             <hr>
             <div class="cost">
                 <h2 style="text-decoration: underline;">Total Cost :- Rs.
-                    {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}.00
+                    {{ $post->fcost + $post->ecost + $post->fucost + $post->oxcost + $post->pcost + $post->ncost + $post->ocost }}
                 </h2>
             </div>
             <br><br>

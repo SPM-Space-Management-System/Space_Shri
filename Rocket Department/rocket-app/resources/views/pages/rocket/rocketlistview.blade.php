@@ -102,7 +102,7 @@
                                             <h6>DRAFT</h6>
                                         </a>
                                     @endif
-                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Required data can be updated."
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Directs to the update interface to edit the data."
                                         onclick="rocketEditModal({{ $task->id }})">
                                         <h6>EDIT</h6>
                                     </a>

@@ -104,11 +104,11 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('projectview.delete', $post->id) }}" role="button">
+                                        href="{{ route('projectview.delete', $post->id) }}" role="button" title="Unnecessary or incorrect rocket information can be deleted.">
                                         <h6>DELETE</h6>
                                     </a>
                                     <br><br>
-                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Directs to the update interface to edit the data."
                                         onclick="projectEditModal({{ $post->id }})">
                                         <h6>EDIT</h6>
                                     </a>
@@ -119,8 +119,8 @@
                 </table>
                 <div class="col-md-12 text-center">
                     <div class="btn">
-                        <a href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
-                        <a href="{{ route('report') }}" role="button">REPORT >></a>
+                        <a title="Click this button to save the entered data." href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
+                        <a title="Redirects to report page." href="{{ route('report') }}" role="button">REPORT >></a>
                     </div>
                 </div>
             </div>

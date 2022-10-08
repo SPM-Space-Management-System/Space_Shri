@@ -265,6 +265,14 @@ if (!$conn) {
             can be used to help develop
             future forecasts, and marketing plans, guide budget planning and improve decision-making"...</h6>
     </div>
+    <div class="text-button">
+        <div class="col-6">
+            <a href="{{ route('projectview') }}"><< Back</a>
+        </div>
+        <div class="col-4">
+            <a href="{{ route('functionhome') }}"><< Go to functions</a>
+        </div>
+    </div> 
 @endsection
 
 @push('css')
@@ -346,7 +354,6 @@ if (!$conn) {
 
         .quot_1 {
             padding-top: 10vh;
-            padding-bottom: 50vh;
         }
 
         .quot_1 h6,
@@ -363,6 +370,20 @@ if (!$conn) {
             color: #ffab00;
             text-decoration: none;
 
+        }
+
+        .text-button {
+            display: flex;
+            margin-left: 530px;
+            padding-top: 35vh;
+            padding-bottom: 40vh;
+        }
+
+        .text-button a{
+            font-size: 1.8em;
+            color: #fff;
+            text-decoration: none;
+            font-style: italic;
         }
     </style>
 @endpush

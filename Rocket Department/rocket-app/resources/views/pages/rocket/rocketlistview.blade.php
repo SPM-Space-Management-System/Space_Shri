@@ -114,7 +114,7 @@
 
                 <div class="col-md-12 text-center">
                     <div class="btn">
-                        <a href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                        <a title="Click this button to save the entered data." href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
                     </div>
                 </div>
             </div>

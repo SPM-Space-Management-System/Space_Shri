@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\missions;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use PDF;
 class PagesController extends ParentController
+
 {
     //admin read and search
     public function indexmissionshome(Request $request){
@@ -66,11 +70,71 @@ class PagesController extends ParentController
 
 
 
-
-      //admin genarate report
       public function indexmissionreport(){
-        return view('pages/admin/MissionReport');
-      }
+      
+        $date = Carbon::now();
+        $currentMoth = $date->format('F');
 
+        $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
+
+        $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
+        
+        $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
+        $label = array();
+        foreach ($labels as $l) {
+        array_push($label,$l->mission_id);
+        }
+
+        $prices = missions::whereMonth('created_at', Carbon::now()->month)->get('costOfMission');
+            $price = array();
+            foreach ($prices as $p) {
+            array_push($price,$p->costOfMission);
+        }
+
+        $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
+    }
+
+
+      public function indexeditall(){
+      $post = missions::all();
+      return view ('pages/admin/RemoveAll', compact('post'));
+  }
+
+  
+  public function reomvepost($mission_id){
+    $missionObj  = missions::find($mission_id)->delete();
+    // $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
+    return redirect()->back();
+  }
+
+
+  public function pdfgenerate(){
+    $date = Carbon::now();
+    $currentMoth = $date->format('F');
+
+    $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
+
+    $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
+    
+    $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
+    $label = array();
+    foreach ($labels as $l) {
+    array_push($label,$l->mission_id);
+    }
+
+    $prices = missions::whereMonth('created_at', Carbon::now()->month)->get('costOfMission');
+        $price = array();
+        foreach ($prices as $p) {
+        array_push($price,$p->costOfMission);
+    }
+
+    // $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+    //  $pdf = PDF::loadview('pages/admin/PDF/MissionReport',array('currentMoth' => $currentMoth,'monthlyAll' => $monthlyAll, 'totalPrice' => $totalPrice, 'monthlyTab'=>$monthlyTab, 'labels' => $label, 'prices' => $price));
+    // return $pdf->stream();
+    $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+    return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
+       
+  }
  
 }

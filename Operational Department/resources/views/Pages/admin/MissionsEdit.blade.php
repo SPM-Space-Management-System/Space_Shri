@@ -65,7 +65,7 @@
     </form>
 </div>
 <div style="float: right; width: 225px"> 
-        <form action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
+        <form onsubmit="return confirm('Do you really want to Delete this Record?');" action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
         <button type="submit" class="btn btn-danger " value="delete">Delete</button>  
         </form>
@@ -80,7 +80,11 @@
 
 </div>
 @endsection
-
+<script>
+    // function (){
+    //     return confirm('Do you really want to Delete this Record?');
+    // }
+</script>
 
 @push('css')
 <style>
@@ -93,9 +97,9 @@ h2{
     text-align: center;
     font-size: 400%;   
 }   
-/* <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> */
-</style> 
 
+</style> 
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 $(document).ready(function(){
 
     $('.postdeletebtn').click(function (e){
@@ -124,8 +128,7 @@ swal({
 
 
 
-<script>
+<script> --}}
 
 
-    </script>
 @endpush

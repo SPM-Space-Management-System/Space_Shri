@@ -6,6 +6,7 @@ use App\Http\Controllers\MissonsController;
 
 
 
+
 Route::get('/', function () {
     return view('pages/Home.welcome');
 });
@@ -28,6 +29,14 @@ Route::post('/saveeditmission/{mission_id}', [MissonsController::class, 'storeed
 Route::post('/deletemission/{mission_id}', [MissonsController::class, 'deletemissions'])->name('deletePost');
 //admin genarate report
 Route::get('/missionreport', [PagesController::class, 'indexmissionreport'])->name('missionreport');
+//admin view update/delete all(ALL)
+Route::get('/admin/editallposts', [PagesController::class, 'indexeditall'])->name('editallposts');
+//admin view update(ALL)
+Route::get('/admin/update/{mission_id}', [PagesController::class, 'updatepost'])->name('updatePost');
+//admin view delete(ALL)
+Route::get('/admin/remove/{mission_id}', [PagesController::class, 'reomvepost'])->name('removePost');
+//pdf generate
+Route::get('admin/pdf/missionreport', [PagesController::class, 'pdfgenerate'])->name('missionpdf');
 
 
 

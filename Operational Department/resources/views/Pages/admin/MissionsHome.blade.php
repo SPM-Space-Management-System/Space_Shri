@@ -31,7 +31,7 @@
     
     {{-- All posts read for Admin --}}
     <a href="{{ route('minsert') }}" class="btn btn-primary me-md-5 pl-5" type="submit">Add New Post </a>    
-    <a href="#"class="btn btn bg-warning me-md-5 pl-5" type="submit">Update/Remove Post</a>
+    <a href="{{ route('editallposts') }}"class="btn btn bg-warning me-md-5 pl-5" type="submit">Update/Remove Post</a>
     <a href="{{ route('missionreport') }}" class="btn btn btn-success" type="submit">Generate Report</a>
     <div class="space" style="padding-top: 3vh"></div>
 

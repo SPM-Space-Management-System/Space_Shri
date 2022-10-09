@@ -125,7 +125,8 @@
 
                                 </div>
                                 <div class=btnedit>
-                                    <a href="/JobUpdate/{{$job->id}}" class="btn btn-warning me-md-1 pl-3 border-light">Edit</a>
+                                    <a href="/JobUpdate/{{$job->id}}" class="btn btn-warning me-md-1 pl-3 ">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
 
                                 </div>
                             </td>
@@ -200,6 +201,7 @@
         }
         .btnedit {
             padding-top: 2px;
+            color: #fff;
         }
         .bottom {
             padding-bottom: 120px;

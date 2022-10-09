@@ -10,8 +10,7 @@
  	<div class="main">
         @if(session('message'))
         <div class="p-3 mb-2 bg-success text-white rounded">{{ session('message') }}</div>
-
-        @endif
+ @endif
  		<form method="post" action="{{ route('jobStore') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
  			<center>

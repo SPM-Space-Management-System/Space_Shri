@@ -7,7 +7,9 @@ use App\Models\missions;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF;
 class PagesController extends ParentController
+
 {
     //admin read and search
     public function indexmissionshome(Request $request){
@@ -127,9 +129,12 @@ class PagesController extends ParentController
         array_push($price,$p->costOfMission);
     }
 
+    // $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+    //  $pdf = PDF::loadview('pages/admin/PDF/MissionReport',array('currentMoth' => $currentMoth,'monthlyAll' => $monthlyAll, 'totalPrice' => $totalPrice, 'monthlyTab'=>$monthlyTab, 'labels' => $label, 'prices' => $price));
+    // return $pdf->stream();
     $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
     return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
-
+       
   }
  
 }

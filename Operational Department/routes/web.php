@@ -6,6 +6,7 @@ use App\Http\Controllers\MissonsController;
 
 
 
+
 Route::get('/', function () {
     return view('pages/Home.welcome');
 });

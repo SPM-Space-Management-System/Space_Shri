@@ -6,8 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <style>
+        .card{
+       background-color: rgb(250, 244, 239);
+       padding-top: 20px;
+       padding-left: 20px;
+       padding-right: 20px;
+       box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+       transition: 0.5s
+     }
+       .container{
+           margin top: 10%;
+       }
+       .inner{
+           overflow: hidden;
+       }
+       .inner img{
+           transition: all 1.5s ease;
+       }
+       .inner:hover img{
+           transform: scale(1.5);
+       }
+       
+       .aligns{
+         text-align: center;
+       }
+       h1{
+           text-align: center;
+           color: rgb(16, 189, 39);
+       }
+       h2{
+           text-align: center;
+       }
+       h3{
+           color: rgb(39, 119, 39);
+           align-items: center;
+            text-align: center;
+       }
+       p{
+           margin-top: 10%;
+       }
+       table:hover tr {
+     background:rgb(75, 148, 16);
+   }
+       
+   </style>
+
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+    function generatePDF() {
+      // Choose the element that our invoice is rendered in.
+      const element = document.getElementById('invoice');
+      // Choose the element and save the PDF for our user.
+      html2pdf().from(element).save();
+    }
+  </script>
 </head>
-<body>
+<body> 
+    <div id="invoice">
 <div class="space" style="padding-bottom: 5vh"></div>
   
 <img src="../../images/SpaceTransparent.png" style="width:200px;height:100px;display:block;margin:auto;padding: auto;" alt="space logo">
@@ -15,83 +73,23 @@
 
 
 <div class="container">
+    <div class="space" style="padding-top: 4vh"></div>
     <h1>Monthly Report</h1>
-    <div class="space" style="padding-bottom: 5vh"></div>
+
+    <div class="space" style="padding-bottom: 1vh"></div>
     <div class="card">
-        <h4 class="card-header bg-success">Department  : Operations and Research</h4>
+        <h4 class="card-header bg-success">Department :  Operations and Research</h4>
         <div class="card-body">
-          <h5 class="card-title"><b><strong>Month : </strong></b>{{$currentMoth}}</h5>
-          <h5 class="card-title"><b><strong>Maximum Expenses Topic Of The Month : </strong></b>{{$monthlyAll->topic}}</h5>
-          <h5 class="card-title"><b><strong>Maximum Expenses Topic's Price Of The Month : </strong></b>{{ $monthlyAll->costOfMission }}</h5>
-          <h5 class="card-title"><b><strong>Total Monthly Expenses : </strong></b>{{ $totalPrice }}</h5>
+          <h5 class="card-title"><small><strong>Month : </small></strong><small>{{$currentMoth}}</small></h5>
+          <h5 class="card-title"><small><strong>Maximum Expenses Topic Of The Month : </small></strong></b><small>{{$monthlyAll->topic}}</small></h5>
+          <h5 class="card-title"><small><strong>Maximum Expenses Topic's Price Of The Month : </small></strong></b><small>{{ $monthlyAll->costOfMission }}</small></h5>
+          <h5 class="card-title"><small><strong>Total Monthly Expenses : </small></strong></b><small>{{ $totalPrice }}</small></h5>
           <div class="space" style="padding-bottom: 5vh"></div>
           {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
          <!-- Show Graph Data -->
 <script src="https://cdnjs.com/libraries/Chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 
-<div class="map_canvas">
-  
-            <canvas id="myChart" width="auto" height="100"></canvas>
-</div>
-
-<script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: <?php echo json_encode($labels) ?>,
-        datasets: [{
-            label: 'xxxa',
-            data: <?php echo json_encode($prices); ?>,
-            backgroundColor: [
-                'rgba(31, 58, 147, 1)',
-                'rgba(37, 116, 169, 1)',
-                'rgba(92, 151, 191, 1)',
-                'rgb(200, 247, 197)',
-                'rgb(77, 175, 124)',
-                'rgb(30, 130, 76)'
-            ],
-            borderColor: [
-                'rgba(31, 58, 147, 1)',
-                'rgba(37, 116, 169, 1)',
-                'rgba(92, 151, 191, 1)',
-                'rgb(200, 247, 197)',
-                'rgb(77, 175, 124)',
-                'rgb(30, 130, 76)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {  
-                title: { 
-              display: true,
-              text: 'Mission Cost(LKR)'   
-          },
-                max: 10000000000,
-                min: 0,
-                ticks: {
-               stepSize: 1000000000
-                }
-            }
-           
-        },
-        plugins: {
-            title: { 
-                display: true,
-                text: 'Mission Topic'
-               
-            },
-            legend: {
-                display: false,
-            }
-        }
-    }
-});
-</script>
-<div class="space" style="padding-bottom: 5vh"></div>
+<h3>View All Completed Missions In The Current Month</h3>
          <table class="table table-striped table-dark">
             <thead>
       <tr>
@@ -105,10 +103,10 @@ var myChart = new Chart(ctx, {
     <tbody>
       <tr>
         @foreach ($monthlyTab as $setMonthly)
-        <td style="text-align: center">{{ $setMonthly->mission_id}}</td>
-        <td style="text-align: center">{{ $setMonthly->editor_name}}</td>
-        <td>{{ $setMonthly->topic}}</td>
-        <td style="text-align: center">{{ $setMonthly->costOfMission}}</td>
+        <td style="text-align: center"><small>{{ $setMonthly->mission_id}} </small></td>
+        <td style="text-align: center"><small>{{ $setMonthly->editor_name}} </small></td>
+        <td><small>{{ $setMonthly->topic}}</small></td>
+        <td style="text-align: center"><small>{{ $setMonthly->costOfMission}} </small></td>
         
       </tr>
       @endforeach
@@ -124,14 +122,19 @@ var myChart = new Chart(ctx, {
       </div>
  
       </div>
-      <div class="space" style="padding-bottom: 5vh"></div>
+      <div class="space" style="padding-bottom: 2vh"></div>
    
+</div>
+
+</div>
+<div class="space" style="padding-left: 33vh">
+<button class="btn btn btn-success me-md-3 pl-5" onclick="generatePDF()">Download as PDF</button>
+<a href="{{ route('mhome') }}" class="btn btn-primary bg-info me-md-5 pl-5">Go Dashboard</a>
 </div>
 
 
 
-
-
 <div class="space" style="padding-bottom: 10vh"></div>
+
 </body>
 </html>

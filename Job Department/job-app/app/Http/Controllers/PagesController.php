@@ -49,8 +49,8 @@ class PagesController extends Controller
 
     //admin edit missions
     public function indexjobedit($id){
-        $post = jobs::findorFail($id);
-        return view('Pages/admin/JobUpdate',compact('post'));
+        $job = jobs::findorFail($id);
+        return view('Pages/admin/JobUpdate',compact('job'));
       }
 
     public function jobdetailsVeiw()

@@ -35,7 +35,7 @@ Route::get('/view',[PagesController::class,'jobdetailsVeiw']);
 
 
 //admin edit jobs
-Route::get('/JobUpdate/{id}', [PagesController::class, 'indexjobedit'])->name('JobUpdate');
+Route::get('/JobUpdate/{id}', [PagesController::class, 'indexjobedit']);
 //admin save-edit jobs
 Route::post('/JobUpdate/{id}', [JobController::class, 'storeedtjobs'])->name('storeedtjobs');
 

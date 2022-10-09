@@ -15,10 +15,9 @@
             <a class="func-link" href="#">Operations and Research</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Jobs & Career</a>
+            <a class="func-link" href="/">Jobs & Career</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav> 
- 
+  </nav>

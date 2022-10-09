@@ -12,7 +12,7 @@
         <div class="p-3 mb-2 bg-success text-white rounded">{{ session('message') }}</div>
 
         @endif
- 		<form method="get" action="{{route('jobstore')}}" enctype="multipart/form-data">
+ 		<form method="post" action="{{ route('jobStore') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
  			<center>
                 <table>
@@ -82,7 +82,7 @@
       </center>
 
 
-                    <button type="submit">UPLOAD</button>
+                    <button >UPLOAD</button>
  		</form>
  	</div>
  </div>
@@ -97,13 +97,11 @@
 	background-image: url(rokert.jpg);
 	background-repeat: no-repeat;
 	background-size: 105%;
-
+   background-color: rgb(2, 2, 2)
 }
 label {
             color: #fff;
             font-size: 15px;
-
-
         }
         h5 {
             text-align: center;
@@ -114,8 +112,6 @@ label {
           margin-right:30px;
           padding:0;
         }
-
-
 .container {
 	width: 780px;
 	margin:0% 0% 10% 15%;
@@ -123,23 +119,19 @@ label {
 	background-color: rgba(0,0,0,0.1);
 	box-shadow: 0 0 17px #333;
 }
-
 .header {
 	text-align: center;
 	padding-top: 40px;
   padding-right:200px
 }
-
 .header h1 {
 	color:white;
 	font-size: 45px;
 	margin-bottom: 20px;
 }
-
 .main {
 	text-align: center;
 }
-
 .main input, button {
 	width: 300px;
 	height: 40px;
@@ -151,7 +143,6 @@ label {
 	color: #333;
 	margin-bottom: 40px;
 }
-
 .main button {
 	padding-left: 0;
 	background-color: #83acf1;
@@ -159,7 +150,6 @@ label {
 	font-weight: bold;
 	margin-bottom: 70px;
 }
-
 .main button:hover {
 	box-shadow: 2px 2px 5px #555;
 	background-color: #7799d4;
@@ -168,11 +158,9 @@ label {
 	box-shadow: 2px 2px 5px #555;
 	background-color: #ddd;
 }
-
 .main span {
 	position: relative;
 }
-
 .main i {
 	position: absolute;
 	left: 15px;
@@ -180,6 +168,5 @@ label {
 	font-size: 16px;
 	top: 2px;
 }
-
 </style>
 @endpush

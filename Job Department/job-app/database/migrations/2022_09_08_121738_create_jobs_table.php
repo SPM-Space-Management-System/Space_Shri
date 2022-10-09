@@ -19,7 +19,8 @@ return new class extends Migration
             $table->date('P_date')->nullable();
             $table->text('Summary')->nullable();
             $table->text('Requirements')->nullable();
-            $table->string('image_id')->nullable();
+            // $table->string('image_id')->nullable();
+            $table->string('image_id');
             $table->integer('NOV')->nullable();
             $table->date('C_date')->nullable();
             $table->text('Duties')->nullable();
@@ -39,3 +40,4 @@ return new class extends Migration
         Schema::dropIfExists('jobs');
     }
 };
+

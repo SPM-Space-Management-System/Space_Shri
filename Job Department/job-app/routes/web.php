@@ -1,9 +1,7 @@
 <?php
-
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\JobInsertController;
-use App\Http\Controllers\JoblistviewController;
-use App\Http\Controllers\JobDeleteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +13,32 @@ use App\Http\Controllers\JobDeleteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Main-Home
- Route::get('/', [JobInsertController::class, 'indexhome'])->name('home');
 
 
-//insert job new post
-Route::get('/addjob', [JobInsertController::class, 'indexjobupload'])->name('jobstore');
 
-//show job list
-Route::get('/joblist', [JoblistviewController::class, 'show']);
+Route::get('/jobinsert', [PagesController::class, 'indexjobinsert'])->name('jobinsert');
 
-Route::get('/delete',[JobDeleteController::class,'destroy']);
+Route::post('/savejob', [JobController::class, 'storejob'])->name('jobStore');
+
+Route::get('/',[PagesController::class,'indexjobsview'])->name('jobview');
+
+Route::get('/home',[PagesController::class,'homeview'])->name('home');
+
+Route::get('/applicant',[PagesController::class,'applicantlistview'])->name('Applicant_list');
+
+Route::post('/apply',[PagesController::class,'jobApplyindex'])->name('ApplicantStore');
+
+Route::delete('/jobs/{id}',[JobController::class,'destroy']);
+//Route::get('/JobUpdate',[PagesController::class,'jobupdate']);
+
+Route::get('/view',[PagesController::class,'jobdetailsVeiw']);
+
+
+//admin edit jobs
+Route::get('/JobUpdate/{id}', [PagesController::class, 'indexjobedit'])->name('JobUpdate');
+//admin save-edit jobs
+Route::post('/JobUpdate/{id}', [JobController::class, 'storeedtjobs'])->name('storeedtjobs');
+
+
+
+Route::get('/jobdetails/{id}', [JobController::class, 'jobdetails_function'])->name('jobdetails');

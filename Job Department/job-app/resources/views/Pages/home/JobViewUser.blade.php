@@ -125,7 +125,7 @@
 
                                 </div>
                                 <div class=btnedit>
-                                    <a href="{{ route('/JobUpdate',$job->id) }}" class="btn btn-warning me-md-1 pl-3 border-light">Edit</a>
+                                    <a href="/JobUpdate/{{$job->id}}" class="btn btn-warning me-md-1 pl-3 border-light">Edit</a>
 
                                 </div>
                             </td>

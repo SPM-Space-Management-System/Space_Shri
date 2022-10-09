@@ -69,48 +69,28 @@ class PagesController extends ParentController
 
 
       public function indexmissionreport(){
-        //$post = missions::all();
-    
-    //     $label = ['Shirts', 'T-Shirt', 'Pants', 'Coat', 'Kurta', 'Pajama'];
-
-    //    $price = ['10', '5', '100', '90', '50', '30'];
-
       
         $date = Carbon::now();
         $currentMoth = $date->format('F');
 
-       
-        $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
-        // $user = DB::table('missions')->whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
-        // $topic = missions::select('topic')->whereMonth('created_at', Carbon::now()->month)->max('costOfMission');
-        // $maxPrice = missions::where('topic', $topic)->max('costOfMission');
-        // $maxPrice = missions::where('topic')->max('costOfMission');
-        
+        $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
+
         $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
-
-        // $label = missions::find('mission_id')whereMonth('created_at', Carbon::now()->month);
-        // $price = missions::whereMonth('created_at', Carbon::now()->month)->('costOfMission');
-      
-       
-        // $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month);
-        // $label =  $monthlyAll->('mission_id');
         
-        $labels = missions::all('mission_id');
-        // $labels = missionsall('mission_id');
+        $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
         $label = array();
-    foreach ($labels as $l) {
+        foreach ($labels as $l) {
         array_push($label,$l->mission_id);
-    }
+        }
 
-    $prices = missions::all('costOfMission');
-    // $prices = missions::all('costOfMission');
-        $price = array();
-    foreach ($prices as $p) {
-        array_push($price,$p->costOfMission);
-        // $price =   $monthlyAll->('costOfMission');
-    }
-        //   dd($totalPrice,  $currentMoth, $maxPrice,  $label, $price);
-           return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice);
+        $prices = missions::whereMonth('created_at', Carbon::now()->month)->get('costOfMission');
+            $price = array();
+            foreach ($prices as $p) {
+            array_push($price,$p->costOfMission);
+        }
+
+        $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
     }
 
 
@@ -124,6 +104,32 @@ class PagesController extends ParentController
     $missionObj  = missions::find($mission_id)->delete();
     // $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
     return redirect()->back();
+  }
+
+
+  public function pdfgenerate(){
+    $date = Carbon::now();
+    $currentMoth = $date->format('F');
+
+    $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
+
+    $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
+    
+    $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
+    $label = array();
+    foreach ($labels as $l) {
+    array_push($label,$l->mission_id);
+    }
+
+    $prices = missions::whereMonth('created_at', Carbon::now()->month)->get('costOfMission');
+        $price = array();
+        foreach ($prices as $p) {
+        array_push($price,$p->costOfMission);
+    }
+
+    $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+    return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
+
   }
  
 }

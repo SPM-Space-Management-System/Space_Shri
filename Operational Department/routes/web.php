@@ -34,6 +34,8 @@ Route::get('/admin/editallposts', [PagesController::class, 'indexeditall'])->nam
 Route::get('/admin/update/{mission_id}', [PagesController::class, 'updatepost'])->name('updatePost');
 //admin view delete(ALL)
 Route::get('/admin/remove/{mission_id}', [PagesController::class, 'reomvepost'])->name('removePost');
+//pdf generate
+Route::get('admin/pdf/missionreport', [PagesController::class, 'pdfgenerate'])->name('missionpdf');
 
 
 

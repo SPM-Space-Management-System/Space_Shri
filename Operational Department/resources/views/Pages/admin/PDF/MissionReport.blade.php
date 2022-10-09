@@ -1,8 +1,18 @@
-@extends('layouts.app')
-@section('content')
-<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
 <div class="space" style="padding-bottom: 5vh"></div>
+  
+<img src="../../images/SpaceTransparent.png" style="width:200px;height:100px;display:block;margin:auto;padding: auto;" alt="space logo">
+   
+
 
 <div class="container">
     <h1>Monthly Report</h1>
@@ -115,9 +125,7 @@ var myChart = new Chart(ctx, {
  
       </div>
       <div class="space" style="padding-bottom: 5vh"></div>
-      <a href="{{ route('mhome') }}" class="btn btn-primary bg-info me-md-5 pl-5">Go Dashboard</a>
-      <a href="{{ route('missionpdf') }}" class="btn btn btn-success">Generate PDF</a>
-
+   
 </div>
 
 
@@ -125,53 +133,5 @@ var myChart = new Chart(ctx, {
 
 
 <div class="space" style="padding-bottom: 10vh"></div>
-@endsection
-
-
-@push('css')
-<style>
-     .card{
-    background-color: rgb(250, 244, 239);
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
-    transition: 0.5s
-  }
-    .container{
-        margin top: 5%;
-    }
-    .inner{
-        overflow: hidden;
-    }
-    .inner img{
-        transition: all 1.5s ease;
-    }
-    .inner:hover img{
-        transform: scale(1.5);
-    }
-    
-    .aligns{
-      text-align: center;
-    }
-    h1{
-        text-align: center;
-        color: rgb(16, 189, 39);
-    }
-    h2{
-        text-align: center;
-    }
-    h3{
-        color: rgb(38, 206, 32);
-    }
-    p{
-        margin-top: 10%;
-    }
-    table:hover tr {
-  background:rgb(75, 148, 16);
-}
-    body{
-        background-color: rgb(0, 0, 0);
-    }
-</style>
-@endpush  
+</body>
+</html>

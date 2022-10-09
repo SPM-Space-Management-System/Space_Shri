@@ -36,7 +36,8 @@
         {{-- <button type="button" class="btn btn-warning">Update</button></td> --}}
         <td><a href="/missionedit/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-warning" >Edit</button></a></td>
       
-        <td><a href="/admin/remove/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-danger" >Remove</button></a></td>
+        {{-- <td><button><a href="/admin/remove/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-danger servideletebtn" >Remove</button></a></td> --}}
+        <td> <button type="submit" onclick="remove()" class="btn btn-info me-md-3 btn-danger servideletebtn">Remove</button></td>
    
       </tr>
       @endforeach
@@ -49,6 +50,23 @@
 <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
 
+@section('scripts')
+    <script>
+      $(document).ready(function() {
+  $(".servideletebtn").click(function () {
+    alert("Hello!");
+    $(".hide_div").hide();
+  });
+});
+     
+    </script>
+@endsection
+<script>
+  
+  function remove(){
+    onsubmit="return confirm('Do you really want to Delete this Record?');"
+  }
+</script>
 
 
 {{-- css  --}}
@@ -95,3 +113,30 @@
     }
 </style>
 @endpush
+
+ {{-- Sweet Alert Delete Script --}}
+ {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script>
+  window.addEventListener('show-delete-confirmation', event => {
+      Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, Delete'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  Livewire.emit('deleteConfirmed')
+              }
+      })
+  });
+  window.addEventListener('studentDeleted', event => {
+      Swal.fire(
+          'Deleted!',
+          'The student has been deleted.',
+          'success'
+      )
+  });
+</script> --}}

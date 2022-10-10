@@ -27,15 +27,20 @@
                 </div>
             </form>
         </div>
-    </div>
-    
+    </div> 
+     <div class="space" style="padding-top: 3vh"></div>
+     @if(session('msg'))
+     <div class="p-3 mb-2 bg-danger text-white rounded">{{ session('msg') }}</div>
+  
+     @endif
+  
     {{-- All posts read for Admin --}}
     <a href="{{ route('minsert') }}" class="btn btn-primary me-md-5 pl-5" type="submit">Add New Post </a>    
     <a href="{{ route('editallposts') }}"class="btn btn bg-warning me-md-5 pl-5" type="submit">Update/Remove Post</a>
     <a href="{{ route('missionreport') }}" class="btn btn btn-success" type="submit">Generate Report</a>
     <div class="space" style="padding-top: 3vh"></div>
 
-    
+
 <h3>Latest Posts</h3>
  <div class="row row-cols-1 row-cols-md-2 g-4"> 
     @foreach ($missionsALL as $mission)

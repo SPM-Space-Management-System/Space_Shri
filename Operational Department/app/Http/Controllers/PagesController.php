@@ -105,7 +105,10 @@ class PagesController extends ParentController
   public function reomvepost($mission_id){
     $missionObj  = missions::find($mission_id)->delete();
     // $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
-    return redirect()->back();
+    return response()->json(['status'=>'Mission Details Deleted Successfully!']);
+    // return redirect()->back();
+
+ 
   }
 
 
@@ -129,12 +132,14 @@ class PagesController extends ParentController
         array_push($price,$p->costOfMission);
     }
 
-    // $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
-    //  $pdf = PDF::loadview('pages/admin/PDF/MissionReport',array('currentMoth' => $currentMoth,'monthlyAll' => $monthlyAll, 'totalPrice' => $totalPrice, 'monthlyTab'=>$monthlyTab, 'labels' => $label, 'prices' => $price));
-    // return $pdf->stream();
+ 
     $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
+
+    if($monthlyAll->topic == null){
+        return "<h1> The TOP MODEl DETAILS Not Exist. </h1>";
+    }else{
     return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
-       
+    }
   }
  
 }

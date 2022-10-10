@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
 <div class="container">
@@ -36,9 +37,11 @@
         {{-- <button type="button" class="btn btn-warning">Update</button></td> --}}
         <td><a href="/missionedit/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-warning" >Edit</button></a></td>
       
-        {{-- <td><button><a href="/admin/remove/{{$Post->mission_id}}" class="btn btn-info me-md-3 btn-danger servideletebtn" >Remove</button></a></td> --}}
-        <td> <button type="submit" onclick="remove()" class="btn btn-info me-md-3 btn-danger servideletebtn">Remove</button></td>
-   
+        <td><a class="btn btn-info me-md-3 btn-danger serviceDeleteBtn" role="button"
+          title="Unnecessary or incorrect Missions information can be deleted." href="/admin/remove/{{$Post->mission_id}}" >Remove</button></a></td>
+        {{-- <td> <button type="submit" onclick="remove()" class="btn btn-info me-md-3 btn-danger servideletebtn">Remove</button></td> --}}
+       
+    </a>
       </tr>
       @endforeach
     </tbody>
@@ -46,29 +49,57 @@
        
   </table>
   <a href="/missionshomea" class="btn btn-info me-md-3" >Back</button></a>
+
+  
 </div>
 <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
+@push('js')
+  <script>
 
-@section('scripts')
-    <script>
-      $(document).ready(function() {
-  $(".servideletebtn").click(function () {
-    alert("Hello!");
-    $(".hide_div").hide();
+  $(document).ready(function() {
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('.serviceDeleteBtn').click(function(e) {
+        e.preventDefault();
+        var mission_id = $(this).closest("td").find('.serDel_val').val();
+        //alert(delete_id);
+        swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this data!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    var data = {
+                        "_token": $('input[name=_token]').val(),
+                        "id": mission_id,
+                    };
+                    $.ajax({
+                        url: '/admin/remove/{{$Post->mission_id}}',
+                        data: data,
+                        success: function(response) {
+                            swal(response.status , {
+                                icon: "success",
+                            })
+                            .then((result) => {
+                                location.reload();
+                            });
+                        }
+                    });
+                }
+            });
+    });
   });
-});
-     
-    </script>
-@endsection
-<script>
-  
-  function remove(){
-    onsubmit="return confirm('Do you really want to Delete this Record?');"
-  }
-</script>
-
-
+  </script>
+@endpush
 {{-- css  --}}
 @push('css')
 <style>
@@ -114,29 +145,4 @@
 </style>
 @endpush
 
- {{-- Sweet Alert Delete Script --}}
- {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- <script>
-  window.addEventListener('show-delete-confirmation', event => {
-      Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, Delete'
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  Livewire.emit('deleteConfirmed')
-              }
-      })
-  });
-  window.addEventListener('studentDeleted', event => {
-      Swal.fire(
-          'Deleted!',
-          'The student has been deleted.',
-          'success'
-      )
-  });
-</script> --}}
+

@@ -65,7 +65,7 @@
     </form>
 </div>
 <div style="float: right; width: 225px"> 
-        <form onsubmit="return confirm('Do you really want to Delete this Record?');" action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
+        <form onsubmit="return confirm('Do You Really Want To Delete This Mission ?');" action="{{ route('deletePost',$post->mission_id) }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
         <button type="submit" class="btn btn-danger " value="delete">Delete</button>  
         </form>
@@ -74,17 +74,8 @@
         </div>
    
 
-
-        
-
-
 </div>
 @endsection
-<script>
-    // function (){
-    //     return confirm('Do you really want to Delete this Record?');
-    // }
-</script>
 
 @push('css')
 <style>
@@ -99,36 +90,5 @@ h2{
 }   
 
 </style> 
-{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-$(document).ready(function(){
-
-    $('.postdeletebtn').click(function (e){
-        e.prevenDefault();
-
-      
-
-
-        
-swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this imaginary file!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-      swal("Poof! Your imaginary file has been deleted!", {
-        icon: "success",
-      });
-    } 
-  });
-    })
-})
-
-
-
-<script> --}}
-
 
 @endpush

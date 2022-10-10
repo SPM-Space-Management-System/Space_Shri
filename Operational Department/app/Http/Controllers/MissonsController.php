@@ -87,7 +87,11 @@ class MissonsController extends ParentController
       public function deletemissions($mission_id){
         $missionObj  = missions::find($mission_id)->delete();
         $missionsALL = missions::orderBy('mission_id', 'DESC')->get(); 
-        return view('pages/Admin/MissionsHome',compact('missionsALL'));
+
+         session()->flash( 'msg', 'Post Deleted Successfully...' );
+         return view('pages/Admin/MissionsHome')->with('missionsALL',$missionsALL);
+         
+        // return redirect()->back()->with('message','Details Deleted Successfully!');
       }
       
 

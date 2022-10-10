@@ -103,12 +103,15 @@
                                     <h5>{{ $post->ocost }}</h5>
                                 </td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('projectview.delete', $post->id) }}" role="button" title="Unnecessary or incorrect rocket information can be deleted.">
+                                    <input type="hidden" class="proDel_val" value="{{ $post->id }}">
+                                    <a class="btn btn-warning btn-sm btn-block projectDeleteBtn"
+                                        href="{{ route('projectview.delete', $post->id) }}" role="button"
+                                        title="Unnecessary or incorrect rocket information can be deleted.">
                                         <h6>DELETE</h6>
                                     </a>
                                     <br><br>
-                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Directs to the update interface to edit the data."
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                        title="Directs to the update interface to edit the data."
                                         onclick="projectEditModal({{ $post->id }})">
                                         <h6>EDIT</h6>
                                     </a>
@@ -119,7 +122,8 @@
                 </table>
                 <div class="col-md-12 text-center">
                     <div class="btn">
-                        <a title="Click this button to save the entered data." href="{{ route('projectinsert') }}" role="button">ADD NEW DETAILS</a>
+                        <a title="Click this button to save the entered data." href="{{ route('projectinsert') }}"
+                            role="button">ADD NEW DETAILS</a>
                         <a title="Redirects to report page." href="{{ route('report') }}" role="button">REPORT >></a>
                     </div>
                 </div>
@@ -272,5 +276,47 @@
                 }
             });
         }
+
+        $(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('.projectDeleteBtn').click(function(e) {
+                e.preventDefault();
+                var post_id = $(this).closest("td").find('.proDel_val').val();
+                //alert(delete_id);
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this data!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            var data = {
+                                "_token": $('input[name=_token]').val(),
+                                "id": post_id,
+                            };
+                            $.ajax({
+                                url: '/rocketview/' + post_id + '/delete/',
+                                data: data,
+                                success: function(response) {
+                                    swal(response.status, {
+                                            icon: "success",
+                                        })
+                                        .then((result) => {
+                                            location.reload();
+                                        });
+                                }
+                            });
+                        }
+                    });
+            });
+        });
     </script>
 @endpush

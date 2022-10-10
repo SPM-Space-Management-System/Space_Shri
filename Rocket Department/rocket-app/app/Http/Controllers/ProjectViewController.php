@@ -16,7 +16,8 @@ class ProjectViewController extends Controller
 
     public function delete($post_id) {
         ProjectViewFacade::delete($post_id);
-        return redirect()->back()->with('message','Details Deleted Successfully!');
+        return response()->json(['status' => 'Project Details Deleted Successfully!']);
+        //return redirect()->back()->with('message','Details Deleted Successfully!');
     } 
 
     public function edit(Request $request) { 

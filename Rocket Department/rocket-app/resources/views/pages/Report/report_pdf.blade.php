@@ -5,11 +5,13 @@
         <h1>Project Report</h1>
         <hr>
         <h2>Project Details...</h2>
-        <h3>Project Name :- {{ $post->pname }}</h3>
-        <h3>Project Date :- {{ $post->pdate }}</h3>
-        <h3>Total Launches :- {{ $post->noOfLaunch }}</h3>
-        <h3>Total Landings :- {{ $post->noOfLand }}</h3>
-        <h3>Total Reflights :- {{ $post->noOfReflight }}</h3>
+        <ul>
+            <li><h3>Project Name :- {{ $post->pname }}</h3></li>
+            <li><h3>Project Date :- {{ $post->pdate }}</h3></li>
+            <li><h3>Total Launches :- {{ $post->noOfLaunch }}</h3></li>
+            <li><h3>Total Landings :- {{ $post->noOfLand }}</h3></li>
+            <li><h3>Total Reflights :- {{ $post->noOfReflight }}</h3></li>
+        </ul>
         <hr>
         <h2>Project Expenses...</h2>
         <div class="expense-table">
@@ -118,9 +120,9 @@
                 <pre>contact@spaceshri.com (Email)</pre>
             </div>
     @endforeach
-    <br>
+    <br><
     <div class="logo">
-        <img src="nlogo.png" alt="logo" />
+        <img src="sp.png" alt="logo" />
         <p>&copy;2022 Space Shri | All Rights Reserved</p>
     </div>
 @endsection
@@ -138,7 +140,7 @@
             margin-left: 100px;
         }
 
-        h3 {
+        li {
             margin-left: 100px;
         }
 
@@ -170,8 +172,8 @@
         }
 
         img {
-            width: 100px;
-            height: 60px;
+            width: 180px;
+            height: 80px;
             display: block;
             margin: auto;
             padding: auto;

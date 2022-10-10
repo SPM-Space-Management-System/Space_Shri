@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
   <img src="space.jpg" alt="Snow" style="width:100%">
-  <button class="btn1">Manage Jobs</button>
-  <button class="btn2">Manage Applicants</button>
+  <a href="{{ route('JobViewUser') }}"button class="btn1">Manage Jobs</button>
+  <a href="{{ route('jobinsert') }}"button class="btn2">Manage Applicants</button>
 </div>
 <div class="Fline">
-    </div> 
+    </div>
 @endsection
 
 @push('css')

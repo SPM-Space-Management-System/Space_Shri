@@ -5,14 +5,14 @@
  		<h1>UPLOAD A JOB</h1>
  	</div>
 <div class="container">
-    {{-- @if($errors->any())
-    @endif --}}
+    @if($errors->any())
+    @endif
  	<div class="main">
-        {{-- @if(session('message'))
+        @if(session('message'))
         <div class="p-3 mb-2 bg-success text-white rounded">{{ session('message') }}</div>
 
-        @endif --}}
- 		<form method="post" action="{{ route('ApplicantStore') }}" enctype="multipart/form-data">
+        @endif
+ 		<form method="POST" action="{{ route('saveApplicant') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
 
 
@@ -22,24 +22,24 @@
                         <th>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">JOB POSITION</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('jobtitle')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('jobtitle')}}</div>
                             <input class="form-control form-control-lg" id="exampleFormControlInput1" name="jobtitle" placeholder="EX:LAB SPECIALIST" >
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput2" class="form-label">DATE OF APPLICATION</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('DOA')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('DOA')}}</div>
                                 <input type="date" class="form-control form-control-lg" id="exampleFormControlInput2" name="DOA" placeholder="XXXX/XX/XX" >
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput3" class="form-label">EMAIL</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('email')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('email')}}</div>
                                 <input class="form-control form-control-lg" input type="email" id="exampleFormControlInput3" name="email" placeholder="EX:example@gmail.com " >
 
 
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput4" class="form-label">ADDRESS</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('address')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('address')}}</div>
                                 <input class="form-control form-control-lg" id="exampleFormControlInput4" name="address" placeholder="EX:No 20,weliwira RD, Kaduwela " >
                             </div>
 
@@ -47,22 +47,22 @@
                         <th>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">NAME OF APPLICANT</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('name')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('name')}}</div>
                                 <input class="form-control form-control-lg" id="exampleFormControlInput1" name="name" placeholder="EX:M.R.Kasun Amarasinghe" >
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">CONTACT NO</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('tp_no')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('tp_no')}}</div>
                                 <input   class="form-control form-control-lg" id="exampleFormControlInput1" name="tp_no" placeholder="EX:0XXXXXXXXX" >
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">NIC NO</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('NIC')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('NIC')}}</div>
                                 <input  class="form-control form-control-lg" id="exampleFormControlInput1" name="NIC" placeholder="EX:XXXXXXXXXX " >
                             </div>
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">UPLOAD CV</label>
-                                {{-- <div class="alert-danger text-danger">{{$errors->first('cvadd')}}</div> --}}
+                                <div class="alert-danger text-danger">{{$errors->first('cvadd')}}</div>
                                 <input class="form-control form-control-lg" type="file" name="cvadd"  >
                             </div>
 

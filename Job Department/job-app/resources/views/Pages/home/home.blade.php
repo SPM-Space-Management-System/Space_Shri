@@ -30,10 +30,10 @@
         <div class="container">
             <div class="wrapper">
                 <div class="container">
-                    {{-- <form method="get" action="{{ route('mhomeu') }}"> --}}
+                    <form method="get" action="{{ route('home') }}">
                     <div class="search_wrap search_wrap_6">
                         <div class="search_box">
-                            <input type="text" name="searchpostu" class="input" placeholder="Search Title Of The Job">
+                            <input type="text" name="searchposta" class="input" placeholder="Search Title Of The Job">
                             <div class="btn" input type="button" value="Search">
                                 <p>Search</p>
                             </div>
@@ -52,7 +52,7 @@
                 <div class="titlebox"><center>{{ $job['jobtitle'] }}</center></div>
 
                <DIV><a href="{{ route('jobdetails', $job->id) }}"  > <button class="button">VIEW MORE</button></a>
-                <a href="" role="button"><button class="button">APPLY NOW</button></a>
+                <a href="{{ route('Applicantinsert') }}" role="button"><button class="button">APPLY NOW</button></a>
                 </div></div>
                 @endforeach
 

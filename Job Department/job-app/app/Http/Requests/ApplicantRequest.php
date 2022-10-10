@@ -55,7 +55,7 @@ class ApplicantRequest extends FormRequest
             'NIC'=>[
                  'required',
             ],
-            'cv_id'=>[
+            'cvadd'=>[
                 'required',
 
             ],

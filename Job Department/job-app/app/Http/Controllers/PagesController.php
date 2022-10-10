@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\jobs;
 use Illuminate\Http\Request;
 
+
 class PagesController extends Controller
 {
     public function indexjobinsert()
@@ -21,11 +22,16 @@ class PagesController extends Controller
         return view('Pages/home/JobViewUser', compact('data'));
     }
 
-    public function homeview()
+    public function homeview(Request $request)
     {
+        if($request->has('searchposta')){
+            $searchposta = $request->get('searchposta');
+            $data = jobs::where('jobtitle','like','%'.$searchposta.'%')->orderBy('id', 'DESC')->get();
+        }else{
+            $data = jobs::orderBy('id', 'DESC')->get();
+        }
+    return view('Pages/home/home',compact('data'));
 
-        $data = jobs::all();
-        return view('Pages/home/home', compact('data'));
     }
     public function applicantlistview()
     {
@@ -33,11 +39,15 @@ class PagesController extends Controller
         $data = jobs::all();
         return view('Pages/admin/applicantslistview', compact('data'));
     }
-    public function jobApplyindex()
+    public function adminview()
     {
 
         $data = jobs::all();
-        return view('Pages/admin/jobApply', compact('data'));
+        return view('Pages/admin/manageJobs', compact('data'));
+    }
+    public function jobApplyindex()
+    {
+        return view('Pages/admin/jobApply');
     }
 
     // public function jobupdate()
@@ -59,4 +69,14 @@ class PagesController extends Controller
         $data = jobs::all();
         return view('Pages/home/jobdetails', compact('data'));
     }
+     //read and search
+    //  public function indexjobhomeuser(Request $request){
+    //     if($request->has('searchposta')){
+    //         $searchposta = $request->get('searchposta');
+    //         $jobALL = jobs::where('jobtitle','like','%'.$searchposta.'%')->orderBy('id', 'DESC')->get();
+    //     }else{
+    //         $jobALL = jobs::orderBy('id', 'DESC')->get();
+    //     }
+    // return view('pages/home/home',compact('jobALL'));
+    // }
 }

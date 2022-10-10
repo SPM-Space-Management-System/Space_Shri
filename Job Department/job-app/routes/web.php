@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ApplicantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,13 +21,17 @@ Route::get('/jobinsert', [PagesController::class, 'indexjobinsert'])->name('jobi
 
 Route::post('/savejob', [JobController::class, 'storejob'])->name('jobStore');
 
-Route::get('/',[PagesController::class,'indexjobsview'])->name('jobview');
+Route::get('/job',[PagesController::class,'indexjobsview'])->name('jobview');
 
-Route::get('/home',[PagesController::class,'homeview'])->name('home');
+Route::get('/',[PagesController::class,'homeview'])->name('home');
+Route::get('/dashboard',[PagesController::class,'adminview'])->name('');
 
 Route::get('/applicant',[PagesController::class,'applicantlistview'])->name('Applicant_list');
 
-Route::post('/apply',[PagesController::class,'jobApplyindex'])->name('ApplicantStore');
+Route::get('/apply',[PagesController::class,'jobApplyindex'])->name('Applicantinsert');
+
+Route::post('/saveApplicant', [ApplicantController::class, 'saveApplicant'])->name('saveApplicant');
+
 
 Route::delete('/jobs/{id}',[JobController::class,'destroy']);
 //Route::get('/JobUpdate',[PagesController::class,'jobupdate']);
@@ -40,5 +45,7 @@ Route::get('/JobUpdate/{id}', [PagesController::class, 'indexjobedit']);
 Route::post('/JobUpdate/{id}', [JobController::class, 'storeedtjobs'])->name('storeedtjobs');
 
 
+//user read
+//Route::get('/jobhomeu',[PagesController::class,'indexjobhomeuser'])->name('jhomeu');
 
 Route::get('/jobdetails/{id}', [JobController::class, 'jobdetails_function'])->name('jobdetails');

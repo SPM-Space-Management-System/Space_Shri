@@ -18,7 +18,7 @@
                         <div class="jobboxsub3">
                             <CENTER> <button class="btn1">APPLY NOW</button><br><br>
                                 <br>
-                                <H4>NO.OF.VACANCIES</H4><button class="btn2">00</button><br>
+                                <H4>NO.OF.VACANCIES</H4><button class="btn2">{{ $post->NOV }}</button><br>
                                 <br>
                                 <H4>PUBLISH DATE</H4><button class="btn2"> {{ $post->P_date }}</button><br>
                                 <br>

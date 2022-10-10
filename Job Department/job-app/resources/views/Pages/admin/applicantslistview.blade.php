@@ -9,7 +9,7 @@
             <div class="col-md-12 text-center">
                 <h1 class="page-title">Applicant List</h1>
             </div>
-            
+
             <div class="col-md-12 text-center">
                 <div class="btn">
                     <a href="" role="button">GENARATE REPORT</a>
@@ -51,29 +51,85 @@
                         </th>
                     </tr>
                 </thead>
-                
-                </tbody>
-            </table>
-              
-        </div>   
-        </div> 
-    </div>
+                @foreach ($data as $job)
+                <
+                <tr>
+                    <td>
+                        <h5>{{ $job['id'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['jobtitle'] }}</h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['NOV'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['P_date'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['C_date'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['Summary'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['Duties'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['Requirements'] }} </h5>
+                    </td>
+                    <td>
+                        <h5>{{ $job['Req_Doc'] }}</h5>
+                    </td>
+                    <td>
+                        {{-- <h5>{{ $job['image_id'] }}</h5> --}}
+                        <img src="{{ asset('thumbnails/' . $job->image_id) }}" height="50" width ="2"  alt="job images">
+                    </td>
+                    <td>
+                        @if ($job->done == 0)
+                            <span class="badge bg-danger">
+                                <h6>Inactive</h6>
+                            </span>
+                        @else
+                            <span class="badge bg-primary">
+                                <h6>Active</h6>
+                            </span>
+                        @endif
+                    </td>
 
-    <!-- Modal -->
-    <div class="modal fade" id="rocketEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="rocketEditLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="rocketEditLabel">Job Details Update</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="rocketEditContent">
+                    <td>
+                        <div class=btndelete>
 
-                </div>
-            </div>
-        </div>
+                            <form method="POST" action="/jobs/{{$job->id}}" accept-charset="UTF-8" style="display:inline">
+
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger btn-sm"  >
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                            </form>
+
+
+
+                        </div>
+                        <div class=btnedit>
+                            <a href="/JobUpdate/{{$job->id}}" class="btn btn-warning me-md-1 pl-3 ">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+
+                        </div>
+                    </td>
+                </tr>
+
+
+
+            @endforeach
+
+            </tbody>
+        </table>
+
+
     </div>
+</div>
+</div>
 @endsection
 
 @push('css')
@@ -106,9 +162,9 @@
             width: 70px;
             height: 35px;
         }
-       
+
         .btn a {
-           
+
             font-size: 1.5em;
             font-weight: 400;
             padding: 5px 5px;

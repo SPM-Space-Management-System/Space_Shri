@@ -2,7 +2,7 @@
 @section('content')
 <img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
 
-<div class="space" style="padding-bottom: 5vh"></div>
+<div class="space" style="padding-bottom: 2vh"></div>
 
 <div class="container">
     <h1>Monthly Report</h1>
@@ -71,7 +71,7 @@ var myChart = new Chart(ctx, {
         plugins: {
             title: { 
                 display: true,
-                text: 'Mission Topic'
+                text: 'Mission Topic ID'
                
             },
             legend: {
@@ -82,6 +82,8 @@ var myChart = new Chart(ctx, {
 });
 </script>
 <div class="space" style="padding-bottom: 5vh"></div>
+<h3>View All Completed Missions In {{$currentMoth}} Month</h3>
+
          <table class="table table-striped table-dark">
             <thead>
       <tr>
@@ -162,7 +164,9 @@ var myChart = new Chart(ctx, {
         text-align: center;
     }
     h3{
-        color: rgb(38, 206, 32);
+        color: rgb(52, 116, 49);
+        text-align: center;
+
     }
     p{
         margin-top: 10%;

@@ -89,7 +89,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.mi
          <!-- Show Graph Data -->
 <script src="https://cdnjs.com/libraries/Chart.js"></script>
 
-<h3>View All Completed Missions In The Current Month</h3>
+<h3>View All Completed Missions In {{$currentMoth}} Month</h3>
          <table class="table table-striped table-dark">
             <thead>
       <tr>

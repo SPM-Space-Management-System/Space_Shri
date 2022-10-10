@@ -16,7 +16,8 @@ class RocketViewController extends Controller
 
     public function delete($task_id) {
         RocketViewFacade::delete($task_id);
-        return redirect()->back()->with('message','Details Deleted Successfully!');
+        return response()->json(['status'=>'Rocket Details Deleted Successfully!']);
+        //return redirect()->back()->with('message','Details Deleted Successfully!');
     } 
 
     public function done($task_id) {

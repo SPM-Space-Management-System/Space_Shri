@@ -87,22 +87,27 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm btn-block" role="button" title="Unnecessary or incorrect rocket information can be deleted."
+                                    <input type="hidden" class="serDel_val" value="{{ $task->id }}">
+                                    <a class="btn btn-warning btn-sm btn-block serviceDeleteBtn" role="button"
+                                        title="Unnecessary or incorrect rocket information can be deleted."
                                         href="{{ route('rocketview.delete', $task->id) }}">
                                         <h6>DELETE</h6>
                                     </a>
                                     @if ($task->done == 0)
                                         <a class="btn btn-warning btn-sm btn-block"
-                                            href="{{ route('rocketview.done', $task->id) }}" role="button" title="Only necessary data can be publish in the user interface.">
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button"
+                                            title="Only necessary data can be publish in the user interface.">
                                             <h6>PUBLISH</h6>
                                         </a>
                                     @else
                                         <a class="btn btn-warning btn-sm btn-block"
-                                            href="{{ route('rocketview.done', $task->id) }}" role="button" title="Only necessary data can be unpublish in the user interface.">
+                                            href="{{ route('rocketview.done', $task->id) }}" role="button"
+                                            title="Only necessary data can be unpublish in the user interface.">
                                             <h6>DRAFT</h6>
                                         </a>
                                     @endif
-                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button" title="Directs to the update interface to edit the data."
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                        title="Directs to the update interface to edit the data."
                                         onclick="rocketEditModal({{ $task->id }})">
                                         <h6>EDIT</h6>
                                     </a>
@@ -114,7 +119,8 @@
 
                 <div class="col-md-12 text-center">
                     <div class="btn">
-                        <a title="Click this button to save the entered data." href="{{ route('rocketinsert') }}" role="button">ADD NEW DETAILS</a>
+                        <a title="Click this button to save the entered data." href="{{ route('rocketinsert') }}"
+                            role="button">ADD NEW DETAILS</a>
                     </div>
                 </div>
             </div>
@@ -277,5 +283,47 @@
                 }
             });
         }
+
+        $(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('.serviceDeleteBtn').click(function(e) {
+                e.preventDefault();
+                var task_id = $(this).closest("td").find('.serDel_val').val();
+                //alert(delete_id);
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this data!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            var data = {
+                                "_token": $('input[name=_token]').val(),
+                                "id": task_id,
+                            };
+                            $.ajax({
+                                url: '/rocketview/' + task_id + '/delete/',
+                                data: data,
+                                success: function(response) {
+                                    swal(response.status, {
+                                            icon: "success",
+                                        })
+                                        .then((result) => {
+                                            location.reload();
+                                        });
+                                }
+                            });
+                        }
+                    });
+            });
+        });
     </script>
 @endpush

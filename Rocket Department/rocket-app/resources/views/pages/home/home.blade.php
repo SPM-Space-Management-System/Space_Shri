@@ -10,53 +10,46 @@
         <source src="bg.mp3" type="audio/mpeg">
     </audio>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>Space Shri..</h3>
         <div class="container">
             <div class="imgBx jarallax">
                 <img src="bg1.jpg" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>The Space Management System is a web application that we will implement, called Space Sri. As NASA for
+                    united states, for Sri Lanka there is not any space management or astronomy management system. As well
+                    as Sri Lankans are not doing any further study or innovation in this sector. Therefore, enthusiasts in
+                    this sector do not try to study more about innovative things. So, we decided to implement a space
+                    management system for Sri Lanka, and we hope that this will help to increase the knowledge of people in
+                    Sri Lanka about this field.</p>
             </div>
         </div>
     </div>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>Mission..</h3>
         <div class="container">
             <div class="imgBx jarallax">
                 <img src="bg3.jpg" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>SPACE SHRI explores the unknown in air and space, innovates for the benefit of humanity, inspires the
+                    world through discovery, educates people about space, and creates new jobs. Core Values: We share a set
+                    of core values—Safety, Integrity, Teamwork, Excellence, Inclusion—that are evident in everything we do.
+                </p>
             </div>
         </div>
     </div>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>Our System..</h3>
         <div class="container">
             <div class="imgBx jarallax">
                 <img src="bg1.jpg" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>Rocket department handles information about all rockets launched and upcoming projects. Job and career
+                    department handles currently available job positions, job applications. Operation department handles the
+                    innovation ideas people were held, they can present their ideas and Operation department helps those
+                    ideas. Newsrooms handles all the news related to our sector. </p>
             </div>
         </div>
     </div>
@@ -64,53 +57,49 @@
         <img src="bg4.jpg" class="jarallax-img">
     </div>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>What we can do..</h3>
         <div class="container">
             <div class="imgBx jarallax">
                 <img src="bg1.jpg" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>There are jobs and there are careers. But at SPACE SHRI, our work is more than just a profession—it’s a
+                    lifelong pursuit, a passion—and a chance to change the history of humanity. For more than 50 years,
+                    SPACE SHRI has been breaking barriers to achieve the seemingly impossible—from walking on the Moon to
+                    pushing the boundaries of human spaceflight farther than ever before.</p>
             </div>
         </div>
     </div>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>What do we have in common?..</h3>
         <div class="container">
             <div class="imgBx jarallax">
-                <img src="bg1.jpg" class="jarallax-img">
+                <img src="bb.png" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>Our more than 18,000 professionals come from many diverse backgrounds, but are united by a common
+                    purpose: to pioneer the future in space exploration, scientific discovery and aeronautics research. In
+                    addition to our core values, our SPACE SHRI team embodies a few shared characteristics that are integral
+                    to our success. Each of these attributes are underpinned by SPACE SHRI’s core values and mission.</p>
             </div>
         </div>
     </div>
     <div class="box">
-        <h3>Awesome Parallex Scrolling</h3>
+        <h3>Yuri Gagarin: First Man in Space..</h3>
         <div class="container">
             <div class="imgBx jarallax">
-                <img src="bg1.jpg" class="jarallax-img">
+                <img src="yuri.jpg" class="jarallax-img">
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-                    Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-                    in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-                    vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-                    Integer eu nibh at nisi ullamcorper sagittis id vel leo.</p>
+                <p>April 12 was already a huge day in space history twenty years before the launch of the first shuttle
+                    mission. On that day in 1961, Russian cosmonaut Yuri Gagarin became the first human in space, making a
+                    108-minute orbital flight in his Vostok 1 spacecraft. Newspapers like The Huntsville Times trumpeted
+                    Gagarin's accomplishment.
+                    Since 1993, the U.S. and Russia have worked together on a number of other space flight projects. The
+                    Space Shuttle began visiting the Russian Mir space station in 1994, and in 1995 Norm Thagard became the
+                    first U.S. astronaut to take up residency on Mir. Seven U.S. astronauts served with their Russian
+                    counterparts aboard the orbiting Mir laboratory from 1995 to 1998. The experience gained from the Mir
+                    cooperative effort, as well as lessons learned, paved the way for the International Space Station.</p>
             </div>
         </div>
     </div>
@@ -229,6 +218,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text">
+        <h3>We Dream Big, We Work Together. SPACE SHRI benefits all humanity and our workforce is key to making this happen. Take a look at the universe of SPACE SHRI missions and projects made possible by our commitment to teamwork, collaboration, equity and inclusiveness.</h3>
     </div>
 @endsection
 
@@ -392,7 +384,7 @@
             background: linear-gradient(#ffb74d, #ffb74d, 30%, #1d3548 30%, #1d3548);
             margin: 10px;
             margin-top: 400px;
-            margin-bottom: 150px;
+            margin-bottom: 50px;
             border-radius: 20px;
             overflow: hidden;
         }
@@ -495,8 +487,7 @@
             display: flex;
             width: 100%;
             padding-top: 400px;
-           
-        } 
+        }
 
         .swiper-slide {
             background-position: center;
@@ -512,6 +503,20 @@
             width: 600px;
             height: 450px;
             -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+        }
+
+        .text {
+            padding-top: -10vh;
+            padding-bottom: 20vh;
+        }
+
+        .text h3 {
+            display: block;
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            font-size: 1.2em;
+            margin-right: 100px;
         }
     </style>
 @endpush
@@ -549,7 +554,7 @@
                 stretch: 0,
                 depth: 200,
                 modifier: 1,
-                slideShadows : true,
+                slideShadows: true,
             },
             loop: true,
             autoplay: {

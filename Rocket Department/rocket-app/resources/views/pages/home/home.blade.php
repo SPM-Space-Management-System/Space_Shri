@@ -338,12 +338,12 @@
             margin-top: 200px;
             margin-bottom: 40px;
             padding: 40px;
-            background: #333;
+            background: #8B8000;
             z-index: 1;
             max-width: 400px;
             color: #fff;
             box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
-            border-bottom: 6px solid #4ac7ff;
+            border-bottom: 6px solid #FBCEB1;
         }
 
         .box:nth-child(even) .container .content {

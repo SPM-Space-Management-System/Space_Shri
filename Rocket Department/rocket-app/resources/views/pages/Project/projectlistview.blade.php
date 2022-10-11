@@ -303,7 +303,7 @@
                                 "id": post_id,
                             };
                             $.ajax({
-                                url: '/rocketview/' + post_id + '/delete/',
+                                url: '/projectview/' + post_id + '/delete/',
                                 data: data,
                                 success: function(response) {
                                     swal(response.status, {

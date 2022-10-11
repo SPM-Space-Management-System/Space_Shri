@@ -37,9 +37,7 @@
                         <th scope="col">
                             <h3>TP_NO</h3>
                         </th>
-                        <th scope="col">
-                            <h3>DOB</h3>
-                        </th>
+
                         <th scope="col">
                             <h3>NIC NO</h3>
                         </th>
@@ -81,24 +79,19 @@
 
 
                     <td>
-                        {{-- <div class=btndelete>
+                        <div class=btndelete>
 
-                            <form method="POST" action="/jobs/{{$ $Applicant->id}}" accept-charset="UTF-8" style="display:inline">
+                            <form method="POST" action="/applicant/{{$Applicant->id}}" accept-charset="UTF-8" style="display:inline">
 
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm"  >
                                     <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                            </form> --}}
+                            </form>
 
 
 
-                        {{-- </div>
-                        <div class=btnedit>
-                            <a href="/JobUpdate/{{ $Applicant->id}}" class="btn btn-warning me-md-1 pl-3 ">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
-
-                        </div> --}}
+                        </div>
                     </td>
                 </tr>
 

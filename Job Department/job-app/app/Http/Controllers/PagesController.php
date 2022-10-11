@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\applicants;
 use App\Models\jobs;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,13 @@ class PagesController extends Controller
 
         $data = jobs::all();
         return view('Pages/home/JobViewUser', compact('data'));
+    }
+
+    public function applicantlist ()
+    {
+
+        $data = applicants::all();
+        return view('Pages/admin/applicantslistview', compact('data'));
     }
 
     public function homeview(Request $request)
@@ -42,8 +50,8 @@ class PagesController extends Controller
     public function adminview()
     {
 
-        $data = jobs::all();
-        return view('Pages/admin/manageJobs', compact('data'));
+
+        return view('Pages/admin/manageJobs');
     }
     public function jobApplyindex()
     {

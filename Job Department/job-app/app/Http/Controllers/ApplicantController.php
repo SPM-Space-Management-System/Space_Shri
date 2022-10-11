@@ -40,5 +40,10 @@ class ApplicantController extends Controller
           } catch (\Exception $ex) {
             return redirect()->back()->with('message','somthing went wrong'.$ex);
           }
+    }public function destroy($id)
+    {
+        $appObj = applicants::find($id);
+        $appObj->delete();
+        return redirect('/applicant');
     }
 }

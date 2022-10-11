@@ -42,7 +42,7 @@ class JobController extends Controller
     {
         $job = jobs::find($id);
         $job->delete();
-        return redirect('/');
+        return redirect('/job');
     }
 
     public function edit(jobs $job)

@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
   <img src="space.jpg" alt="Snow" style="width:100%">
-  <a href="{{ route('JobViewUser') }}"button class="btn1">Manage Jobs</button>
-  <a href="{{ route('jobinsert') }}"button class="btn2">Manage Applicants</button>
+  <a href="{{ route('jobview') }}"button class="btn1">Manage Jobs</button>
+  <a href="{{ route('applicantlist') }}"button class="btn2">Manage Applicants</button>
 </div>
 <div class="Fline">
     </div>

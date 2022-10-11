@@ -26,13 +26,13 @@ Route::get('/job',[PagesController::class,'indexjobsview'])->name('jobview');
 Route::get('/',[PagesController::class,'homeview'])->name('home');
 Route::get('/dashboard',[PagesController::class,'adminview'])->name('');
 
-Route::get('/applicant',[PagesController::class,'applicantlistview'])->name('Applicant_list');
+Route::get('/applicant',[PagesController::class,'applicantlist'])->name('applicantlist');;
 
 Route::get('/apply',[PagesController::class,'jobApplyindex'])->name('Applicantinsert');
 
 Route::post('/saveApplicant', [ApplicantController::class, 'saveApplicant'])->name('saveApplicant');
 
-
+Route::delete('/applicant/{id}',[ApplicantController::class,'destroy']);
 Route::delete('/jobs/{id}',[JobController::class,'destroy']);
 //Route::get('/JobUpdate',[PagesController::class,'jobupdate']);
 

@@ -43,7 +43,7 @@
         <h3>Our System..</h3>
         <div class="container">
             <div class="imgBx jarallax">
-                <img src="bg1.jpg" class="jarallax-img">
+                <img src="bg4.jpg" class="jarallax-img">
             </div>
             <div class="content">
                 <p>Rocket department handles information about all rockets launched and upcoming projects. Job and career
@@ -54,13 +54,13 @@
         </div>
     </div>
     <div class="fit">
-        <img src="bg4.jpg" class="jarallax-img">
+        <img src="bbb.png" class="jarallax-img">
     </div>
     <div class="box">
         <h3>What we can do..</h3>
         <div class="container">
             <div class="imgBx jarallax">
-                <img src="bg1.jpg" class="jarallax-img">
+                <img src="b2b.jpg" class="jarallax-img">
             </div>
             <div class="content">
                 <p>There are jobs and there are careers. But at SPACE SHRI, our work is more than just a profession—it’s a

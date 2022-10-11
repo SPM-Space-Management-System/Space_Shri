@@ -51,71 +51,54 @@
                         </th>
                     </tr>
                 </thead>
-                @foreach ($data as $job)
+                @foreach ($data as $Applicant)
                 <
                 <tr>
                     <td>
-                        <h5>{{ $job['id'] }} </h5>
+                        <h5>{{ $Applicant['jobtitle'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['jobtitle'] }}</h5>
+                        <h5>{{ $Applicant['DOA'] }}</h5>
                     </td>
                     <td>
-                        <h5>{{ $job['NOV'] }} </h5>
+                        <h5>{{ $Applicant['email'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['P_date'] }} </h5>
+                        <h5>{{ $Applicant['address'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['C_date'] }} </h5>
+                        <h5>{{ $Applicant['name'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['Summary'] }} </h5>
+                        <h5>{{ $Applicant['tp_no'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['Duties'] }} </h5>
+                        <h5>{{ $Applicant['NIC'] }} </h5>
                     </td>
                     <td>
-                        <h5>{{ $job['Requirements'] }} </h5>
-                    </td>
-                    <td>
-                        <h5>{{ $job['Req_Doc'] }}</h5>
-                    </td>
-                    <td>
-                        {{-- <h5>{{ $job['image_id'] }}</h5> --}}
-                        <img src="{{ asset('thumbnails/' . $job->image_id) }}" height="50" width ="2"  alt="job images">
-                    </td>
-                    <td>
-                        @if ($job->done == 0)
-                            <span class="badge bg-danger">
-                                <h6>Inactive</h6>
-                            </span>
-                        @else
-                            <span class="badge bg-primary">
-                                <h6>Active</h6>
-                            </span>
-                        @endif
+                        <h5>{{ $Applicant['cv_id'] }} </h5>
                     </td>
 
-                    <td>
-                        <div class=btndelete>
 
-                            <form method="POST" action="/jobs/{{$job->id}}" accept-charset="UTF-8" style="display:inline">
+                    <td>
+                        {{-- <div class=btndelete>
+
+                            <form method="POST" action="/jobs/{{$ $Applicant->id}}" accept-charset="UTF-8" style="display:inline">
 
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm"  >
                                     <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                            </form>
+                            </form> --}}
 
 
 
-                        </div>
+                        {{-- </div>
                         <div class=btnedit>
-                            <a href="/JobUpdate/{{$job->id}}" class="btn btn-warning me-md-1 pl-3 ">
+                            <a href="/JobUpdate/{{ $Applicant->id}}" class="btn btn-warning me-md-1 pl-3 ">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
 
-                        </div>
+                        </div> --}}
                     </td>
                 </tr>
 

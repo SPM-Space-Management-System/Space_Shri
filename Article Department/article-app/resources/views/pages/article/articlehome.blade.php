@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="logo">
         <img src="logo.png" alt="logo" />
@@ -32,15 +31,20 @@
             @forelse ($arts as $art)
                 <div class="col-lg-6 mb-5">
                     <div class="card">
+                        <div class="card-header">
+                            <div class="inner">
+                            <img src="{{ asset('thumbnails') }}/{{ $art->images->name }}"  height="400" class="card-img-top" alt="Article-Image">
+                            </div>
+                        </div> 
+                        
                         <div class="card-body">
-                            <h5 class="card-title">Topic: {{ $art->topic }}</h5>
+                            <h5 class="card-title text-center">Topic: {{ $art->topic }}</h5>
                             <h5 class="card-title">Author: {{ $art->author }}</h5>
                             <h5 class="card-title">Date: {{ $art->date }}</h5>
                             <h5 class="card-title">Country: {{ $art->country }}</h5>
-                        </div>
-                        <img src="{{ config('images.upload_path') }}/{{ $art->images->name }}" alt="Article-Image">
+                       </div>
                     </div>
-                </div>
+                    </div>
             @empty
                 <div class="col-lg-12">
                     <h2 class="text-danger">No Image Found!</h2>
@@ -61,8 +65,8 @@
         }
 
         img {
-            width: 500px;
-            height: 400px;
+            width: 800px;
+            height: 500px;
             display: block;
             margin: auto;
             padding: auto;
@@ -127,17 +131,15 @@
             transition: 0.5s;
             justify-content: flex-start;
             align-items: center;
-            background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
         }
 
         .container .card img {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 250px;
-            height: 400px;
-            transition: 0.5s;
+            background-color: rgb(181, 247, 247);
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+            transition: 0.5s
         }
 
         .container .card:hover img {

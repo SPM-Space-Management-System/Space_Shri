@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="logo">
         <img src="logo.png" alt="logo" />
@@ -20,27 +19,28 @@
             </a></p>
         </div>
     </form>
-    <div class="scan-body">
-        <div class="scan">
-            <div class="rocket-fingerprint">
-                <h3 style="margin-top: 350px; text-align: center;">Searching...</h3>
-            </div>
-        </div>
-    </div>
+    
     <div class="container">
         <div class="row justify-content-center">
             @forelse ($arts as $art)
                 <div class="col-lg-6 mb-5">
                     <div class="card">
+                        <div class="card-header">
+                            <div class="inner">
+                            <img src="{{ config('images.upload_path') }}/{{ $art->images->name }}"  class="card-img-top" alt="Article-Image">
+                            </div>
+                        </div> 
+                        
                         <div class="card-body">
-                            <h5 class="card-title">Topic: {{ $art->topic }}</h5>
+                            <h2 class="card-title text-center">{{ $art->topic }}</h2>
                             <h5 class="card-title">Author: {{ $art->author }}</h5>
                             <h5 class="card-title">Date: {{ $art->date }}</h5>
                             <h5 class="card-title">Country: {{ $art->country }}</h5>
-                        </div>
-                        <img src="{{ config('images.upload_path') }}/{{ $art->images->name }}" alt="Article-Image">
+                            <button class="Read-more" style="background-color: #555" >Read more</button>
+
+                       </div>
                     </div>
-                </div>
+                    </div>
             @empty
                 <div class="col-lg-12">
                     <h2 class="text-danger">No Image Found!</h2>
@@ -60,9 +60,10 @@
             background-color: #000;
         }
 
+
         img {
-            width: 500px;
-            height: 400px;
+            width: 800px;
+            height: 500px;
             display: block;
             margin: auto;
             padding: auto;
@@ -85,29 +86,7 @@
             cursor: pointer;
         }
 
-        .page-title span.active {
-            animation: smoke 2s linear forwards;
-            transform-origin: bottom;
-        }
-
-        @keyframes smoke {
-            0% {
-                opacity: 1;
-                filter: blur(0);
-                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
-            }
-
-            50% {
-                opacity: 1;
-                pointer-events: none;
-            }
-
-            100% {
-                opacity: 0;
-                filter: blur(20px);
-                transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
-            }
-        }
+        
 
         .container {
             position: relative;
@@ -115,45 +94,36 @@
             justify-content: center;
             align-items: center;
             padding-top: 30vh;
-            padding-bottom: 50vh;
+            padding-bottom: 10vh;
         }
 
         .container .card {
-            position: relative;
-            width: 600px;
-            height: 350px;
-            margin: 20px;
-            display: flex;
-            transition: 0.5s;
-            justify-content: flex-start;
-            align-items: center;
-            background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+            
+            width: 475px;
+            height: 520px;
+            margin: 10px;
+            align-items: left;
+            background-image: linear-gradient(to right, #b465da 0%, #cf6cc9 33%, #fc92be 66%, #ee609c 100%);
         }
-
         .container .card img {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 250px;
-            height: 400px;
-            transition: 0.5s;
+            bottom: 0; 
+            float: left;
+            left: 30%;
+            width: 300px;
+            height: 300px;
+          
         }
 
         .container .card:hover img {
-            left: 73%;
-            height: 500px;
+            transition: all 1.5s ease;
         }
 
         .container .card .card-body {
-            position: relative;
+       
             width: 50%;
             left: 20%;
             padding: 20px 20px 20px 0;
-            opacity: 0;
-            visibility: hidden;
             margin-right: 180px;
-            transition: 0.5s;
         }
 
         .container .card:hover .card-body {
@@ -163,31 +133,10 @@
         }
 
         .container .card .card-body h5 {
-            color: #fff;
+            color: rgb(18, 16, 16);
         }
 
-        @media (max-width: 991px) {
-            .container .card {
-                width: auto;
-                max-width: 600px;
-                align-items: flex-start;
-            }
 
-            .container .card:hover {
-                height: 600px;
-            }
-
-            .container .card:hover img {
-                left: 50%;
-                height: 350px;
-            }
-
-            .container .card .card-body {
-                width: 100%;
-                left: 0;
-                padding: 40px;
-            }
-        }
 
         .loader {
             position: relative;
@@ -199,7 +148,7 @@
             align-items: center;
             width: 500px;
             height: 8px;
-            background: #fff;
+            background: rgb(255, 253, 253);
             -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
         }
 
@@ -326,63 +275,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .scan .rocket-fingerprint {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background: url(rocket_f1.png);
-            background-size: 300px;
-        }
-
-        .scan .rocket-fingerprint::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url(rocket_f2.png);
-            background-size: 300px;
-            animation: animatef 4s ease-in-out infinite;
-        }
-
-        @keyframes animatef {
-
-            0%,
-            100% {
-                height: 0%;
-            }
-
-            50% {
-                height: 100%;
-            }
-        }
-
-        .scan .rocket-fingerprint::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: #76ff03;
-            border-radius: 8px;
-            filter: drop-shadow(0 0 20px #76ff03) drop-shadow(0 0 60px #76ff03);
-            animation: animate_line 4s ease-in-out infinite;
-        }
-
-        @keyframes animate_line {
-
-            0%,
-            100% {
-                top: 0%;
-            }
-
-            50% {
-                top: 100%;
-            }
         }
 
         .scan h3 {

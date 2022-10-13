@@ -47,7 +47,7 @@ class ArticleFormRequest extends FormRequest
             'description' => [
                 'required',
                 'string',
-                'max:191'
+                
             ],
             'images' => [
                 'required'

@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleInsertController;
 use App\Http\Controllers\ArticleListViewController;
 use App\Http\Controllers\AddArticleExpensesController;
 use App\Http\Controllers\ExpensesListViewController;
+use App\Http\Controllers\ArticleReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::prefix('/expensesview')->group(function () {
     Route::get('/{exp_id}/delete', [ExpensesListViewController::class, "delete"])->name('expensesview.delete');
   
 });
+Route::get('/articlereport', [ArticleReportController::class, "reportview"])->name('articlereport');
 
 
 

@@ -20,10 +20,9 @@ return new class extends Migration
             $table->string('topic')->nullable();
             $table->double('transport')->nullable();
             $table->double('mcost')->nullable();
-            $table->string('visits')->nullable();
+            $table->integer('visits')->nullable();
             $table->double('extra')->nullable();
-            $table->string('nauthors')->nullable();
-            $table->double('tcost')->nullable();
+            $table->integer('nauthors')->nullable();
             $table->timestamps();
         });
     }

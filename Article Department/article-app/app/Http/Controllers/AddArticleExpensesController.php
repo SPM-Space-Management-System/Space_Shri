@@ -10,7 +10,7 @@ use App\Http\Requests\ExpenseFormRequest;
 class AddArticleExpensesController extends Controller
 {   
 
-    public function articleexpensesview() {
+    public function addexpensesview() {
         return view('pages.expenses.addexpenses');
     }
 

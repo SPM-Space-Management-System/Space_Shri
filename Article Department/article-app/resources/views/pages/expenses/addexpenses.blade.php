@@ -109,3 +109,150 @@
         </div>
 
     </form>
+@endsection
+@push('css')
+    <style>
+        .btn-group {
+            padding-bottom: 40vh;
+        }
+
+        body {
+            margin-top: 0px;
+            font-family: sans-serif;
+            background-position: center;
+            background-color: rgb(5, 5, 5);
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+
+        img {
+            width: 500px;
+            height: 400px;
+            display: block;
+            margin: auto;
+            padding: auto;
+        }
+
+        label {
+            color: #fff;
+            font-size: 18px;
+            length: 15%;
+
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            color: rgb(67, 31, 4);
+        }
+
+        .mb-5 {
+            margin-right: 50px;
+            length: 25px;
+            padding: 0;
+        }
+
+        form {
+            padding-top: 0vh;
+            padding-bottom: 10vh;
+        }
+
+        .article-image {
+            padding-top: 30vh;
+            float: right;
+            margin-left: 50px;
+            margin: 40px 110px 100px 100px;
+        }
+
+        .form-title {
+            margin-top: 0px;
+            text-align: center;
+            font-size: 30px;
+            font-color: rgb(19, 118, 105);
+        }
+
+
+        .container {
+            width: 640px;
+            height: 1100px;
+            margin: 0% 0% 3% 5%;
+            border-radius: 0;
+            box-shadow: 0 0 17px rgb(120, 83, 200);
+        }
+
+        .header {
+            text-align: center;
+            padding-top: 40px;
+            padding-right: 200px
+        }
+
+        .header h1 {
+            color: rgb(43, 1, 1);
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 70px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+
+        @keyframes show_slide {
+            0% {
+                transform: translateX(100%);
+            }
+
+            40% {
+                transform: translateX(-10%);
+            }
+
+            80% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 32px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ffc766;
+        }
+    
+    </style>
+@endpush

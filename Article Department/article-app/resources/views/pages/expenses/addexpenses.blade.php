@@ -3,6 +3,20 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
+    <!--validation part-->
+    @if ($errors->any())
+        
+    @endif
+    <!--generate successfull message-->
+    @if (session('message'))
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+            </span>
+        </div>
+    @endif
+
     <form method="post" action="{{ route('addexpenses.store') }}" enctype="multipart/form-data" role="form">
         {{ csrf_field() }}
         <div class="container">
@@ -24,22 +38,22 @@
                     <table>
                         <tr><td><label for="exampleFormControlInput1" class="form-label">Start Date :</label>
                             <input title="The date when article get started." type="date"
-                                class="form-control form-control-lg" id="exampleFormControlInput1" name="Start date"
+                                class="form-control form-control-lg"  id="exampleFormControlInput1" name="Start date"
                                 placeholder="../../....">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('Sdate') }}</div></td>
+                                <div class="text-danger">{{ $errors->first('sdate') }}</div></td>
 
-                        <td><label for="exampleFormControlInput1" class="form-label">End Date</label>
+                        <td><label for="exampleFormControlInput1" class="form-label">End Date :</label>
                             <input title="The date when article end." type="date"
-                                class="form-control form-control-lg" id="exampleFormControlInput1" name="End Date"
+                                class="form-control form-control-lg"  border-spacing="80px 60px" id="exampleFormControlInput1" name="End Date"
                                 placeholder="../../....">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('Edate') }}</div></td>  
+                                <div class="text-danger">{{ $errors->first('edate') }}</div></td>  
                         </tr>
                     </table>
 
                     <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">Topic</label>
+                        <label for="exampleFormControlInput1" class="form-label">Topic :</label>
                         <input title="The topic of the article to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="topic"
                             placeholder="Enter Article Title...">
@@ -47,16 +61,16 @@
                             <div class="text-danger">{{ $errors->first('topic') }}</div>
                     </div>
                     <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">Transport</label>
+                        <label for="exampleFormControlInput1" class="form-label">Transport :</label>
                         <input title="The name of author of the article to be applied." type="text"
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="transport"
                             placeholder="Add transport cost here..." >
                             <br>
-                            <div class="text-danger">{{ $errors->first('transport') }}</div>
+                            <div class="text-danger">{{ $errors->first('transport') }}</div></div>
                     
                             <table>
                                 <tr><td><label for="exampleFormControlInput1" class="form-label">Media Cost :</label>
-                                    <input title="the cost of media was spent." type="integer"
+                                    <input title="the cost of media was spent." type="text"
                                         class="form-control form-control-lg" id="exampleFormControlInput1" name="media cost"
                                         placeholder="Add media cost here..">
                                         <br>
@@ -64,7 +78,7 @@
         
                                 <td><label for="exampleFormControlInput1" class="form-label">No of visits:</label>
                                     <select title="Select the no of visits from the drop-down list."
-                                        class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="visits">
+                                        class="form-control form-control-lg" border-spacing="80px 60px" border-collapse="separate" aria-label=".form-select-lg example" name="visits">
                                         <option value="">Select Visits in here..</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -80,20 +94,37 @@
 
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Extra expenses(if any):</label>
-                        <textarea class="form-control form-control-lg" id="exampleFormControlInput1" name="description"
-                        rows="5" cols="33" placeholder="Type Article description..." ></textarea>
+                        <input title="the cost of media was spent." type="text"
+                        class="form-control form-control-lg" id="exampleFormControlInput1" name="extra expenses"
+                                        placeholder="any extra expenses..">
                         <br>
-                        <div class="text-danger">{{ $errors->first('description') }}</div>
+                        <div class="text-danger">{{ $errors->first('extra') }}</div>
                     </div>
 
-                    <div class="mb-5">
-                        <label for="formFileLg" class="form-label">Image</label>
-                        <input title="Insert a picture of the article related picture."
-                            class="form-control form-control-lg" type="file" name="images"
-                            accept="image/jpg, image/jpeg, image/png" >
-                            <br>
-                            <div class="text-danger">{{ $errors->first('images') }}</div>
-                    </div>
+                    <td><label for="exampleFormControlInput1" class="form-label">No of Authors:</label>
+                        <select title="Select the no of visits from the drop-down list."
+                            class="form-control form-control-lg" border-spacing="80px 60px" aria-label=".form-select-lg example" name="No of authors">
+                            <option value="">Select number of authors in here..</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <div class="text-danger">{{ $errors->first('nauthors') }}</div>
+                    </div></td>  
+                    </tr>
+                </table>
+
+                <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label">Total cost:</label>
+                    <input title="the total cost was spent." type="text" 
+                    class="form-control form-control-lg" id="exampleFormControlInput1" name="Total cost">
+                    <br>
+                    <div class="text-danger">{{ $errors->first('tcost') }}</div>
+                </div>
+                    
                 </div>
                 <div class="col-md-5 text-center">
                     <div class="btn-group">
@@ -157,13 +188,6 @@
             padding-bottom: 10vh;
         }
 
-        .article-image {
-            padding-top: 30vh;
-            float: right;
-            margin-left: 50px;
-            margin: 40px 110px 100px 100px;
-        }
-
         .form-title {
             margin-top: 0px;
             text-align: center;
@@ -174,7 +198,7 @@
 
         .container {
             width: 640px;
-            height: 1100px;
+            height: 1000px;
             margin: 0% 0% 3% 5%;
             border-radius: 0;
             box-shadow: 0 0 17px rgb(120, 83, 200);

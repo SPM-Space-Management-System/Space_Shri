@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Expenses;
 use domain\Facades\AddArticleExpensesFacade;
 use Illuminate\Http\Request;
-use App\Http\Requests\ExpensesFormRequest;
+use App\Http\Requests\ExpenseFormRequest;
 
 class AddArticleExpensesController extends Controller
 {   
@@ -14,7 +14,7 @@ class AddArticleExpensesController extends Controller
         return view('pages.expenses.addexpenses');
     }
 
-    public function store(ExpensesFormRequest $request) {
+    public function store(ExpenseFormRequest $request) {
 
         try {
             $data = $request->validated();

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleHomeController;
 use App\Http\Controllers\ArticleInsertController;
 use App\Http\Controllers\ArticleListViewController;
+use App\Http\Controllers\AddArticleExpensesController;
 
 /*
 |--------------------------------------------------------------------------

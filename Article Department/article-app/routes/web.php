@@ -29,6 +29,10 @@ Route::prefix('/articleview')->group(function () {
     Route::get('/{art_id}/delete', [ArticleListViewController::class, "delete"])->name('articleview.delete');
     Route::get('/{art_id}/done', [ArticleListViewController::class, "done"])->name('articleview.done');
 });
+Route::prefix('/addexpenses')->group(function () {
+    Route::get('/', [AddArticleExpensesController::class, "addexpensesview"])->name('addexpenses');
+    Route::post('/store', [AddArticleExpensesController::class, "store"])->name('addexpenses.store');
+});
 
 
 

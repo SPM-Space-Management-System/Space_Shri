@@ -17,8 +17,7 @@ class Expenses extends Model
         'mcost',
         'visits',
         'extra',
-        'nauthors',
-        'tcost'
+        'nauthors'
 
     ];
 }

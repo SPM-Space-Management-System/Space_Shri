@@ -4,132 +4,117 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
-
+    <!--generate successfull message-->
     @if (session('message'))
-    <div class="alert show">
-        <span class="fas fa-exclamation-circle"></span>
-        <span class="msg-text">{{ session('message') }}</span>
-        <span class="close-btn">
-        </span>
-    </div>
-@endif
-
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+            </span>
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1 class="page-title">Expenses List</h1>
             </div>
             <div class="bottom">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <h3>Start Date :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>End Date :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Topic :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Transport :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Media Cost :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>No of visits :</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Extra expenses(if any):</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>No of Authors:</h3>
-                        </th>
-                        <th scope="col">
-                            <h3>Total cost:</h3>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($arts as $art)
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td>
-                                <h5>{{ $art->topic }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $art->author }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $art->date }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $art->country }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $art->description }}</h5>
-                            </td>
-                            <td>
-                                <h5>{{ $art->image }}</h5>
-                            </td>
-                            <td><img src="{{ config('images.upload_path') }}/{{ $art->images->name }}" class="table-iamge">
-                            </td>
-                            <td>
-                                @if ($art->done == 0)
-                                    <span class="badge bg-danger">
-                                        <h6>Inactive</h6>
-                                    </span>
-                                @else
-                                    <span class="badge bg-primary">
-                                        <h6>Active</h6>
-                                    </span>
-                                @endif
-                            </td>
-                            <td>
-                                <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('articleview.delete', $art->id) }}" role="button">
-                                    <h6>DELETE</h6>
-                                </a>
-                                @if ($art->done == 0)
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('articleview.done', $art->id) }}" role="button">
-                                        <h6>PUBLISH</h6>
-                                    </a>
-                                @else
-                                    <a class="btn btn-warning btn-sm btn-block"
-                                        href="{{ route('articleview.done', $art->id) }}" role="button">
-                                        <h6>DRAFT</h6>
-                                    </a>
-                                @endif
-                                <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
-                                    onclick="articleEditModal({{ $art->id }})">
-                                    <h6>EDIT</h6>
-                                </a>
-                            </td>
+                            <th scope="col">
+                                <h3>Start Date :</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Ending Date</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Topic :</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Transport :</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Media Cost :</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>No of visits :</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>Extra expenses(if any):</h3>
+                            </th>
+                            <th scope="col">
+                                <h3>No of Authors:</h3>
+                            </th>
+                            
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="col-md-12 text-center">
-                <div class="btn-group">
-                    <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block" style="width:6cm; height:1% "
-                        href="{{ route('articlehome') }}" role="button">User View</a>
+                    </thead>
+                    <tbody>
+                        @foreach ($exps as $exp)
+                            <tr>
+                                <td>
+                                    <h5>{{ $exp->sdate }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->edate }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->topic }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->transport }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->mcost }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->visits }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->extra }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ $exp->nauthors }}</h5>
+                                </td>
+                               
+                                <td>
+                                    <input type="hidden" class="expDel_val" value="{{ $exp->id }}">
+                                    <a class="btn btn-warning btn-sm btn-block expDeleteBtn"
+                                        href="{{ route('expensesview.delete', $exp->id) }}" role="button"
+                                        title="Unnecessary or incorrect article exxpenses information can be deleted.">
+                                        <h6>DELETE</h6>
+                                    </a>
+                                    <br><br>
+                                    <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                                        title="Directs to the update interface to edit the data."
+                                        onclick="expEditModal({{ $exp->id }})">
+                                        <h6>EDIT</h6>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class="col-md-12 text-center">
+                    <div class="btn">
+                        <a title="Click this button to save the entered data." href="{{ route('addexpenses') }}"
+                            role="button">ADD NEW DETAILS</a>
+                    </div>
                 </div>
-        </div>
+            </div>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="articleEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="articleEditLabel" aria-hidden="true">
+    <div class="modal fade" id="expEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="expEditLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="articleEditLabel">Article Details Update</h4>
+                    <h4 class="modal-title" id="expEditLabel">Article expenses Details Update</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="articleEditContent">
+                <div class="modal-body" id="expEditContent">
 
                 </div>
             </div>
@@ -144,16 +129,20 @@
         }
 
         img {
-            width: 400px;
-            height: 400px;
+            width: 800px;
+            height: 500px;
             display: block;
             margin: auto;
             padding: auto;
         }
 
+        .container {
+            padding-bottom: 30vh;
+        }
+
         .page-title {
-            margin-top: 0vh;
-            margin-bottom: 300px;
+            margin-top: 10px;
+            margin-bottom: 150px;
             font-size: 80px;
         }
 
@@ -161,24 +150,21 @@
             color: #fff;
         }
 
-        span {
-            width: 70px;
-            height: 35px;
+        .btn a {
+            position: relative;
+            font-size: 1.4em;
+            font-weight: 400;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #000;
+            text-decoration: none;
+            background-color: chartreuse;
         }
 
-        a {
-            width: 70px;
-            height: 35px;
-        }
-
-        .table-iamge {
-            width: 150px;
-            height: 120px;
-        }
         .bottom {
-            padding-top: 0%;
             padding-bottom: 120px;
         }
+
         .alert {
             background: #ffdb9b;
             padding: 20px 40px;
@@ -186,7 +172,7 @@
             position: absolute;
             overflow: hidden;
             right: 0px;
-            top: 70px;
+            top: 80px;
             border-radius: 4px;
             border-left: 8px solid #ffa502;
         }
@@ -241,18 +227,17 @@
         .close-btn:hover {
             background: #ffc766;
         }
-
     </style>
 @endpush
 
 @push('js')
     <script>
-        function articleEditModal(art_id) {
+        function expEditModal(exp_id) {
             var data = {
-                art_id: art_id,
+                exp_id: exp_id,
             };
             $.ajax({
-                url: "{{ route('articleview.edit') }}",
+                url: "{{ route('expensesview.edit') }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -260,10 +245,52 @@
                 dataType: '',
                 data: data,
                 success: function(response) {
-                    $('#articleEdit').modal('show');
-                    $('#articleEditContent').html(response);
+                    $('#expEdit').modal('show');
+                    $('#expEditContent').html(response);
                 }
             });
         }
+
+        $(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('.expDeleteBtn').click(function(e) {
+                e.preventDefault();
+                var exp_id = $(this).closest("td").find('.expDel_val').val();
+                //alert(delete_id);
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this data!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            var data = {
+                                "_token": $('input[name=_token]').val(),
+                                "id": exp_id,
+                            };
+                            $.ajax({
+                                url: '/expensesview/' + exp_id + '/delete/',
+                                data: data,
+                                success: function(response) {
+                                    swal(response.status, {
+                                            icon: "success",
+                                        })
+                                        .then((result) => {
+                                            location.reload();
+                                        });
+                                }
+                            });
+                        }
+                    });
+            });
+        });
     </script>
 @endpush

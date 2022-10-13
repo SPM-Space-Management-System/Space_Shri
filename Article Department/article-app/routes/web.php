@@ -5,6 +5,8 @@ use App\Http\Controllers\ArticleHomeController;
 use App\Http\Controllers\ArticleInsertController;
 use App\Http\Controllers\ArticleListViewController;
 use App\Http\Controllers\AddArticleExpensesController;
+use App\Http\Controllers\ExpensesListViewController;
+use App\Http\Controllers\ArticleReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,14 @@ Route::prefix('/addexpenses')->group(function () {
     Route::get('/', [AddArticleExpensesController::class, "addexpensesview"])->name('addexpenses');
     Route::post('/store', [AddArticleExpensesController::class, "store"])->name('addexpenses.store');
 });
+Route::prefix('/expensesview')->group(function () {
+    Route::get('/', [ExpensesListViewController::class, "expensesview"])->name('expensesview');
+    Route::get('/edit', [ExpensesListViewController::class, "edit"])->name('expensesview.edit');
+    Route::post('/{exp_id}/update', [ExpensesListViewController::class, "update"])->name('expensesview.update');
+    Route::get('/{exp_id}/delete', [ExpensesListViewController::class, "delete"])->name('expensesview.delete');
+  
+});
+Route::get('/articlereport', [ArticleReportController::class, "reportview"])->name('articlereport');
 
 
 

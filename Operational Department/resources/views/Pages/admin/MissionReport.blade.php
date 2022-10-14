@@ -1,3 +1,4 @@
+<div id="preloader"></div>
 @extends('layouts.app')
 @section('content')
 <img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
@@ -124,7 +125,16 @@ var myChart = new Chart(ctx, {
 
 
 
+<iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+<script>
+  var loader = document.getElementById("preloader");
 
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
+</script>
 
 <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
@@ -177,5 +187,14 @@ var myChart = new Chart(ctx, {
     body{
         background-color: rgb(0, 0, 0);
     }
+    #preloader{
+  background: #000 url(images/insert4.webp) no-repeat center center;
+  background-size: 20%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+ 
+}
 </style>
 @endpush  

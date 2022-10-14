@@ -176,7 +176,7 @@
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Description</label>
                         <textarea class="form-control form-control-lg" id="exampleFormControlInput1" name="description"
-                        rows="5" cols="33" placeholder="Type Article description..." ></textarea>
+                        rows="10" placeholder="Type Article description..." ></textarea>
                         <br>
                         <div class="text-danger">{{ $errors->first('description') }}</div>
                     </div>

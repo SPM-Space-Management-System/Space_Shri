@@ -32,7 +32,7 @@ Route::get('/dashboard',[PagesController::class,'adminview'])->name('');
 Route::get('/applicant',[PagesController::class,'applicantlist'])->name('applicantlist');;
 // Job apply
 Route::get('/apply',[PagesController::class,'jobApplyindex'])->name('Applicantinsert');
-Route::get('/jobreport', [PagesController::class, 'indexjobreport']);
+Route::get('/jobreport', [PagesController::class, 'indexjobreport'])->name('jobreport');
 Route::post('/saveApplicant', [ApplicantController::class, 'saveApplicant'])->name('saveApplicant');
 
 Route::delete('/applicant/{id}',[ApplicantController::class,'destroy']);
@@ -40,7 +40,7 @@ Route::delete('/jobs/{id}',[JobController::class,'destroy']);
 //Route::get('/JobUpdate',[PagesController::class,'jobupdate']);
 
 Route::get('/view',[PagesController::class,'jobdetailsVeiw']);
-Route::get('/pdf',[PagesController::class,'pdfgenerate']);
+Route::get('/pdf',[PagesController::class,'pdfgenerate'])->name('pdf');
 
 //admin edit jobs
 Route::get('/JobUpdate/{id}', [PagesController::class, 'indexjobedit']);

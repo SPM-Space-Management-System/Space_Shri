@@ -22,8 +22,19 @@
             </tr>
         </table>
         <center>
-            <div class="discription">
-            </div>
+            <div class="discription"><h6>
+                SPACE SHRI is more than astronauts. We are scientists, engineers, IT specialists, human resources
+                specialists, accountants, writers, technicians and many other kinds of people working together to break
+                barriers to achieve the seemingly impossible.<BR>
+                We continue SPACE SHRI’s legacy of excellence through an unprecedented array of missions—from laying the
+                foundation to expand our human presence in deep space to developing cutting-edge technologies to studying
+                Earth’s system. We tackle each adventure with curiosity and innovation to leave an enduring impact on the
+                world and humanity.<BR>
+                Explore the Extraordinary: Align your talents with your passion and find out why SPACE SHRI consistently is
+                named a best place to work in the federal government. At SPACE SHRI, you’ll have an opportunity to work on
+                unique and challenging projects that truly make an impact on humanity. Learn more about the extraordinary
+                things our team accomplishes on an everyday basis. Are you ready to explore the extraordinary?
+                </h6></div>
         </center>
         {{-- Search option for user --}}
 
@@ -31,34 +42,39 @@
             <div class="wrapper">
                 <div class="container">
                     <form method="get" action="{{ route('home') }}">
-                    <div class="search_wrap search_wrap_6">
-                        <div class="search_box">
-                            <input type="text" name="searchposta" class="input" placeholder="Search Title Of The Job">
-                            <div class="btn" input type="button" value="Search">
-                                <p>Search</p>
+                        <div class="search_wrap search_wrap_6">
+                            <div class="search_box">
+                                <input type="text" name="searchposta" class="input"
+                                    placeholder="Search Title Of The Job">
+                                <div class="btn" input type="button" value="Search">
+                                    <p>Search</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
         </div>
         {{-- All posts read for users --}}
         <div class="row row-cols-1 row-cols-md-2 g-1">
-        @foreach ($data as $job)
-            <div class="jobbox">
-                <img src="{{ asset('thumbnails/' . $job->image_id) }}" style="width:392px;height:250px;display:block;margin:auto;padding: auto;"
-                    alt="space logo">
-                <div class="titlebox"><center>{{ $job['jobtitle'] }}</center></div>
+            @foreach ($data as $job)
+                <div class="jobbox">
+                    <img src="{{ asset('thumbnails/' . $job->image_id) }}"
+                        style="width:392px;height:250px;display:block;margin:auto;padding: auto;" alt="space logo">
+                    <div class="titlebox">
+                        <center>{{ $job['jobtitle'] }}</center>
+                    </div>
 
-               <DIV><a href="{{ route('jobdetails', $job->id) }}"  > <button class="button">VIEW MORE</button></a>
-                <a href="{{ route('Applicantinsert') }}" role="button"><button class="button">APPLY NOW</button></a>
-                </div></div>
-                @endforeach
-
-
-                <div class="Fline">
+                    <DIV><a href="{{ route('jobdetails', $job->id) }}"> <button class="button">VIEW MORE</button></a>
+                        <a href="{{ route('Applicantinsert') }}" role="button"><button class="button">APPLY
+                                NOW</button></a>
+                    </div>
                 </div>
+            @endforeach
+
+
+            <div class="Fline">
+            </div>
 
     </section>
 @endsection
@@ -99,7 +115,7 @@
         h1 {
             font-size: 6rem;
             text-align: right;
-            color: white;
+            color: rgb(255, 255, 255);
         }
 
         .logo {
@@ -108,11 +124,72 @@
             height: 20vh;
         }
 
-        .discription {
-            background-color: rgba(183, 184, 183, 0.36);
+        /* .discription {
+            background-color: rgba(71, 71, 73, 0.363);
+            font-size: 14px;
             width: 80%;
+            color: rgb(255, 255, 255);
             height: 30vh;
             margin-bottom: 40px;
+            font-family: 'Noto Sans KR', sans-serif;
+
+        } */
+
+        .discription{
+
+            font-size: 14px;
+            width: 80%;
+            color: rgb(255, 255, 255);
+            height: 30vh;
+            margin-bottom: 40px;
+            font-family: 'Noto Sans KR', sans-serif;
+
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border-radius: 20px;
+
+            box-shadow: 0 0 10px #000;
+        }
+
+        .discription h6 {
+            position: relative;
+            color: #fff;
+            font-size: 14px;
+            z-index: 15;
+            margin: 5px;
+        }
+
+        .discription::before {
+            content: '';
+            position: absolute;
+            width: 1500px;
+            height: 140%;
+            background: linear-gradient(#00ccff, #d400d4);
+            animation: animate 4s linear infinite;
+            box-shadow: 0 0 20px #999;
+        }
+
+        .discription::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: #0e1538;
+            border-radius: 16px;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .jobbox {
@@ -140,17 +217,17 @@
             height: 6vh;
 
             background-color: rgba(47, 132, 202, 0.664);
-  border: none;
-  color: white;
+            border: none;
+            color: white;
 
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-bottom:5px ;
-  margin-left: 7px;
-  cursor: pointer;
-}
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            margin-left: 7px;
+            cursor: pointer;
+        }
 
 
         .textbox2 {
@@ -162,7 +239,7 @@
 
         .Fline {
             width: 100%;
-            height: 70vh;
+            height: 30vh;
         }
 
 

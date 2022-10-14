@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
+<img src="logo.png" style="width:400px;height:100px;display:block;margin:auto;padding: auto;" alt="space logo">
 
 <div class="space" style="padding-bottom: 2vh"></div>
 
@@ -8,7 +8,7 @@
     <h1>Monthly Report</h1>
     <div class="space" style="padding-bottom: 5vh"></div>
     <div class="card">
-        <h4 class="card-header bg-success">Department  : Job Department</h4>
+        <h4 class="card-header bg-primary">Department  : Job Department</h4>
         <div class="card-body">
           <h5 class="card-title"><b><strong>Month : {{$currentMoth}}</strong></b></h5>
           <h5 class="card-title"><b><strong>Total Job Positions Of The Month : {{$totaljobs}} </strong></b></h5>
@@ -58,9 +58,9 @@ var myChart = new Chart(ctx, {
             y: {
                 title: {
               display: true,
-              text: 'Mission Cost(LKR)'
+              text: 'Job Vacancies'
           },
-                max: 75,
+                max: 35,
                 min: 0,
                 ticks: {
                stepSize: 5
@@ -71,7 +71,7 @@ var myChart = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Mission Topic ID'
+                text: 'Job Positions'
 
             },
             legend: {
@@ -82,8 +82,9 @@ var myChart = new Chart(ctx, {
 });
 </script>
 <div class="space" style="padding-bottom: 5vh"></div>
-<h3>View All Subbmited Job Positions In Month</h3>
 
+<div class="alert alert-dark" role="alert">
+    <h3>View All Subbmited Job Positions In Month</h3></div>
          <table class="table table-striped table-dark">
             <thead>
       <tr>
@@ -100,22 +101,14 @@ var myChart = new Chart(ctx, {
       </tr>
    @endforeach
     </tbody>
-    {{--<tfoot>
-    <tr>
-      <td colspan="2"></td> </tr>
-    <tr><td style="color: rgb(241, 141, 116);text-align: center" ><b><strong>  Total Job Positions  </strong></b>
-         <td style="color: rgb(241, 141, 116);text-align: center" ><b><strong>   </strong></b></td></tr>
-            <tr><td style="color: rgb(241, 141, 116);text-align: center" ><b><strong>  Total Job Vacancies  </strong></b> </td>
-                <td style="color: rgb(241, 141, 116);text-align: center" ><b><strong>   </strong></b></td></tr>
-    </tr>
-  </tfoot>--}}
+
          </table>
       </div>
 
       </div>
       <div class="space" style="padding-bottom: 5vh"></div>
-      <a href="" class="btn btn-primary bg-info me-md-5 pl-5">Go Dashboard</a>
-      <a href="" class="btn btn btn-success">Generate PDF</a>
+      <a href="{{ route('jobview') }}" class="btn btn-primary bg-info me-md-5 pl-5">Go Dashboard</a>
+      <a href="{{ route('pdf') }}"" class="btn btn btn-success">Generate PDF</a>
 
 </div>
 
@@ -123,7 +116,7 @@ var myChart = new Chart(ctx, {
 
 
 
-<div class="space" style="padding-bottom: 10vh"></div>
+<div class="space" style="padding-bottom: 20vh"></div>
 @endsection
 
 
@@ -155,20 +148,20 @@ var myChart = new Chart(ctx, {
     }
     h1{
         text-align: center;
-        color: rgb(16, 189, 39);
+        color: rgb(241, 241, 241);
     }
     h2{
         text-align: center;
     }
     h3{
-        color: rgb(52, 116, 49);
+        color: rgb(167, 4, 189);
         text-align: center;
     }
     p{
         margin-top: 10%;
     }
     table:hover tr {
-  background:rgb(75, 148, 16);
+  background:rgb(252, 93, 1);
 }
     body{
         background-color: rgb(0, 0, 0);

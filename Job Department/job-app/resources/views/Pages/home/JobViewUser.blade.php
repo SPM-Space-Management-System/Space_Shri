@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-12 text-center">
                 <div class="btn">
-                    <a href="" role="button">GENARATE REPORT</a>
+                    <a href="{{ route('jobreport') }}" role="button">GENARATE REPORT</a>
                 </div>
             </div>
             <div class="bottom">
@@ -113,7 +113,7 @@
                             <td>
                                 <div class=btndelete>
 
-                                    <form method="POST" action="/jobs/{{$job->id}}" accept-charset="UTF-8" style="display:inline">
+                                    <form  onsubmit="return confirm('Do You Really Want TO delete ?');"  method="POST" action="/jobs/{{$job->id}}" accept-charset="UTF-8" style="display:inline">
 
                                         @csrf
                                         @method('delete')
@@ -156,7 +156,11 @@
     <style>
         body {
             background-color: #000;
+            justify-content: center;
+            align-items: center;
+            display: block;
         }
+
         img {
             width: 100px;
             height: 50px;

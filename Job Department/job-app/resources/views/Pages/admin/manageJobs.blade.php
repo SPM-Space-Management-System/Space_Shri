@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
   <img src="space.jpg" alt="Snow" style="width:100%">
-  <a href="{{ route('jobview') }}"button class="btn1">Manage Jobs</button>
-  <a href="{{ route('applicantlist') }}"button class="btn2">Manage Applicants</button>
+  <a href="{{ route('jobview') }}"> <button class="btn1">Manage Jobs</button><br>
+  <a href="{{ route('applicantlist') }}"><button class="btn2">Manage Applicants</button>
 </div>
 <div class="Fline">
     </div>
@@ -16,6 +16,25 @@
         background-color: black;
             justify-content: center;
             align-items: center;
+        }
+        .btn1{
+            width: 300px;
+            height: 50px;
+
+        }
+
+
+        .container .btn1:hover {
+  background-color: #008cffb9; /* Green */
+  color: white;
+}
+.container .btn2:hover {
+  background-color: #008cffb9; /* Green */
+  color: white;
+}
+        .btn2{
+            width: 300px;
+            height: 50px;
         }
         .Fline
          {
@@ -39,22 +58,24 @@
   left: 35%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
+  background-color: rgba(85, 85, 85, 0.486);
   color: white;
   font-size: 16px;
   padding: 12px 24px;
   border: none;
   cursor: pointer;
   border-radius: 25px;
+  transition-duration: 0.4s;
   text-align: center;
 }
 .container .btn2 {
   position: absolute;
   top: 50%;
   left: 35%;
+  transition-duration: 0.4s;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
+  background-color: rgba(85, 85, 85, 0.486);
   color: white;
   font-size: 16px;
   padding: 12px 24px;

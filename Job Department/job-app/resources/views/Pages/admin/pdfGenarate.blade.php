@@ -35,13 +35,13 @@
    }
    h1{
        text-align: center;
-       color: rgb(16, 189, 39);
+       color: rgb(133, 196, 248);
    }
    h2{
        text-align: center;
    }
    h3{
-       color: rgb(52, 116, 49);
+       color: rgb(91, 11, 138);
        text-align: center;
    }
    p{
@@ -67,8 +67,9 @@ src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.mi
 </head>
 <body>
     <div id="invoice">
-    <img src="SpaceTransparent.png" style="width:250px;height:100px;display:block;margin:auto;margin-top:5vh" alt="space logo">
+    <img src="SpaceTransparent.png" style="width:400px;height:100px;display:block;margin:auto;padding: auto;"alt="space logo">
 
+  
 
     <div class="space" style="padding-bottom: 2vh"></div>
 
@@ -76,7 +77,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.mi
         <h1>Monthly Report</h1>
         <div class="space" style="padding-bottom: 5vh"></div>
         <div class="card">
-            <h4 class="card-header bg-success">Department  : Job Department</h4>
+            <h4 class="card-header bg-primary">Department  : Job Department</h4>
             <div class="card-body">
               <h5 class="card-title"><b><strong>Month : {{$currentMoth}}</strong></b></h5>
               <h5 class="card-title"><b><strong>Total Job Positions Of The Month : {{$totaljobs}} </strong></b></h5>
@@ -92,7 +93,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.mi
     <div class="space" style="padding-bottom: 5vh"></div>
 
 
-    <h3>View All Subbmited Job Positions In Month</h3>
+    <div class="alert alert-dark" role="alert">
+        <h3>View All Subbmited Job Positions In Month</h3></div>
 
              <table class="table table-striped table-dark">
                 <thead>

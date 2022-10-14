@@ -16,7 +16,7 @@
                                 alt="missions images">
                         </div>
                         <div class="jobboxsub3">
-                            <CENTER> <button class="btn1">APPLY NOW</button><br><br>
+                            <CENTER> <a href="{{ route('Applicantinsert') }}" ><button class="btn1">APPLY NOW</button><br><br></a>
                                 <br>
                                 <H4>NO.OF.VACANCIES</H4><button class="btn2">{{ $post->NOV }}</button><br>
                                 <br>
@@ -81,14 +81,14 @@
 
 
         .jobbox1 {
-            background-color: rgba(36, 35, 35, 0.788);
+            background-color: rgb(28, 0, 151);
             width: 65vh;
             height: 13vh;
             margin: 0px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 38px;
+            font-size: 35px;
             color: rgb(255, 255, 255)
         }
 
@@ -106,17 +106,21 @@
             width: 65vh;
             padding-bottom: 5px;
             padding-top: 15px;
-            height: 92vh;
+            height: 115vh;
             margin: 0px;
         }
 
         .jobbox2 {
             background-color: rgba(126, 126, 126, 0.219);
             width: 120vh;
-            height: 155vh;
+            height: 178vh;
             margin: 0px;
         }
 
+        .btn1:hover{
+            background-color: rgb(82, 43, 255);
+            color: rgb(245, 245, 245);
+        }
         .btn1 {
 
 
@@ -145,7 +149,7 @@
 
         .Fline {
             width: 100%;
-            height: 50vh;
+            height: 30vh;
         }
     </style>
 @endpush

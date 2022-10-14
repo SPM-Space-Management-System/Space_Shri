@@ -11,9 +11,7 @@
             </div>
 
             <div class="col-md-12 text-center">
-                <div class="btn">
-                    <a href="" role="button">GENARATE REPORT</a>
-                </div>
+
             </div>
             <div class="bottom2">
             <table class="table table-hover">
@@ -81,12 +79,13 @@
                     <td>
                         <div class=btndelete>
 
-                            <form method="POST" action="/applicant/{{$Applicant->id}}" accept-charset="UTF-8" style="display:inline">
+                            <form onsubmit="return confirm('Do You Really Want TO delete ?');" method="POST" action="/applicant/{{$Applicant->id}}" accept-charset="UTF-8" style="display:inline">
 
+                                {{-- {{csrf_feild()}} --}}
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm"  >
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                    <i class="fa fa-trash-o" aria-hidden="true" value="delete"></i> Delete</button>
                             </form>
 
 

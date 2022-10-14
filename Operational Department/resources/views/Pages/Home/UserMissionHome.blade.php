@@ -1,3 +1,4 @@
+<div id="preloader"></div>
 @extends('layouts.app')
 @section('content')
 <div class="night">
@@ -33,7 +34,7 @@
  <div class="row row-cols-1 row-cols-md-2 g-4"> 
     @foreach ($missionsALL as $mission)
     <div class="col">
-      <div class="card">
+      <div class="card" data-aos="fade-up-left" data-aos-mirror="true">
         <div class="inner"> <img src="{{ asset('thumbnails/' . $mission->mission_image) }}" height="250" class="card-img-top"  alt="missions images"></div>
         <div class="card-body">
             <div class="aligns">
@@ -48,7 +49,24 @@
     </div> 
     @endforeach
   </div>
+  <iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 </div> 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<script>
+  var loader = document.getElementById("preloader");
+
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
+</script>
+
   <div class="space" style="padding-bottom: 15vh"></div>
 @endsection
 
@@ -329,6 +347,14 @@
 .star:nth-child(5)::before, .star:nth-child(5)::after{
   animation-delay: 1.8s;
 }
-
+#preloader{
+  background: #000 url(images/circle-loader.gif) no-repeat center center;
+  background-size: 20%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+ 
+}
     </style>
 @endpush

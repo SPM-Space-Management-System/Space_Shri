@@ -1,3 +1,4 @@
+<div id="preloader"></div>
 @extends('layouts.app')
 @section('content')
 <img src="../images/logo.png" style="width:800px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
@@ -11,9 +12,12 @@
         <h4 class="card-header bg-success">Department  : Operations and Research</h4>
         <div class="card-body">
           <h5 class="card-title"><b><strong>Month : </strong></b>{{$currentMoth}}</h5>
+          <h5 class="card-title"><b><strong>Total No Of Newly Visited Users : </strong></b>{{$totalusers}}</h5>
           <h5 class="card-title"><b><strong>Maximum Expenses Topic Of The Month : </strong></b>{{$monthlyAll->topic}}</h5>
           <h5 class="card-title"><b><strong>Maximum Expenses Topic's Price Of The Month : </strong></b>{{ $monthlyAll->costOfMission }}</h5>
           <h5 class="card-title"><b><strong>Total Monthly Expenses : </strong></b>{{ $totalPrice }}</h5>
+          
+          
           <div class="space" style="padding-bottom: 5vh"></div>
           {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
          <!-- Show Graph Data -->
@@ -32,7 +36,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: <?php echo json_encode($labels) ?>,
         datasets: [{
-            label: 'xxxa',
+            label: '$labels',
             data: <?php echo json_encode($prices); ?>,
             backgroundColor: [
                 'rgba(31, 58, 147, 1)',
@@ -124,7 +128,16 @@ var myChart = new Chart(ctx, {
 
 
 
+<iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe hidden width="560" height="315" src="https://www.youtube.com/embed/4H3rtnagu2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+<script>
+  var loader = document.getElementById("preloader");
 
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
+</script>
 
 <div class="space" style="padding-bottom: 10vh"></div>
 @endsection
@@ -177,5 +190,14 @@ var myChart = new Chart(ctx, {
     body{
         background-color: rgb(0, 0, 0);
     }
+    #preloader{
+  background: #000 url(images/insert4.webp) no-repeat center center;
+  background-size: 20%;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+ 
+}
 </style>
 @endpush  

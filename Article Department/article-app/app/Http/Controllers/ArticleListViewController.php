@@ -16,7 +16,8 @@ class ArticleListViewController extends Controller
 
     public function delete($art_id) {
         ArticleViewFacade::delete($art_id);
-        return redirect()->back()->with('message','Details Deleted Successfully!');
+        return response()->json(['status' => 'Article Details Deleted Successfully!']);
+        //return redirect()->back()->with('message','Details Deleted Successfully!');
     } 
 
     public function done($art_id) {

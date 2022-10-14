@@ -13,5 +13,13 @@ class ArticleReportController extends Controller
         return view('pages.expenses.articlereport')->with($response);
     }
 
+    public function article_report_pdf() {
+        $exps = ArticleExpensesViewFacade::all();
+        $pdf = PDF::loadView('pages.expenses.aarticlereportpdf', ['exps' => $exps]);
+
+        return $pdf->download('aarticlereportpdf.pdf');
+
+    }
+
    
 }

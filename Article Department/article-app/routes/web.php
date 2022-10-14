@@ -7,6 +7,8 @@ use App\Http\Controllers\ArticleListViewController;
 use App\Http\Controllers\AddArticleExpensesController;
 use App\Http\Controllers\ExpensesListViewController;
 use App\Http\Controllers\ArticleReportController;
+use App\Http\Controllers\ViewMoreArticleController;
+use App\Http\Controllers\articlepdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,10 @@ Route::prefix('/articleinsert')->group(function () {
     Route::get('/', [ArticleInsertController::class, "articleinsertview"])->name('articleinsert');
     Route::post('/store', [ArticleInsertController::class, "store"])->name('articleinsert.store');
 });
+
+
+Route::get('/articleviewmore', [ViewMoreArticleController::class, "ViewMoreArticle"])->name('ViewMoreArticle');
+
 
 Route::prefix('/articleview')->group(function () {
     Route::get('/', [ArticleListViewController::class, "articleview"])->name('articleview');
@@ -44,6 +50,7 @@ Route::prefix('/expensesview')->group(function () {
   
 });
 Route::get('/articlereport', [ArticleReportController::class, "reportview"])->name('articlereport');
-
+Route::get('/article_report_pdf', [ArticleReportController::class, "article_report_pdf"])->name('article_report_pdf');
+Route::get('/articlepdf', [articlepdfController::class, "articlepdfManage"]);
 
 

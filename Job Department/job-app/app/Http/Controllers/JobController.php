@@ -88,6 +88,6 @@ class JobController extends Controller
     public function jobdetails_function($id)
     {
         $post = jobs::findorFail($id);
-        return view('Pages/home/jobdetails', compact('post'));
+        return view('Pages/Job-Department/home/jobdetails', compact('post'));
     }
 }

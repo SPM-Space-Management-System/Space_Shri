@@ -12,7 +12,7 @@ class PagesController extends Controller
 {
     public function indexjobinsert()
     {
-        return view('Pages/admin/JobInsert');
+        return view('Pages/Job-Department/admin/JobInsert');
     }
 
 
@@ -21,14 +21,14 @@ class PagesController extends Controller
     {
 
         $data = jobs::all();
-        return view('Pages/home/JobViewUser', compact('data'));
+        return view('Pages/Job-Department/home/JobViewUser', compact('data'));
     }
 
     public function applicantlist ()
     {
 
         $data = applicants::all();
-        return view('Pages/admin/applicantslistview', compact('data'));
+        return view('Pages/Job-Department/admin/applicantslistview', compact('data'));
     }
 
     public function homeview(Request $request)
@@ -39,24 +39,24 @@ class PagesController extends Controller
         }else{
             $data = jobs::orderBy('id', 'DESC')->get();
         }
-    return view('Pages/home/home',compact('data'));
+    return view('Pages/Job-Department/home/home',compact('data'));
 
     }
     public function applicantlistview()
     {
 
         $data = jobs::all();
-        return view('Pages/admin/applicantslistview', compact('data'));
+        return view('Pages/Job-Department/admin/applicantslistview', compact('data'));
     }
     public function adminview()
     {
 
 
-        return view('Pages/admin/manageJobs');
+        return view('Pages/Job-Department/admin/manageJobs');
     }
     public function jobApplyindex()
     {
-        return view('Pages/admin/jobApply');
+        return view('Pages/Job-Department/admin/jobApply');
     }
 
     // public function jobupdate()
@@ -69,7 +69,7 @@ class PagesController extends Controller
     //admin edit missions
     public function indexjobedit($id){
         $job = jobs::findorFail($id);
-        return view('Pages/admin/JobUpdate',compact('job'));
+        return view('Pages/Job-Department/admin/JobUpdate',compact('job'));
       }
 
     public function jobdetailsVeiw()
@@ -78,7 +78,7 @@ class PagesController extends Controller
        $currentMoth = $date->format('F');
 
         $data = jobs::all();
-        return view('Pages/home/jobdetails', compact('data'));
+        return view('Pages/Job-Department/home/jobdetails', compact('data'));
     }
 
     public function indexjobreport()
@@ -109,7 +109,7 @@ class PagesController extends Controller
 // dd($monthlyAllJobs);
             // $monthlyAllJobs = jobs::whereMonth('created_at', Carbon::now()->month)->count('jobtitle');
 
-        return view('pages/admin/jobReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('totaljobs',$totaljobs)->with('totalVacancies',$totalVacancies)->with('monthlyAllJobs',$monthlyAllJobs);
+        return view('pages/Job-Department/admin/jobReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('totaljobs',$totaljobs)->with('totalVacancies',$totalVacancies)->with('monthlyAllJobs',$monthlyAllJobs);
 
 
     }
@@ -139,7 +139,7 @@ class PagesController extends Controller
 // dd($monthlyAllJobs);
             // $monthlyAllJobs = jobs::whereMonth('created_at', Carbon::now()->month)->count('jobtitle');
 
-        return view('pages/admin/pdfGenarate',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('totaljobs',$totaljobs)->with('totalVacancies',$totalVacancies)->with('monthlyAllJobs',$monthlyAllJobs);
+        return view('pages/Job-Department/admin/pdfGenarate',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('totaljobs',$totaljobs)->with('totalVacancies',$totalVacancies)->with('monthlyAllJobs',$monthlyAllJobs);
 
 
         // return view('Pages/admin/pdfGenarate');

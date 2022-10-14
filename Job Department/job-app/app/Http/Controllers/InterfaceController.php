@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
-class PagesController extends Controller
+class InterfaceController extends Controller
 {
     public function indexjobinsert()
     {

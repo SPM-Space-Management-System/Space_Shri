@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\missions;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -77,6 +78,8 @@ class PagesController extends ParentController
 
         $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
 
+        $totalusers = user::whereMonth('created_at', Carbon::now()->month)->count('id');
+
         $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
         
         $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
@@ -92,7 +95,8 @@ class PagesController extends ParentController
         }
 
         $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
-        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
+        
+        return view('pages/admin/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab)->with('totalusers',$totalusers );
     }
 
 
@@ -119,7 +123,9 @@ class PagesController extends ParentController
     $monthlyAll = missions::whereMonth('created_at', Carbon::now()->month)->orderBy('costOfMission', 'desc')->first();
 
     $totalPrice = missions::whereMonth('created_at', Carbon::now()->month)->sum('costOfMission');
-    
+
+    $totalusers = user::whereMonth('created_at', Carbon::now()->month)->count('id');
+ 
     $labels = missions::whereMonth('created_at', Carbon::now()->month)->get('mission_id');
     $label = array();
     foreach ($labels as $l) {
@@ -135,10 +141,12 @@ class PagesController extends ParentController
  
     $monthlyTab = missions::whereMonth('created_at', Carbon::now()->month)->get();
 
+
+
     if($monthlyAll->topic == null){
         return "<h1> The TOP MODEl DETAILS Not Exist. </h1>";
     }else{
-    return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab);
+    return view('pages/admin/PDF/MissionReport',['labels' => $label, 'prices' => $price])->with('currentMoth',$currentMoth)->with('monthlyAll',$monthlyAll)->with('totalPrice',$totalPrice)->with('monthlyTab',$monthlyTab)->with('totalusers',$totalusers );
     }
   }
  

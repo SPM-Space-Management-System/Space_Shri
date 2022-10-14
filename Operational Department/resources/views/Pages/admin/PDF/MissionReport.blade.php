@@ -81,6 +81,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.mi
         <h4 class="card-header bg-success">Department :  Operations and Research</h4>
         <div class="card-body">
           <h5 class="card-title"><small><strong>Month : </small></strong><small>{{$currentMoth}}</small></h5>
+          <h5 class="card-title"><small><strong>Total No Of Newly Visited Users :</small></strong><small>{{$totalusers}}</small></h5>
           <h5 class="card-title"><small><strong>Maximum Expenses Topic Of The Month : </small></strong></b><small>{{$monthlyAll->topic}}</small></h5>
           <h5 class="card-title"><small><strong>Maximum Expenses Topic's Price Of The Month : </small></strong></b><small>{{ $monthlyAll->costOfMission }}</small></h5>
           <h5 class="card-title"><small><strong>Total Monthly Expenses : </small></strong></b><small>{{ $totalPrice }}</small></h5>

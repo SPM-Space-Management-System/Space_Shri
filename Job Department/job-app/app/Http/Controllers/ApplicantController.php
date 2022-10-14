@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class ApplicantController extends Controller
 {
-    public function ApplicantStore(Request $request)
+    public function saveApplicant(ApplicantRequest $request)
     {
         $appObj = new applicants();
 
-        // $cvName = time() . "." . $request->cvadd->getClientOriginalName();
-        // $request->cvadd->move(public_path('thumbnails'), $cvName);
+        $cvName = time() . "." . $request->cvadd->getClientOriginalName();
+        $request->cvadd->move(public_path('cv'), $cvName);
 
 
 
@@ -25,20 +25,25 @@ class ApplicantController extends Controller
         $appObj->name = $request->name;
         $appObj->tp_no = $request->tp_no;
         $appObj->NIC = $request->NIC;
-        $appObj->cv_id = $request->cvadd;
-        // $appObj->cv_id = $cvName;
+        //$appObj->cv_id = $request->cvadd;
+        $appObj->cv_id = $cvName;
 
-        // $appObj->save();
+        //  $appObj->save();
 
-        dd($appObj);
+        // dd($appObj);
 
 
-        //  try {
-        //     $data = $request->validated();
-        //     $appObj->save();
-        //     return redirect()->back()->with('message','job added Successfully');
-        //   } catch (Exception $ex) {
-        //     return redirect()->back()->with('message','somthing went wrong'.$ex);
-        //   }
+         try {
+            $data = $request->validated();
+            $appObj->save();
+            return redirect()->back()->with('message','job added Successfully');
+          } catch (\Exception $ex) {
+            return redirect()->back()->with('message','somthing went wrong'.$ex);
+          }
+    }public function destroy($id)
+    {
+        $appObj = applicants::find($id);
+        $appObj->delete();
+        return redirect('/applicant');
     }
 }

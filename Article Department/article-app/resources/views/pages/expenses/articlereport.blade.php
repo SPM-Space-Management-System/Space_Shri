@@ -13,6 +13,12 @@ if (!$conn) {
     </div>
     <section>
         @foreach ($exps as $exp)
+            <div class="article-text">
+                <h2>Topic : {{ $exp->topic }}</h2>
+                <h2>Start-Date : {{ $exp->sdate }}</h2>
+                <h2>End-Date : {{ $exp->edate }}</h2>
+            </div>
+
             <div class="expense-table">
                 <table class="table">
                     <tbody>
@@ -55,40 +61,44 @@ if (!$conn) {
                             <td></td>
                             <td></td>
                             <td>{{ $exp->mcost }}</td>
-                            </tr>
-                       
-                            <td>
-                                <h2>Total Cost</h2>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h2 id="total-cost">
-                                    {{ ($exp->transport + $exp->mcost)*$exp->visits }}
-                                </h2>
-                            </td>
+                        </tr>
+
+                        <td>
+                            <h2>Total Cost</h2>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <h2 id="total-cost">
+                                {{ ($exp->transport + $exp->mcost) * $exp->visits }}
+                            </h2>
+                        </td>
                         </tr>
                     </tbody>
                 </table>
         @endforeach
-    
+
     </section>
 
     <div class="chart">
         <div id="curve_chart" style="width: 600px; height: 600px"></div>
     </div>
-   
-        <div class="text-button">
+
+    <div class="text-button">
         <div class="col-6">
-            <a href="{{ route('expensesview') }}"><< Back</a>
+            <a href="{{ route('expensesview') }}">
+                < Back</a>
         </div>
-       
+        <div class="col-4">
+            <a href="{{ route('article_report_pdf') }}">Generate Report ></a>
+        </div>
+    </div>
 @endsection
 
 @push('css')
@@ -118,8 +128,16 @@ if (!$conn) {
         section .expense-table table {
             position: relative;
             width: 35%;
-            margin-top: 15vh;
+            margin-top: 10vh;
             margin-left: 120px;
+        }
+
+        .article-text {
+            margin-left: 120px;
+        }
+
+        .article-text h2 {
+            color: #fff;
         }
 
         section .expense-table table td {
@@ -132,70 +150,21 @@ if (!$conn) {
             color: cornflowerblue;
         }
 
-        .rocket-engine {
-            padding-left: 110vh;
-            margin-top: -600px;
-            width: 600px;
-            height: 1000px;
-        }
 
         .chart {
-            margin-left: 190px;
-            margin-top: -200px;
+            margin-left: 150px;
+            margin-top: 200px;
         }
 
-        .quot {
-            padding-top: 10vh;
-            padding-bottom: 15vh;
-        }
-
-        .quot h6 {
-            display: block;
-            text-transform: capitalize;
-            text-align: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.8em;
-        }
-
-        .report-img {
-            padding-bottom: 10vh;
-        }
-
-        .report-img img {
-            width: 100%;
-            height: 800px;
-            ;
-        }
-
-        .quot_1 {
-            padding-top: 10vh;
-        }
-
-        .quot_1 h6,
-        .quot_1 a {
-            display: block;
-            text-transform: capitalize;
-            text-align: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2em;
-        }
-
-        .quot_1 a {
-            color: #ffab00;
-            text-decoration: none;
-
-        }
 
         .text-button {
             display: flex;
-            margin-left: 530px;
+            margin-left: 300px;
             padding-top: 35vh;
             padding-bottom: 40vh;
         }
 
-        .text-button a{
+        .text-button a {
             font-size: 1.8em;
             color: #fff;
             text-decoration: none;
@@ -228,7 +197,7 @@ if (!$conn) {
             ?>
             ]);
             var options = {
-                width: 1500,
+                width: 1200,
                 colors: ['#ff4d4d'],
                 curveType: 'function',
                 legend: {

@@ -23,21 +23,14 @@
     <div class="container">
         <div class="row justify-content-center">
             @forelse ($arts as $art)
-                <div class="col-lg-6 mb-5">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="inner">
-                            <img src="{{ config('images.upload_path') }}/{{ $art->images->name }}"  class="card-img-top" alt="Article-Image">
-                            </div>
-                        </div> 
-                        
+                <div class="col">
+                    <div class="card">                       
                         <div class="card-body">
+                            <img src="{{ config('images.upload_path') }}/{{ $art->images->name }}"  class="card-img-top" alt="Article-Image">
                             <h2 class="card-title text-center">{{ $art->topic }}</h2>
                             <h5 class="card-title">Author: {{ $art->author }}</h5>
                             <h5 class="card-title">Date: {{ $art->date }}</h5>
                             <h5 class="card-title">Country: {{ $art->country }}</h5>
-                            <button class="Read-more" style="background-color: #555" >Read more</button>
-
                        </div>
                     </div>
                     </div>
@@ -98,19 +91,18 @@
         }
 
         .container .card {
-            
-            width: 475px;
-            height: 520px;
-            margin: 10px;
-            align-items: left;
-            background-image: linear-gradient(to right, #b465da 0%, #cf6cc9 33%, #fc92be 66%, #ee609c 100%);
+            width: 340px;
+            height: 450px;
+            margin: 5px;
+            align-items: right;
+            background-color: #9d9d9d;
         }
         .container .card img {
             bottom: 0; 
-            float: left;
+            float: center;
             left: 30%;
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 260px;
           
         }
 
@@ -120,7 +112,7 @@
 
         .container .card .card-body {
        
-            width: 50%;
+            width: 100%;
             left: 20%;
             padding: 20px 20px 20px 0;
             margin-right: 180px;
